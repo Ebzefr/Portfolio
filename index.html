@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
+    
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Ebenezer</div>
+        <div>
+            <ul class="nav-links">
+             <li><a href="about.html">About</a></li>
+             <li><a href="experience.html">Experience</a></li>
+             <li><a href="project.html">Project</a></li>
+             <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="ham-nav">
+        <div class="logo">Ebenezer</div>
+<div class="ham-menu">
+    <div class="ham-icons" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="menu-links">
+    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+             <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+             <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
+             <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
+</div>
+</div>
+    </nav>
+    <section id="profile">
+        <div class="section_pic-container">
+            <img src="Assets/Profile pic.jpeg" alt="Ebenezer">
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello I'm</p>
+            <h1 class="title">Ebenezer</h1>
+            <p class="section_text_p2">Computer Scienece Student</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2"onclick="window.open('./Assets/CV.pdf') ">
+                    Download CV
+                </button>
+                <button class="btn btn-color-1"onclick="location.href('./#contact') ">
+                    Contat Info
+                </button>
+            </div>
+        <div id="socials-container">
+            <img src="Assets/Linkedin.png" alt="My Linkedin"
+            class="icon" onclick="location.href='https://www.linkedin.com/in/ebenezer-obi-23858324b/'">
+            <img src="Assets/github.png" alt="My Github"
+            class="icon" onclick="location.href='https://github.com/Ebzefr'">
+        </div>
+        </div>
+    </section>
+    <section id="about">
+        <p class="section_text_p1">Get to know more</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+        <div class="section_pic-container">
+            <img src="Assets/About.png " alt="Profile picture" class="about-pic"/>
+        </div>
+  <div class="about-details-container">
+    <div class="about-containers">
+        <div class="details-container">
+            <img src="Assets/Experience.png" alt="Experience icon" class="icon"/>
+            <h3>Experience</h3>
+            <p>2+ years <br />Data Analysis</p>
+        </div>
+        <div class="details-container">
+            <img src="Assets/Education 2.png" alt="Education icon" class="icon"/>
+            <h3>Education</h3>
+            <p>High School <br />B.Sc. Bachelors Degree</p>
+        </div>
+        </div>
+        <div class="text-container">
+             <p>Vorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type 
+                specimen book. It has survived not only five centuries, but also the leap into 
+                electronic typesetting, remaining essentially unchanged. It was popularised in 
+                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including 
+                versions of Lorem Ipsum.</p>
+        </div> 
+    </div>
+</div>
+<img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
+    </section>
+    <section id="experience">
+        <p class="section_text_p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>HTML</h3>
+                            <p>Experienced</p>
+                        </div>
+                        </article>
+                        <article>
+                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                            </article>
+                            <article>
+                                <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                <div>
+                                    <h3>Javascript</h3>
+                                    <p>Experienced</p>
+                                </div>
+                                </article>
+                                <article>
+                                    <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                    <div>
+                                        <h3>Java</h3>
+                                        <p>Experienced</p>
+                                    </div>
+                                    </article>
+                                    <article>
+                                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                        <div>
+                                            <h3>Kotlin</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                        </article>
+                                        <article>
+                                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                            <div>
+                                                <h3>Kotlin</h3>
+                                                <p>Experienced</p>
+                                            </div>
+                                            </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <div class="article-container">
+                        <article>
+                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>HTML</h3>
+                            <p>Experienced</p>
+                        </div>
+                        </article>
+                        <article>
+                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                            </article>
+                            <article>
+                                <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                <div>
+                                    <h3>Javascript</h3>
+                                    <p>Experienced</p>
+                                </div>
+                                </article>
+                                <article>
+                                    <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                    <div>
+                                        <h3>Java</h3>
+                                        <p>Experienced</p>
+                                    </div>
+                                    </article>
+                                    <article>
+                                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
+                                        <div>
+                                            <h3>Kotlin</h3>
+                                            <p>Experienced</p>
+                                        </div>
+                                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+    </section>
+    <section id="project">
+        <p class="section_text_p1">Browse my recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="Assets/Lofis.png" alt="project 1" class="project-img"/>
+                </div>
+                <h2 class="experience-sub-title project-title">Project One</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+   <script src="script.js"></script> 
+</body>
+</html> 
