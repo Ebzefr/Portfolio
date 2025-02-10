@@ -13,19 +13,21 @@
 <body>
     <nav id="desktop-nav">
         <div class="logo">
-            <img src="Assets/Ebze Logo.png" alt="Ebenezer Logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
         </div>
         <div>
             <ul class="nav-links">
              <li><a href="./#about">About</a></li>
              <li><a href="./#experience">Experience</a></li>
-             <li><a href="./#project">Project</a></li>
+             <li><a href="project.html">Portfolio</a></li>
              <li><a href="./#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
     <nav id="ham-nav">
-        <div class="logo">Ebenezer</div>
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
 <div class="ham-menu">
     <div class="ham-icons" onclick="toggleMenu()">
 <span></span>
@@ -46,14 +48,14 @@
         </div>
         <div class="section_text">
             <p class="section_text_p1">Hello I'm</p>
-            <h1 class="title">Ebenezer</h1>
-            <p class="section_text_p2">Computer Scienece Student</p>
+            <h1 class="title">Ebenezer Obi</h1>
+            <p class="section_text_p2">Computer Science Student</p>
             <div class="btn-container">
                 <button class="btn btn-color-2"onclick="window.open('./Assets/CV.pdf') ">
                     Download CV
                 </button>
                 <button class="btn btn-color-1"onclick="location.href('./#contact') ">
-                    Contat Info
+                    Contact Info
                 </button>
             </div>
         <div id="socials-container">
@@ -63,6 +65,7 @@
             class="icon" onclick="location.href='https://github.com/Ebzefr'">
         </div>
         </div>
+        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#about'"/>
     </section>
     <section id="about">
         <p class="section_text_p1">Get to know more</p>
@@ -187,54 +190,42 @@
         </div>
         <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
     </section>
-    <section id="project">
+    <section id="projects">
         <p class="section_text_p1">Browse my recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-            <div class="details-container color-container">
+        <div class="portfolio-container">
+            <div class="card">
                 <div class="article-container">
                     <img src="Assets/Lofis.png" alt="project 1" class="project-img"/>
                 </div>
-                <h2 class="experience-sub-title project-title">Lofis UX/UI</h2>
+                <h3>Lofis UX/UI</h3>
                 <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='lofis.html'">Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='lofis.html'">Figma</button>
                 </div>
             </div>
-            <div class="details-container color-container">
+            <div class="card">
                 <div class="article-container">
-                    <img src="Assets/Sneakerfy.png" alt="Project 2" class="project-img"/>
+                    <img src="Assets/Sneakerfy.png" alt="project 2" class="project-img"/>
                 </div>
-                <h2 class="experience-sub-title project-title">Sneakerfy</h2>
+                <h3>Sneakerfy</h3>
                 <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='lofis.html'">Github</button>
                 </div>
             </div>
-            <div class="details-container color-container">
+            <div class="card">
                 <div class="article-container">
-                    <img src="Assets/Portfolio.png" alt="Project 3" class="project-img"/>
+                    <img src="Assets/Portfolio.png" alt="project 3" class="project-img"/>
                 </div>
-                <h2 class="experience-sub-title project-title">Personal Website</h2>
+                <h3>Personal Website</h3>
                 <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Demo</button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='lofis.html'">Github</button>
                 </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="Assets/Lofis.png" alt="Project 3" class="project-img"/>
-                </div>
-                <h2 class="experience-sub-title project-title">Project Three</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">Live Demo</button>
-                </div>
-            </div>
             </div>
         </div>
-        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
     </section>
     <section id="contact">
 <p class="section_text_p1">Get in Touch</p>
@@ -242,7 +233,7 @@
 <div class="contact-info-upper-container">
     <div class="contact-info-container">
         <img src="Assets/email.png" alt="Email icon" class="icon contact-icon"/>
-        <p><a href="mailto:examplemail@gmail.com">examplemail@gmail.com</a></p>
+        <p><a href="mailto:kenthaliny@gmail.com">kenthaliny@gmail.com</a></p>
     </div>
     <div class="contact-info-container">
         <img src="Assets/Linkedin.png" alt="Linkedin icon" class="icon contact-icon"/>
@@ -256,7 +247,7 @@
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
                     <li><a href="experience.html">Experience</a></li>
-                    <li><a href="project.html">Project</a></li>
+                    <li><a href="project.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                    </ul>
             </div>

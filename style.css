@@ -272,6 +272,7 @@ gap: 1rem  ;
 
 #about{
     position: relative;
+    
 }
 
 .about-containers {
@@ -305,9 +306,10 @@ gap: 1rem  ;
     flex: 1;
     background: white;
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
+    border: 1px solid #ddd;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .section-container{
@@ -364,15 +366,10 @@ article.icon{
 
 #projects {position: relative;}
 
-.color-container{
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
-}
-
 .project-img{
     border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
 }
 
 .project-title{
@@ -428,4 +425,347 @@ footer{
 
 footer p{
     text-align: center;
+}
+
+/*PORTFOLIO*/
+.portfolio {
+    padding: 4em 1em;
+    background-color: #fff;
+    text-align: center;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 1.6em;
+    margin: 0.5em 0;
+}
+
+/*********************LOFIS PAGE*******************************/
+/*Introduction*/
+/* Intro Section Styling */
+section#intro {
+    padding: 3rem 1rem; /* Reduce padding to minimize gap */
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Ensure it's distinct */
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Add spacing between text and image */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.intro-text {
+    margin-top: -5rem;
+    flex: 1; /* Allow text to take up equal space with image */
+}
+
+.intro-text h2 {
+    font-size: 2.5rem; /* Enlarge title */
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.intro-text .author {
+    font-size: 1.2rem;
+    color: #757575;
+    margin-bottom: 1rem;
+    margin-right: 10px; /* Add space between author and date */
+}
+
+.intro-text .date {
+    font-size: 1.2rem;
+    color: #757575;
+    float: right;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.intro-image {
+    flex: 1.2; /* Allow image to take up equal space with text */
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 130%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.date {
+    font-size: 1.2rem;
+    color: #757575;
+    float: right;
+    margin-left: 5px; /* Optional: You can adjust this if you want to add more space */
+}
+
+
+/* Reduce Gap Between Sections */
+section + section {
+    margin-top: -1rem; /* Adjust this value as needed */
+}
+
+
+/*Research*/
+section#research {
+    background-color: #f8f8f8;  /* Light gray color */
+    padding: 4rem 1rem;
+    color: #333;
+    width: 100%;
+    margin: 0;
+    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.1); /* Shadow effect at top */
+
+}
+.research-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+.sub-section {
+    margin-bottom: 4rem;
+}
+
+.sub-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #444;
+}
+
+/* Images: Personas and User Journeys */
+.persona-images, .journey-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.persona-images img {
+    width: 30%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.journey-images img{
+    width: 90%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+/* Scenarios */
+.scenario-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.scenario-cards .card {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 30%;
+    text-align: center;
+}
+
+.scenario-cards .card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.scenario-cards .card h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+.scenario-cards .card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Understanding */
+.understanding-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.understanding-cards .card {
+    width: 45%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.understanding-cards .card h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: lighter;
+}
+
+.aligned {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.aligned li {
+    position: relative;
+    padding-left: 2rem; /* Space for bullet */
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+}
+
+
+.aligned li::before {
+    content: "•"; /* Bullet */
+    position: absolute;
+    left: 0; /* Fixed bullet position */
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/*Design and prototype*/
+/*Colour*/
+/* Container for the colored squares */
+.color-rectangle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px; /* Adjust width as needed */
+    aspect-ratio: 4/1; /* Ensures a wide rectangle shape */
+    border-radius: 10px; 
+    overflow: hidden; /* Ensures no overflow if content exceeds */
+}
+
+/* Styling for each colored square */
+.color-square {
+    flex: 1; /* Each square takes up equal space */
+    height: 100%; /* Full height of the container */
+}
+
+/*Logo Design*/
+.logo-images {
+    display: flex;
+    justify-content: space-between; /* Space between the images */
+    gap: 20px; /* Optional spacing */
+    align-items: center; /* Align images vertically */
+}
+
+/* Individual image styling */
+.logo-images img {
+    width: calc(50% - 10px); /* Each image takes 50% of the width minus spacing */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover within the square */
+    border-radius: 10px; /* Optional styling for rounded corners */
+    aspect-ratio: 1/1; /* Enforce square shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Swiper Container */
+.swiper-container {
+    max-width: 1200px; /* Increase width to accommodate 3 slides */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ensure each image is properly sized */
+.swiper-slide img {
+    width: 100%; /* Fit within the individual slide */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional styling */
+    object-fit: cover;
+}
+
+/* Adjust space between slides */
+.swiper-wrapper {
+    display: flex;
+    gap: 10px; /* Matches the spaceBetween setting */
+}
+
+/* Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    position: fixed; /* Fixed position for arrows */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align arrows correctly */
+    z-index: 10;
+    color: black;
+    font-size: 2rem; /* Size of the arrow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+/* Arrow on the left side */
+.swiper-button-prev {
+    left: -40px; /* Place the left arrow 10px from the left of the screen */
+}
+
+/* Arrow on the right side */
+.swiper-button-next {
+    right: -40px; /* Place the right arrow 10px from the right of the screen */
+}
+
+
+/* Pagination Dots */
+.swiper-pagination {
+    bottom: 10px; /* Position it just below the slides */
+    text-align: center;
+    color: black;
+    position: absolute;
 }
