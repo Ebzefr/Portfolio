@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="./#about">About</a></li>
+                <li><a href="./#experience">Experience</a></li>
+                <li><a href="project.html">Portfolio</a></li>
+                <li><a href="./#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hamburger Navigation -->
+    <nav id="ham-nav">
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
+        <div class="ham-menu">
+            <div class="ham-icons" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Content -->
+    <section class="job-detail-section">
+        <div class="job-header">
+            <h1>UK Tech Job Opportunities</h1>
+            <div class="author-date">
+                <div class="author">Ebenezer Obi</div>
+                <div class="date">February 2025</div>
+            </div>
+        </div>
+
+        <div class="project-intro">
+            <div class="project-text">
+                <p> This is an interactive Shiny web application that analyzes and visualizes the evolution 
+                    of technology-related job opportunities across the United Kingdom from 2019 to 2023. By leveraging 
+                    job posting data, this project offers insights into shifting demands in job roles, required 
+                    technical skills, salary trends, and geographic hiring patterns.
+                <br>
+                Developed using R, Shiny, and various data visualization libraries, this project demonstrates expertise 
+                in data cleaning, statistical analysis, interactive dashboard design, and web-based deployment. It also 
+                reflects a strong understanding of real-world employment trends and the value of data-driven decision-making 
+                in career and business strategy.
+            </p>
+            </div>
+            <div class="project-image"><img src="Assets/J-cover.png" alt="UK Jobs"></div>
+        </div>
+
+        <div class="project-sections">
+            <div class="tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-icon">
+                        <img src="Assets/RStudio.png" alt="RStudio">
+                        <p>RStudio</p>
+                    </div>
+                    <div class="tech-icon">
+                        <img src="Assets/Kaggle.png" alt="Kaggle">
+                    <p>Kaggle</p></div>
+                    <div class="tech-icon">
+                        <img src="Assets/Excel.png" alt="Excel">
+                        <p>MS Excel</p>
+                    </div>
+                    <div class="tech-icon">
+                        <img src="Assets/Shiny.png" alt="Shiny App">
+                        <p>Shiny</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="problem-solution">
+                <h2>Problem Statement</h2>
+                <ul>
+                    <li>
+                        Shifts in demand for roles, skills, and 
+                        salaries are not always visible without deep analysis.
+                    </li>
+                    <li>
+                        Emerging tech trends have disrupted hiring patterns.
+                    </li>
+                    <li>
+                        Job seekers and recruiters lack accessible tools 
+                        to explore these trends interactively.
+                    </li>
+                </ul>
+            </div>
+            <div class="goals">
+                <h2>Goals</h2>
+                <ul>
+                    <li>
+                        Identify trends in job titles, required skills, salaries, 
+                        and hiring regions.
+                    </li>
+                    <li>
+                        Build an interactive, user-friendly dashboard using Shiny 
+                        to visualize the data.
+                    </li>
+                    <li>
+                        Enable users to filter by year, location, job title, and 
+                        skill for personalized insights.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="insight-section">  
+        <div class="insight-container">
+            <h2>Insight and Results</h2>
+            <p>This section highlights the core results of the analysis and gives a 
+                visual preview of the dashboard in action. You'll find key trends uncovered 
+                from the data, the challenges faced during development, and an interactive 
+                link to explore the project firsthand.
+            </p>
+           
+            <h3>Dashboard</h3>
+            <div class="dashboard">
+                <div class="dashboard-image"><img src="Assets/J-Dash.png" alt="Dashboard"></div>
+            </div>
+                <h3>Valuable Findings</h3>
+          <div class="result-grid">
+            <div class="result-icon">
+                <img src="Assets/J-list.png" alt="List">
+                <p>"The United Kingdom according to these dataset recorded a total of 364 Tech
+                    related jobs from 2019 to 2023".
+                </p>
+            </div>
+            <div class="result-icon">
+                <img src="Assets/J-idea.png" alt="Idea">
+                <p>"Although a pandemic occured in 2020, there was total job listing
+                    of 44 and they were all Full-time, suggesting they were listed at 
+                    the start of year or post lockdown".
+                </p>
+            </div>
+            <div class="result-icon">
+                <img src="Assets/J-skills.png" alt="Skills">
+                <p>"In regards to experience level, there seem to be no much opportunities for
+                    current student seeking an internship or fresh graduates looking to 
+                    break into the corporate world".
+                </p>
+            </div>
+          </div> 
+          <div class="challenge-container">
+            <div class="challenges">
+                <h3>Challenges</h3>
+                <ul>
+                    <li>Deploying the whole program to shinyapps.io.</li>
+                    <li>Github commit hangs in local file instead of pushing to the remote 
+                        repository.</li>
+                    <li>Slow dashboard loading on shinyapps.io.</li>
+                </ul>
+            </div>
+            <div class="solutions">
+                <h3>Solution</h3>
+                <ul>
+                    <li>Ran error logs and removed rsconnect declarations present in the script.</li>
+                    <li>Clearly set all assets in directory before cloning afresh and pushing through terminal.</li>
+                    <li>Optimized plots using plotly + limited default dataset size</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="https://ebzefr.shinyapps.io/Job-Analysis/" target="_blank" class="oval-button">Live Dashboard</a>
+            <a href="https://github.com/Ebzefr/Job-Analysis" target="_blank" class="oval-button">GitHub</a>
+        </div>
+
+        </div>
+    </section>
+    
+    
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="project.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2024 Ebenezer. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

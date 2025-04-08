@@ -366,21 +366,13 @@ article.icon{
 
 #projects {position: relative;}
 
-.project-img{
-    border-radius: 2rem;
-    width: 100%;
-    height: 100%;
-}
 
 .project-title{
     margin: 1rem;
     color: black;
 }
 
-.project-btn{
-    color: black;
-    border-color: rgb(163, 163, 163);
-}
+
 
 /*CONTACT*/
 #contact{
@@ -428,41 +420,112 @@ footer p{
 }
 
 /*PORTFOLIO*/
-.portfolio {
-    padding: 4em 1em;
-    background-color: #fff;
-    text-align: center;
-}
-
-.portfolio-container {
+.portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    justify-content: center;
-    gap: 1.5em;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
 }
 
-.card {
-    padding: 1.5rem;
-    flex: 1;
-    background: white;
-    border-radius: 2rem;
+/* Card styling */
+.portfolio-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
     border: 1px solid #ddd;
-    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.card img {
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image container */
+.portfolio-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5f7fa;
 }
 
-.card h3 {
-    font-size: 1.6em;
-    margin: 0.5em 0;
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+    transition: transform 0.5s ease;
 }
+
+.portfolio-card:hover {
+    transform: scale(1.05);
+}
+
+/* Project info */
+.portfolio-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.portfolio-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.portfolio-category {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Arrow indicator for clickable cards */
+.card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-card:hover .card-arrow {
+    transform: translateX(5px);
+    color: #000000;
+}
+
+/* Arrow navigation at bottom */
+
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.card-link .portfolio-card {
+    height: 100%;
+}
+
+
 
 /********PROJECT PAGE************/
+/****Lofis App****?
  /* Project Detail Styles */
  .project-detail-section {
     padding: 4rem 1rem;
@@ -475,8 +538,10 @@ footer p{
 }
 
 .project-header h1 {
-    font-size: 2.5rem;
+    font-size: 3.0rem;
     margin-bottom: 0.5rem;
+    font-weight: bolder;
+    color: #582D09;
 }
 
 .author-date {
@@ -585,13 +650,16 @@ footer p{
 }
 
 .research-container h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: bolder;
+    color: #582D09;
 }
 
 .research-container h3 {
     font-size: 1.8rem;
     margin: 2.5rem 0 1.5rem 0;
+    color: #582D09;
 }
 
 .research-container p {
@@ -727,13 +795,17 @@ footer p{
     }
 
     .design-container h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
+        font-weight: bolder;
+    color: #582D09;
     }
 
     .design-container h3 {
         font-size: 1.8rem;
         margin: 2.5rem 0 1.5rem 0;
+        color: #582D09;
+
     }
 
     /* Wireframe Grid */
@@ -769,7 +841,7 @@ footer p{
     }
     
     .color-section h4 {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         margin-bottom: 1.5rem;
     }
     
@@ -877,7 +949,6 @@ footer p{
 }
 
 
-
 /* Keep the navigation arrows and pagination as before */
 .swiper-button-prev,
 .swiper-button-next {
@@ -921,7 +992,7 @@ footer p{
 
 .swiper-button-next::before {
     border-width: 20px 0 20px 30px;
-    border-color: transparent transparent transparent #5E3511;
+    border-color: transparent transparent transparent #582D09;
     right: 0;
 }
 
@@ -945,7 +1016,184 @@ footer p{
 }
 
 .swiper-pagination-bullet-active {
-    background: #5E3511 !important; 
+    background: #582D09 !important; 
     opacity: 1 !important;
+}
+
+
+/****UK JOB****?
+ /* Job Detail Styles */
+ .job-detail-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.job-header {
+    margin-bottom: 2rem;
+}
+
+.job-header h1 {
+    font-size: 3.0rem;
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    color: #2497f3;
+}
+
+/*Results & Insights*/
+.insight-section {
+    background-color: #F5F2F2;
+    padding: 4rem 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.insight-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.insight-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+    color: #2497f3;
+}
+
+.insight-container h3 {
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem 0;
+    color: #2497f3;
+}
+
+.insight-container p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+.dashboard-image {
+    width: 100%;
+    background-color: transparent;
+    border-radius:0;
+}
+
+.dashboard-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius:8px;
+    box-shadow: 0 2px 8px #2497f3 ;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+}
+
+.result-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px #2497f3 ;
+    transition: transform 0.3s ease;
+}
+
+.result-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.result-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.result-icon p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-style: oblique;
+}
+
+/* Challenges */
+.challenge-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.challenges, .solutions {
+    flex: 1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 35%; 
+}
+
+.challenges {
+    background-color: rgba(255, 99, 71, 0.2); 
+}
+
+.solutions {
+    background-color: rgba(144, 238, 144, 0.3); 
+}
+
+.challenges h3, .solutions h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.challenges ul, .solutions ul {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.challenges li, .solutions li {
+    margin-bottom: 0.5rem;
+}
+
+/*Buttons*/
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.button-container a{
+    text-decoration: none;
+}
+
+.oval-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px; 
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    min-width: 120px;
+    background-color: #2497f3; 
+    color: white;
+    border-color: #2497f3;
 }
 
