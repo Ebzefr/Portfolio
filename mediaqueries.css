@@ -1,101 +1,256 @@
-@media screen  and (max-width: 1400px){
-    #profile{
-        height: 83vh;
-        margin-bottom: 6rem;
+/* Mobile Responsiveness CSS for mediaqueries.css file */
+
+/* Mobile and Tablet Styles */
+@media screen and (max-width: 1200px) {
+    /* Layout adjustments */
+    section {
+        padding-top: 2rem;
+        height: auto;
+        margin: 0 1rem;
+        min-height: fit-content;
     }
-    .about-containers{
+
+    /* Profile section */
+    #profile {
+        flex-direction: column;
+        height: auto;
+        padding: 4rem 2rem;
+        gap: 2.5rem;
+    }
+
+    .section_pic-container {
+        width: 275px;
+        height: 275px;
+        margin: 0 auto;
+    }
+
+    /* Navigation */
+    #desktop-nav {
+        display: none;
+    }
+
+    #ham-nav {
+        display: flex;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    /* About section */
+    .section-container {
+        flex-direction: column;
+        gap: 3rem;
+        height: auto;
+    }
+
+    .about-containers {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Experience section */
+    .article-container {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
     }
-}  
 
-
-
-@media screen  and (max-width: 1200px){
-#desktop-nav{
-display: none;
+    article {
+        width: 45%;
+        margin: 0;
     }
-#ham-nav{
-display: flex;
+
+    /* Projects/Portfolio section */
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        justify-items: center;
+        align-items: center;
     }
-#experience,
-.experience-details-container{
-        margin-top: 2rem;
-}
-#profile,
-.section-container{
-display: block;
+
+    .card {
+        width: 85%;
+        max-width: 350px;
+        height: auto;
+        margin: 0 auto;
     }
-.arrow {
-display: none;
-}
-section,
-.section-container{
-    height: fit-content;
-}
-section{
-    margin: 0 5%;
-}
-.section_pic-container{
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-}
-.about-containers{
-    margin-top: 0;
-}
+
+    /* Contact section */
+    #contact {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .contact-info-upper-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Hide arrow navigation */
+    .arrow {
+        display: none;
+    }
+
+    /* Footer */
+    footer {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    footer nav {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    footer .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
 }
 
-@media screen  and (max-width: 600px){
-#contact,
-footer{
-    height: 40vh;
+/* Mobile Specific Styles */
+@media screen and (max-width: 600px) {
+    /* Further adjustments for very small screens */
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .section_text_p2 {
+        font-size: 1.25rem;
+    }
+
+    /* Button adjustments for mobile */
+    .btn-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Make experience items stack in one column */
+    article {
+        width: 100%;
+    }
+
+    .details-container {
+        padding: 1rem;
+    }
+
+    /* Reduce about image size */
+    .about-pic {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Make contact information more compact */
+    .contact-info-container {
+        gap: 0.5rem;
+    }
+
+    .contact-info-container p {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust socials container */
+    #socials-container {
+        margin-top: 1rem;
+    }
+
+    .icon {
+        height: 1.75rem;
+    }
 }
-#profile{
-    height: 83vh;
-    margin-bottom: 0;
+
+/* Responsive styles for project detail */
+@media screen and (max-width: 768px) {
+    .project-intro {
+        flex-direction: column;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+
+    .project-sections {
+        flex-direction: column;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .survey-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .personas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pain-solution-container {
+        flex-direction: column;
+    }
 }
-article{
-    font-size: 1rem;
+
+@media screen and (max-width: 480px) {
+    .survey-grid {
+        grid-template-columns: 1fr;
+    }
 }
-footer nav{
-    height: fit-content;
-    margin-bottom: 2rem;
+
+@media screen and (max-width: 768px) {
+    .wireframe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .swiper-container {
+        height: 300px;
+    }
 }
-.about-containers,
-.contact-info-upper-container,
-.btn-container{
-    flex-wrap: wrap;
+
+/*Responsiveness for Design section*/
+@media screen and (max-width: 480px) {
+    .wireframe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 80%;
+        text-align: center;
+    }
 }
-.contact-info-container{
-    margin: 0;
-}
-.contact-info-container p,
-.nav-links li a{
-    font-size: 1rem;
-}
-.experience-sub-title{
-    font-size: 1.25rem;
-}
-.logo{
-    font-size: 1.5rem;
-}
-.nav-links{
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-}
-.section_pic-container{
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-}
-.section_text_p2{
-    font-size: 1.25rem;
-}
-.title{
-    font-size: 2rem;
-}
-.text-container{
-    text-align: justify;
-}
+
+@media screen and (max-width: 768px) {
+    .pain-solution-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pain-points, .solution {
+        max-width: 80%; /* Adjust width on smaller screens */
+        width: 80%;
+        margin-bottom: 1rem;
+    }
 }

@@ -3,270 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Project Details</title>
     <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
-    
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
 </head>
 <body>
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
         <div class="logo">
-            <img src="Assets/Ebze Logo.png" alt="Ebenezer Logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
         </div>
         <div>
             <ul class="nav-links">
-             <li><a href="./#about">About</a></li>
-             <li><a href="./#experience">Experience</a></li>
-             <li><a href="project.html">Portfolio</a></li>
-             <li><a href="./#contact">Contact</a></li>
+                <li><a href="./#about">About</a></li>
+                <li><a href="./#experience">Experience</a></li>
+                <li><a href="project.html">Portfolio</a></li>
+                <li><a href="./#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Hamburger Navigation -->
     <nav id="ham-nav">
-        <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
         <div class="ham-menu">
-    <div class="ham-icons" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<div class="menu-links">
-    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-             <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
-             <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
-             <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
-</div>
-</div>
+            <div class="ham-icons" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
+            </div>
+        </div>
     </nav>
-    <section id="intro">
-        <div class="intro-container">
-            <div class="intro-text">
-                <h2>Lofi's Restaurant</h2>
-                <hr class="divider">
-                <p class="author">Ebenezer Obi<span class="date">November 2022</span></p>
-                <p>
-                    After nearly 2 decades working as a product designer, I wrote down my 
-                    logic-driven approach to UI design. Here’s a quick behind-the-scenes 
-                    look at the making of my UI design book.
-                </p>
+
+    <!-- Project Detail Content -->
+    <section class="project-detail-section">
+        <div class="project-header">
+            <h1>Ebenezer Obi</h1>
+            <div class="author-date">
+                <div class="author">Lauren Kimou</div>
+                <div class="date">March 2024</div>
             </div>
-            <div class="intro-image">
-                <img decoding="async" src="Assets/Cover.png" alt="Lofi's Restaurant">
+        </div>
+
+        <div class="project-intro">
+            <div class="project-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ali quam quis enim ultricies lectus fermentum consequat vel eget eros. Fusce mattis nunc eget est hendrerit ultrices. Ves ribulum quis risus quis metus dapibus fringilla. Ut non aliquet tellus. Phasellus varius finibus felis ut varius. Cras fringilla fac ilisis nulla sollicitudin imperdiet. Fusce egestas aliquet tempor. Aenean congue leo sed congue congue. Phasellus eget turpis condimentum, blandit diam quis, euismod orci. Fusce ultricies nisl ut dictum</p>
+            </div>
+            <div class="project-image"><img src="Assets/L-Cover.png" alt="Lofis"></div>
+        </div>
+
+        <div class="project-sections">
+            <div class="tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-icon">
+                        <img src="Assets/Figma.png" alt="Figma">
+                        <p>Figma</p>
+                    </div>
+                    <div class="tech-icon">
+                        <img src="Assets/Google form.png" alt="Google Form">
+                    <p>Google Form</p></div>
+                    <div class="tech-icon">
+                        <img src="Assets/Google doc.png" alt="Google Doc">
+                        <p>Google Doc</p>
+                    </div>
+                    <div class="tech-icon">
+                        <img src="Assets/Illustrator.png" alt="Adobe">
+                        <p>Illustrator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="problem-solution">
+                <h2>Problem</h2>
+                <ul>
+                    <li>lorem ddjjd</li>
+                    <li>yrlondgyyxpp pp</li>
+                    <li>dogy bull cbds</li>
+                    <li>jdjoo bbgiopa vu</li>
+                </ul>
+            </div>
+            <div class="goals">
+                <h2>Goals</h2>
+                <ul>
+                    <li>lorem ddjjd</li>
+                    <li>yrlondgyyxpp pp</li>
+                    <li>dogy bull cbds</li>
+                    <li>jdjoo bbgiopa vu</li>
+                </ul>
             </div>
         </div>
     </section>
-    
-    <section id="research">
+
+    <!-- Research Section with light gray background -->
+    <section class="research-section">
         <div class="research-container">
-        <h2 class="section-heading">Research</h2>
-    
-        <!-- Personas -->
-        <div class="sub-section personas">
+            <h2>Loren Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis enim ultricies lectus fermentum consequat vel eget eros. Fusce mattis nunc eget est hendrerit ultrices. Vestibulum quis risus quis metus dapibus fringilla. Ut non aliquet tellus. Phasellus varius finibus felis ut varius. Cras fringilla facilisis nulla sollicitudin imperdiet.</p>
+            
+            <h3>Survey</h3>
+            <div class="survey-grid">
+                <div class="survey-image"><img src="Assets/LS1.png" alt="Survey"></div>
+                <div class="survey-image"><img src="Assets/LS2.png" alt="Survey"></div>
+                <div class="survey-image"><img src="Assets/LS3.png" alt="Survey"></div>
+                <div class="survey-image"><img src="Assets/LS4.png" alt="Survey"></div>
+                <div class="survey-image"><img src="Assets/LS5.png" alt="Survey"></div>
+                <div class="survey-image"><img src="Assets/LS6.png" alt="Survey"></div>
+            </div>
+            
             <h3>Personas</h3>
-            <div class="persona-images">
-                <img decoding="async" src="Assets/Persona 1.jpg" alt="Persona 1">
-                <img decoding="async" src="Assets/Persona 2.jpg" alt="Persona 2">
-                <img decoding="async" src="Assets/Persona 3.jpg" alt="Persona 3">
-            </div>
-        </div>
-    
-        <!-- User Journeys -->
-        <div class="sub-section user-journeys">
-            <h3>User Journeys</h3>
-            <div class="journey-images">
-                <img decoding="async" src="Assets/User Journey.png" alt="User Journey 1">
-                <img decoding="async" src="Assets/User Jouney 2.png" alt="User Journey 2">
-            </div>
-        </div>
-    
-        <!-- Scenarios -->
-        <div class="sub-section scenarios">
-            <h3>Scenarios</h3>
-            <div class="scenario-cards">
-                <div class="card">
-                    <h4>Scenario 1</h4>
-                    <hr class="divider">
-                    <h5>Alex</h5>
-                    <p>For the upcoming weekend, Alex intended to
-                        arrange a unique and unexpected reservation at the
-                        restaurant for himself and his grandsons.
-                        Although Alex typically prefers to make reservations
-                        in person, he tried the digital approach for the first
-                        time by using the restaurant's mobile app on his
-                        smartphone. Even though he was familiar with the
-                        menu, he was unable to locate the "book a table"
-                        feature. Alex was stucked and asked his daughter
-                        for assistance. He mentioned how much easier it
-                        would be if the "book" button appeared immediately
-                        after logging in.</p>
-                </div>
-                <div class="card">
-                    <h4>Scenario 2</h4>
-                    <hr class="divider">
-                    <h5>Arnold</h5>
-                    <p>Arnold is known for eating-out, after a busy day at
-                        work instead of worrying about what to cook he
-                        decides to have Chinese ribs and some drinks.
-                        Being shellfish allergic, he was dissatisfied to see
-                        that there was no obvious notice of the allergy
-                        content for each item when he first opened the app
-                        and looked through the menu. Concerned Arnold
-                        proceeds to the restaurant. He expressed his hope
-                        that the app would incorporate his feedback, which
-                        emphasised the value of having allergy information
-                        easily accessible.</p>
-                </div>
-                <div class="card">
-                    <h4>Scenario 3</h4>
-                    <hr class="divider">
-                    <h5>Lisa</h5>
-                    <p>
-                        Lisa, the restaurant manager, observed a persistent
-                        problem with the online reservation system. It was
-                        difficult for customers to see the locations in real-
-                        time, and they frequently expressed irritation about
-                        the absent of this tool. In order to guarantee a
-                        smooth and enjoyable dining experience, Lisa has
-                        asked that a "location" feature be added to the
-                        mobile app.
-                    </p>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Understanding -->
-        <div class="sub-section understanding">
-            <h3>Understanding</h3>
-            <div class="understanding-cards">
-                <div class="card">
-                    <h4>User Requirments</h4>
-                    <hr class="divider">
-                    <ul class="aligned">
-                        <li>Simplified Navigation: A clear and intuitive way to 
-                            make reservations without requiring assistance.</li>
-                        <li>User-Friendly Design: A design that caters to users 
-                            unfamiliar with digital platforms.</li>
-                        <li>Allergy Information: Clear and visible labels or 
-                            indicators for food items containing allergens like shellfish.</li>
-                        <li>Real-Time Location Updates: A feature to display available
-                             tables or sections in real-time for better planning.</li>  
-                        <li>Operational Efficiency: Tools to streamline reservation 
-                            management and reduce complaints.</li>      
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>System Requirments</h4>
-                    <hr class="divider">
-                    <ul class="aligned">
-                        <li>Prominent Call-to-Action (CTA): A "Book a Table" button that 
-                            is clearly visible on the home page or immediately after login.</li>
-                        <li>Accessibility Features: Ensure the app is easy to use for older 
-                            generations or less tech-savvy users.</li>  
-                        <li>Allergen Information Database: Comprehensive and easily searchable
-                            allergy information for menu items.</li>  
-                        <li>Real-Time Table Availability: Integrate a real-time location feature
-                            that allows users to see available tables or areas in the restaurant.</li>  
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    
-    <section id="design">
-        <div class="design-container">
-            <h2 class="section-heading">Design and Prototype</h2>
-
-            <!--- Colour -->
-            <div class="sub-section colour">
-                <h3>Colour</h3>
-                <!-- Colored rectangle for subsection colors -->
-<div class="color-rectangle">
-    <div class="color-square" style="background-color: #582D09;"></div>
-    <div class="color-square" style="background-color: #F9CF00;"></div>
-    <div class="color-square" style="background-color: #FFFFFF;"></div>
-    <div class="color-square" style="background-color: #E6E7E9;"></div>
-</div>
+            <div class="personas-grid">
+                <div class="persona-image"><img src="Assets/LP1.png" alt="Persona"></div>
+                <div class="persona-image"><img src="Assets/LP2.png" alt="Persona"></div>
+                <div class="persona-image"><img src="Assets/LP3.png" alt="Persona"></div>
 
             </div>
-            <!-- Logo design -->
-            <div class="sub-section logo">
-                <h3>Logo Design</h3>
-                <div class="logo-images">
-                    <img src="Assets/Lo-fi.jpg" alt="Low Fidelity Logo">
-                    <img src="Assets/Lofis.png" alt="High Fidelity Logo">
+            
+            <div class="pain-solution-container">
+                <div class="pain-points">
+                    <h3>Pain Points</h3>
+                    <ul>
+                        <li>Difficult navigation for reservations.</li>
+                        <li>Lack of detailed dietary information.</li>
+                        <li>Confusing menu layout.</li>
+                        <li>Unclear or slow delivery tracking.</li>
+                    </ul>
+                </div>
+                <div class="solution">
+                    <h3>Solution</h3>
+                    <ul>
+                        <li>Simplify the reservation process by providing a one-click 
+                        reservation feature and a calendar view with availability.</li>
+                        <li>Add a dietary filter that can display specific dietary needs.</li>
+                        <li>Redesign the menu to be categorized by food types.</li>
+                        <li>Implement a live map that shows the real-time location and time of the delivery.</li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Low Fidelity Section -->
-            <div class="sub-section lowfi">
-                <h3>Low Fidelity Design</h3>
-            </div>
-    
-            <!-- High Fidelity Section -->
-            <div class="sub-section hifi">
-                <h3>High Fidelity Design</h3>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide"><img src="Assets/Logo.png" alt="Hi-Fidelity 1"></div>
-                        <div class="swiper-slide"><img src="Assets/Welcome.png" alt="Hi-Fidelity 2"></div>
-                        <div class="swiper-slide"><img src="Assets/Registration.png" alt="Hi-Fidelity 3"></div>
-                        <div class="swiper-slide"><img src="Assets/Registration Details.png" alt="Hi-Fidelity 4"></div>
-                        <div class="swiper-slide"><img src="Assets/Login.png" alt="Hi-Fidelity 5"></div>
-                        <div class="swiper-slide"><img src="Assets/Login Details.png" alt="Hi-Fidelity 6"></div>
-                        <div class="swiper-slide"><img src="Assets/Forget Password.png" alt="Hi-Fidelity 7"></div>
-                        <div class="swiper-slide"><img src="Assets/Enter Email.png" alt="Hi-Fidelity 8"></div>
-                        <div class="swiper-slide"><img src="Assets/Back Email.png" alt="Hi-Fidelity 9"></div>
-                        <div class="swiper-slide"><img src="Assets/Enter password.png" alt="Hi-Fidelity 10"></div>
-                        <div class="swiper-slide"><img src="Assets/Password.png" alt="Hi-Fidelity 11"></div>
-                        <div class="swiper-slide"><img src="Assets/Success.png" alt="Hi-Fidelity 12"></div>
-                        <div class="swiper-slide"><img src="Assets/Home.png" alt="Hi-Fidelity 13"></div>
-                        <div class="swiper-slide"><img src="Assets/Reservation.png" alt="Hi-Fidelity 14"></div>
-                        <div class="swiper-slide"><img src="Assets/Booking.png" alt="Hi-Fidelity 15"></div>
-                        <div class="swiper-slide"><img src="Assets/Confirmed.png" alt="Hi-Fidelity 16"></div>
-                        <div class="swiper-slide"><img src="Assets/Menu.png" alt="Hi-Fidelity 17"></div>
-                        <div class="swiper-slide"><img src="Assets/Detail.png" alt="Hi-Fidelity 18"></div>
-                        <div class="swiper-slide"><img src="Assets/Order.png" alt="Hi-Fidelity 19"></div>
-                        <div class="swiper-slide"><img src="Assets/Order confirm.png" alt="Hi-Fidelity 20"></div>
-                        <div class="swiper-slide"><img src="Assets/Order Update.png" alt="Hi-Fidelity 21"></div>
-                    </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Navigation -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+            <h3>User flow</h3>
+            <div class="user-flow-container">
+                <div class="user-flow-image">
+                    <img src="Assets/L-flow.png" alt="User Flow">
                 </div>
             </div>
         </div>
     </section>
-    
-    
-    
-    <!-- Swiper Initialization -->
-    <script>
-        const swiper = new Swiper('.swiper-container', {
-    loop: true, // Enable looping
-    slidesPerView: 3, // Show three slides at once
-    spaceBetween: 10, // Space between slides in pixels
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000, // Auto-slide every 3 seconds
-    },
-});
-    </script>
-    
 
+    <section class="design-section">
+        <div class="design-container">
+            <h2>Loren Ipsum</h2>
+            <h3>Wireframe</h3>
+            <div class="wireframe-grid">
+                <div class="wireframe-image">
+                <img src="Assets/Wire1.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire2.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire3.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire4.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire5.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire6.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire7.png" alt="Wireframe">
+                </div>
+                <div class="wireframe-image">
+                <img src="Assets/Wire8.png" alt="Wireframe">
+                </div>                    
+            </div>
+            
+            <h3>Colour</h3>
+            <div class="color-section">
+                <h4>Main Colors</h4>
+                <div class="color-palette">
+                    <div class="color-square" style="background-color: #582D09;">#582D09</div>
+                    <div class="color-square" style="background-color: #F9CF00;">#F9CF00</div>
+                </div>
+            </div>
+            <div class="color-section">
+                <h4>Neutral Colors</h4>
+                <div class="color-palette">
+                    <div class="color-square" style="background-color: #222222;">#222222</div>
+                    <div class="color-square" style="background-color: #374151;">#374151</div>
+                    <div class="color-square" style="background-color: #9CA3AF;">#9CA3AF</div>
+                    <div class="color-square" style="background-color: #BEC5D1;">#BEC5D1</div>
+                    <div class="color-square light-text" style="background-color: #F4F4F4;">#F4F4F4</div>
+                    <div class="color-square light-text" style="background-color: #FFFFFF;">#FFFFFF</div>
+                </div>
+            </div>
+            
+            <h3>Logo</h3>
+            <div class="logo-container">
+                <div class="logo-image"><img src="Assets/L-Sketch.jpg" alt="Logo Sketch"></div>
+                <div class="logo-image"><img src="Assets/Lofis.png" alt="Lofis Logo"></div>
+            </div>
+            
+            <h3>Hi-Fidelity Design</h3>
+            <div class="swiper-outer-container">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-splash.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-Welcome.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-reg.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-regde.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-log.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-logde.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-home.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-reserve.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-book.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-confirm.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-menu.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-detail.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-bask.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-order.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-orfirm.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-image">
+                <img src="Assets/L-orup.png">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navigation Buttons inside the container -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+<div class="swiper-pagination"></div>
+
+</div>
+    
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="project.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2024 Ebenezer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
