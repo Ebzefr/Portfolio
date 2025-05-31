@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="./#about">About</a></li>
+                <li><a href="./#experience">Experience</a></li>
+                <li><a href="project.html">Portfolio</a></li>
+                <li><a href="./#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hamburger Navigation -->
+    <nav id="ham-nav">
+        <div class="logo">
+            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
+        </div>
+        <div class="ham-menu">
+            <div class="ham-icons" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
+            </div>
+        </div>
+    </nav>
