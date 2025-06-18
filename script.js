@@ -18,7 +18,7 @@
             // Navigate to individual project HTML files
             const projectPages = {
                 'clouddey': 'cloud.html',
-                'portfolio': '', 
+                'portfolio': 'https://ebze.dev/', 
                 'websecura': 'web.html',
                 'app': 'lofis.html',
                 'ecommerce': 'lofisweb.html',
