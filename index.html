@@ -4,245 +4,335 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
+    <link rel="icon" type="image/png" href="Assets/ebze Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
     
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">
-            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-        <div>
-            <ul class="nav-links">
-             <li><a href="./#about">About</a></li>
-             <li><a href="./#experience">Experience</a></li>
-             <li><a href="project.html">Portfolio</a></li>
-             <li><a href="./#contact">Contact</a></li>
+     <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Assets/ebze logo.png" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="project.html" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </li>
             </ul>
-        </div>
-    </nav>
-    <nav id="ham-nav">
-        <div class="logo">
-            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-<div class="ham-menu">
-    <div class="ham-icons" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<div class="menu-links">
-    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-             <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
-             <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
-             <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
-</div>
-</div>
-    </nav>
-    <section id="profile">
-        <div class="section_pic-container">
-            <img src="Assets/Profile pic.jpeg" alt="Ebenezer" class="circular-image">
-        </div>
-        <div class="section_text">
-            <p class="section_text_p1">Hello I'm</p>
-            <h1 class="title">Ebenezer Obi</h1>
-            <p class="section_text_p2">Computer Science Student</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2"onclick="window.open('./Assets/CV.pdf') ">
-                    Download CV
-                </button>
-                <button class="btn btn-color-1"onclick="location.href('./#contact') ">
-                    Contact Info
-                </button>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-        <div id="socials-container">
-            <img src="Assets/Linkedin.png" alt="My Linkedin"
-            class="icon" onclick="location.href='https://www.linkedin.com/in/ebenezer-obi-23858324b/'">
-            <img src="Assets/github.png" alt="My Github"
-            class="icon" onclick="location.href='https://github.com/Ebzefr'">
         </div>
+    </nav>
+
+<!-- Profile Section -->
+    <section id="profile" class="profile-section">
+    <div class="profile-container">
+        <div class="profile-content">
+            <div class="profile-text">
+                <h1 class="greeting">Hey, I am</h1>
+                <h2 class="name">
+                    <span class="name-highlight">EBENEZER</span> 
+                    <span class="name-regular">OBI</span>
+                </h2>
+                <p class="description">
+                    Computer Science Student &<br>
+                    Aspiring Full-Stack Developer
+                </p>
+                
+                <div class="social-links desktop-social">
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="profile-image-container">
+                <div class="profile-image-wrapper">
+                    <img src="Assets/Profile pic.jpeg" alt="Ebenezer Obi" class="profile-image">
+                </div>
+                <div class="social-links mobile-social">
+                    <a href="https://www.linkedin.com/in/ebenezer-obi-23858324b" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Ebzefr" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#about'"/>
-    </section>
-    <section id="about">
-        <p class="section_text_p1">Get to know more</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-        <div class="section_pic-container">
-            <img src="Assets/About.png " alt="Profile picture" class="about-pic"/>
-        </div>
-  <div class="about-details-container">
-    <div class="about-containers">
-        <div class="details-container">
-            <img src="Assets/Experience.png" alt="Experience icon" class="icon"/>
-            <h3>Experience</h3>
-            <p>2+ years <br />Data Analysis</p>
-        </div>
-        <div class="details-container">
-            <img src="Assets/Education 2.png" alt="Education icon" class="icon"/>
-            <h3>Education</h3>
-            <p>High School <br />B.Sc. Bachelors Degree</p>
-        </div>
-        </div>
-        <div class="text-container">
-             <p>Vorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type 
-                specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including 
-                versions of Lorem Ipsum.</p>
-        </div> 
     </div>
-</div>
-<img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
-    </section>
-    <section id="experience">
-        <p class="section_text_p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Languages</h2>
-                    <div class="article-container">
-                        <article>
-                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                        </article>
-                        <article>
-                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Experienced</p>
-                            </div>
-                            </article>
-                            <article>
-                                <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                <div>
-                                    <h3>Javascript</h3>
-                                    <p>Experienced</p>
-                                </div>
-                                </article>
-                                <article>
-                                    <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                    <div>
-                                        <h3>Java</h3>
-                                        <p>Experienced</p>
-                                    </div>
-                                    </article>
-                                    <article>
-                                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                        <div>
-                                            <h3>Kotlin</h3>
-                                            <p>Experienced</p>
-                                        </div>
-                                        </article>
-                                        <article>
-                                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                            <div>
-                                                <h3>Kotlin</h3>
-                                                <p>Experienced</p>
-                                            </div>
-                                            </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Frameworks & Tools</h2>
-                    <div class="article-container">
-                        <article>
-                        <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                        </article>
-                        <article>
-                            <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Experienced</p>
-                            </div>
-                            </article>
-                            <article>
-                                <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                <div>
-                                    <h3>Javascript</h3>
-                                    <p>Experienced</p>
-                                </div>
-                                </article>
-                                <article>
-                                    <img src="Assets/verify.png" alt="Experience icon" class="icon"/>
-                                    <div>
-                                        <h3>Java</h3>
-                                        <p>Experienced</p>
-                                    </div>
-                                    </article>
-                    </div>
-                </div>
+</section>
+    
+<!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-accent-line"></div>
+                <h2 class="about-title">
+                    About me<span class="title-dot">.</span>
+                </h2>
+                <p class="about-text">
+                    I'm a final-year Computer Science student at the University of Chester 
+                    with a passion for building practical tech solutions that make life easier.
+                    Over the past few years, I’ve built full-stack applications ranging from secure 
+                    restaurant app to web vulnerability scanners and data dashboards. 
+                    I enjoy working at the intersection of clean design, strong backend logic, and user experience.
+                    <br>
+                    I’ve contributed to remote teams, taken on freelance work, and participated in hackathons,
+                    all of which have shaped my love for fast-paced, impact-driven environments.
+                    Right now, I’m actively seeking internship or graduate opportunities, open to 
+                    relocation and excited to bring curiosity, grit, and technical skills to the next team I join.
+                </p>
+                <a href="Assets/CV.pdf" class="download-btn" target="_blank">Download CV</a>
             </div>
         </div>
-        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
-    </section>
-    <section id="projects">
-        <p class="section_text_p1">Browse my recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="portfolio-grid">
-        <!-- Project Card 1 -->
-<a href="lofis.html" class="card-link">
-            <div class="portfolio-card">
-                <div class="portfolio-image">
-                    <img src="Assets/Lofis-app.webp" alt="Lofis Restaurant App" loading="eager">
-                </div>
-                <div class="portfolio-info">
-                    <h3 class="portfolio-title">Lofis Restaurant App</h3>
-                    <p class="portfolio-category">UX/UI Design</p>
-                </div>
-                <div class="card-arrow">
-                    <span>→</span>
-                </div>
-            </div>
-            </a>
-            <!-- Project Card 2 -->
-            
-            
-            
-        </div>
-        <img src="Assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
     </section>
     
-    <section id="contact">
-<p class="section_text_p1">Get in Touch</p>
-<h1 class="title">Contact Me</h1>
-<div class="contact-info-upper-container">
-    <div class="contact-info-container">
-        <img src="Assets/email.png" alt="Email icon" class="icon contact-icon"/>
-        <p><a href="mailto:kenthaliny@gmail.com">kenthaliny@gmail.com</a></p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <h2 class="skills-title">
+                Skills<span class="title-dot">.</span>
+            </h2>
+            
+            <div class="skills-grid">
+    <!-- Languages -->
+    <div class="skill-card">
+        <h3 class="skill-category">Languages</h3>
+        <div class="skill-icons">
+            <div class="skill-item">
+                <div class="skill-icon" title="Python">
+                    <i class="fab fa-python"></i>
+                </div>
+                <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="JavaScript">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="R">
+                    <i class="fab fa-r-project"></i>
+                </div>
+                <span class="skill-name">R</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="HTML">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="CSS">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="C#">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="skill-name">C#</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="SQL">
+                    <i class="fas fa-database"></i>
+                </div>
+                <span class="skill-name">SQL</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="Kotlin">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <span class="skill-name">Kotlin</span>
+            </div>
+        </div>
     </div>
-    <div class="contact-info-container">
-        <img src="Assets/Linkedin.png" alt="Linkedin icon" class="icon contact-icon"/>
-        <p><a href="https:www.linkedin.com">Linkedin</a></p>
+
+    <!-- Frameworks -->
+    <div class="skill-card">
+        <h3 class="skill-category">Frameworks</h3>
+        <div class="skill-icons">
+            <div class="skill-item">
+                <div class="skill-icon" title="Flask">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <span class="skill-name">Flask</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="React">
+                    <i class="fab fa-react"></i>
+                </div>
+                <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="ASP.NET">
+                    <i class="fas fa-dot-circle"></i>
+                </div>
+                <span class="skill-name">ASP.NET</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="Shiny">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="skill-name">Shiny</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="Bootstrap">
+                    <i class="fab fa-bootstrap"></i>
+                </div>
+                <span class="skill-name">Bootstrap</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="Tailwind">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <span class="skill-name">Tailwind</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-card">
+        <h3 class="skill-category">Tools</h3>
+        <div class="skill-icons">
+            <div class="skill-item">
+                <div class="skill-icon" title="Firebase">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <span class="skill-name">Firebase</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="GitLab">
+                    <i class="fab fa-gitlab"></i>
+                </div>
+                <span class="skill-name">GitLab</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="cPanel">
+                    <i class="fas fa-server"></i>
+                </div>
+                <span class="skill-name">cPanel</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="DNS">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <span class="skill-name">DNS</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="VM">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <span class="skill-name">VM</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </div>
+                <span class="skill-name">GitHub</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon" title="Figma">
+                    <i class="fab fa-figma"></i>
+                </div>
+                <span class="skill-name">Figma</span>
+            </div>
+        </div>
     </div>
 </div>
+
+        </div>
     </section>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="project.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                   </ul>
+    
+   <section id="recent" class="recent-section">
+    <div class="recent-container">
+        <h2 class="recent-title">
+            Recent<span class="title-dot">.</span>
+        </h2>
+        
+        <div class="projects-grid">
+            
+            <a href="job.html">
+            <div class="project-card">
+                <img src="Assets/Job-logo.webp" alt="TechJobs Project" class="project-image">
             </div>
-        </nav>
-        <p>Copyright &#169; 2024 Ebenezer. All Rights Reserved.</p>
+            </a>
+            
+            <a href="">
+            <div class="project-card">
+                <img src="Assets/ebze logo.png" alt="Ebz.dev Project" class="project-image">
+            </div>
+            </a>
+            
+            <a href="web.html">
+            <div class="project-card">
+                <img src="Assets/WebLogo.webp" alt="WebSecura Project" class="project-image">
+            </div>
+            </a>
+        
+        </div>
+        
+        <div class="more-projects-btn-container">
+            <a href="project.html" class="more-projects-btn">More Projects</a>
+        </div>
+    </div>
+</section>
+    
+   <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <div class="contact-content">
+            <div class="contact-accent-line"></div>
+            <h2 class="contact-title">
+                Contact me<span class="title-dot">.</span>
+            </h2>
+            <p class="contact-text">
+                Let's work together! Send me a message and I'll get back to you as soon as possible.
+            </p>
+            
+    <form class="contact-form" action="https://formspree.io/f/mldnlwov" method="POST">
+            <input type="hidden" name="_next" value="http://localhost:8000/thanks.html">
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
+        </div>
+    </div>
+</section>
+    <footer>
+    
+        <p>Copyright &#169; 2025 Ebenezer. All Rights Reserved.</p>
     </footer>
    <script src="script.js"></script> 
 </body>

@@ -4,150 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio|Projects</title>
-    <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
+    <link rel="icon" type="image/png" href="Assets/ebze Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
     
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">
-         <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-        <div>
-            <ul class="nav-links">
-             <li><a href="./#about">About</a></li>
-             <li><a href="./#experience">Experience</a></li>
-             <li><a href="project.html">Portfolio</a></li>
-             <li><a href="./#contact">Contact</a></li>
+     <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Assets/ebze logo.png" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="project.html" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
-    <nav id="ham-nav">
-        <div class="logo">
-            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-<div class="ham-menu">
-    <div class="ham-icons" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<div class="menu-links">
-    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-             <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
-             <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
-             <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
-</div>
-</div>
-    </nav>
-    <h1 class="title">Projects</h1>
-    <section class="projects">
-        <div class="portfolio-grid">
-            <!-- Project Card 1 -->
-            <a href="" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/Cloud-logo.webp" alt="Clouddey" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">Clouddey</h3>
-                        <p class="portfolio-category">Cloud Storage</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+     
+    <section class="projects-section">
+        <div class="projects-container">
+            <h1 class="projects-title">
+                Projects<span class="title-dot">.</span>
+            </h1>
+            
+            <div class="projects-grid">
+                <!-- CloudDey Project -->
+                <div class="project-card" onclick="openProject('clouddev')">
+                    <img src="Assets/Cloud-logo.webp" alt="Clouddey" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Clouddey</h3>
+                        <p class="project-tech">React • Tailwind • Firebase</p>
                     </div>
                 </div>
-            </a>     
-            <!-- Project Card 2 -->
-            <a href="lofis.html" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/Lofis-app.webp" alt="Lofis Restaurant App" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">Lofi's Restaurant App</h3>
-                        <p class="portfolio-category">UX/UI Design</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+
+                <!-- Personal Portfolio -->
+                <div class="project-card" onclick="openProject('portfolio')">
+                    <img src="Assets/ebze logo.png" alt="Ebz.dev" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Ebz.dev</h3>
+                        <p class="project-tech">HTML • CSS • JavaScript</p>
                     </div>
                 </div>
-            </a>
-             <!-- Project Card 3 -->
-             <a href="" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/Lofis.png" alt="Lofis Web App" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">Lofi's Web App</h3>
-                        <p class="portfolio-category">Full-Stack Development</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+
+                <!-- Lofis -->
+                <div class="project-card" onclick="openProject('app')">
+                    <img src="Assets/Lofis-app.png" alt="Lofis App" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Lofis App</h3>
+                        <p class="project-tech">UI/UX • Figma </p>
                     </div>
                 </div>
-            </a>
-             <!-- Project Card 4 -->
-             <a href=".html" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/Ebze Logo.png" alt="Personal Website" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">Personal Website</h3>
-                        <p class="portfolio-category">Web Development</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+
+                <!-- Lofis web -->
+                <div class="project-card" onclick="openProject('ecommerce')">
+                    <img src="Assets/Lofis.png" alt="Lofis Web" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Lofis Web</h3>
+                        <p class="project-tech">C# • ASP.NET • SQL</p>
                     </div>
                 </div>
-            </a>   
-             <!-- Project Card 5 -->
-             <a href="job.html" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/Job-logo.webp" alt="UK Tech Jobs" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">UK Tech Jobs</h3>
-                        <p class="portfolio-category">Data Analytics</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+
+                                <!-- UK Jobs -->
+                <div class="project-card" onclick="openProject('analytics')">
+                    <img src="Assets/Job-logo.webp" alt="UK Jobs" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">UK Tech Jobs</h3>
+                        <p class="project-tech">R • Kaggle • Shiny</p>
                     </div>
                 </div>
-            </a> 
-            <!-- Project Card 6 -->
-             <a href="web.html" class="card-link">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Assets/WebSecura.png" alt="WebSecura" loading="eager">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 class="portfolio-title">WebSecura</h3>
-                        <p class="portfolio-category">Cybersecurity</p>
-                    </div>
-                    <div class="card-arrow">
-                        <span>→</span>
+
+                                                <!-- WebSecura -->
+                <div class="project-card" onclick="openProject('websecura')">
+                    <img src="Assets/WebLogo.webp" alt="WebSecura" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">WebSecura</h3>
+                        <p class="project-tech">HTML • Python • JavaScript</p>
                     </div>
                 </div>
-            </a> 
-        
+            </div>
         </div>
     </section>
     <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="project.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                   </ul>
-            </div>
         </nav>
         <p>Copyright &#169; 2024 Ebenezer. All Rights Reserved.</p>
     </footer>

@@ -4,45 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details</title>
-    <link rel="icon" type="image/png" href="Assets/Ebze Logo.png">
+    <link rel="icon" type="image/png" href="Assets/ebze Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins&family=Playball" rel="stylesheet">
+    
 </head>
 <body>
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-        <div class="logo">
-            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="./#about">About</a></li>
-                <li><a href="./#experience">Experience</a></li>
-                <li><a href="project.html">Portfolio</a></li>
-                <li><a href="./#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hamburger Navigation -->
-    <nav id="ham-nav">
-        <div class="logo">
-            <a href="index.html"><img src="Assets/Ebze Logo.png" alt="Ebenezer Logo"></a>
-        </div>
-        <div class="ham-menu">
-            <div class="ham-icons" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+     <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Assets/ebze logo.png" alt="Logo" class="logo-img">
             </div>
-            <div class="menu-links">
-                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-                <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="project.html" onclick="toggleMenu()">Project</a></li>
-                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li> 
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="project.html" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
@@ -59,9 +56,20 @@
 
         <div class="project-intro">
             <div class="project-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ali quam quis enim ultricies lectus fermentum consequat vel eget eros. Fusce mattis nunc eget est hendrerit ultrices. Ves ribulum quis risus quis metus dapibus fringilla. Ut non aliquet tellus. Phasellus varius finibus felis ut varius. Cras fringilla fac ilisis nulla sollicitudin imperdiet. Fusce egestas aliquet tempor. Aenean congue leo sed congue congue. Phasellus eget turpis condimentum, blandit diam quis, euismod orci. Fusce ultricies nisl ut dictum</p>
+                <p>This project is a UX/UI mobile app prototype designed for a 
+                    modern restaurant, built using Figma. The goal was to create 
+                    a seamless and inclusive experience for users to easily make 
+                    reservations, order food, view dietary information, and track 
+                    deliveries in real time.
+                    <br>
+                    The design focuses on accessibility, user diversity, and intuitive navigation. 
+                    Key features include dietary filters (vegan, gluten-free, allergy-safe), a 
+                    simplified booking process, and a live map for delivery tracking. Personas 
+                    ranged from busy professionals to elderly users, ensuring the app meets a wide 
+                    spectrum of user needs.
+                </p>
             </div>
-            <div class="project-image"><img src="Assets/L-Cover.png" alt="Lofis"></div>
+            <div class="project-cover"><img src="Assets/L-Cover.png" alt="Lofis"></div>
         </div>
 
         <div class="project-sections">
@@ -86,31 +94,36 @@
                 </div>
             </div>
             <div class="problem-solution">
-                <h2>Problem</h2>
+                <h2>Problems</h2>
                 <ul>
-                    <li>lorem ddjjd</li>
-                    <li>yrlondgyyxpp pp</li>
-                    <li>dogy bull cbds</li>
-                    <li>jdjoo bbgiopa vu</li>
+                    <li>Users find the reservation process too time-consuming and confusing.</li>
+                    <li>Dietary restrictions are hard to filter and view in the menu.</li>
+                    <li>Users experience uncertainty about food delivery status.</li>
+                    <li>Older users struggle with navigating the app interface.</li>
                 </ul>
             </div>
             <div class="goals">
                 <h2>Goals</h2>
                 <ul>
-                    <li>lorem ddjjd</li>
-                    <li>yrlondgyyxpp pp</li>
-                    <li>dogy bull cbds</li>
-                    <li>jdjoo bbgiopa vu</li>
+                    <li>Simplify the reservation flow with fewer steps and clear prompts.</li>
+                    <li>Implement intuitive dietary filters and display clear ingredient/allergy info.</li>
+                    <li>Integrate a real-time delivery tracker with live map and ETA updates.</li>
+                    <li>Design an accessible, senior-friendly UI with larger touch targets and simple language.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Research Section with -->
+    <!-- Research Section -->
     <section class="research-section">
         <div class="research-container">
             <h2>Research</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis enim ultricies lectus fermentum consequat vel eget eros. Fusce mattis nunc eget est hendrerit ultrices. Vestibulum quis risus quis metus dapibus fringilla. Ut non aliquet tellus. Phasellus varius finibus felis ut varius. Cras fringilla facilisis nulla sollicitudin imperdiet.</p>
+            <p>To design a user-centered restaurant app, I began with exploratory research to 
+                understand the needs, behaviors, and pain points of potential users. This 
+                included user surveys, persona development, and competitor analysis. Insights 
+                from this research guided key design decisions—ensuring the app supports a wide 
+                range of user
+            </p>
             
             <h3>Survey</h3>
             <div class="survey-grid">
@@ -161,7 +174,7 @@
         </div>
     </section>
     
-    <!-- Design Section with -->
+    <!-- Design Section -->
     <section class="design-section">
         <div class="design-container">
             <h2>Design</h2>
@@ -216,7 +229,7 @@
             <h3>Logo</h3>
             <div class="logo-container">
                 <div class="logo-image"><img src="Assets/L-Sketch.jpg" alt="Logo Sketch"></div>
-                <div class="logo-image"><img src="Assets/Lofis.png" alt="Lofis Logo"></div>
+                <div class="logo-image"><img src="Assets/Lofis logo.png" alt="Lofis Logo"></div>
             </div>
             
             <h3>Hi-Fidelity Design</h3>
@@ -347,19 +360,10 @@
 
     <!-- Footer -->
     <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="project.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2024 Ebenezer. All Rights Reserved.</p>
+        <p>Copyright &#169; 2025 Ebenezer. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
