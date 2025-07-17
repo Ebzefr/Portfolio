@@ -35,8 +35,15 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">CONTACT</a>
                 </li>
+                <li class="nav-item">
+                <a href="Assets/CV.pdf" class="nav-link" download="Ebenezer_Obi_CV.pdf">
+                    <i class="fas fa-download"></i> DOWNLOAD CV
+                </a>
+            </li>
             </ul>
-            <div class="hamburger">
+
+            
+        <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -110,10 +117,78 @@
             </div>
         </div>
     </section>
+    <!-- Experience Section -->
+<section id="experience" class="experience-section">
+    <div class="experience-container">
+        <div class="experience-content">
+            <div class="experience-accent-line"></div>
+            <h2 class="experience-title">
+                Experience<span class="title-dot">.</span>
+            </h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" onclick="openModal('job1')">
+                    <div class="timeline-circle">
+                        <img src="Assets/LLC Logo.png" alt="Company 1" class="company-logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Web Developer</h3>
+                        <p class="job-period">05/2025 - Till date</p>
+                    </div>
+                    <div class="timeline-connector"></div>
+                </div>
+                
+                <div class="timeline-item" onclick="openModal('job2')">
+                    <div class="timeline-circle">
+                        <img src="Assets/GLG.png" alt="GLG" class="company-logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">Network Consultant</h3>
+                        <p class="job-period">02/2025 - 09/2025</p>
+                    </div>
+                    <div class="timeline-connector"></div>
+                </div>
+                
+                <div class="timeline-item" onclick="openModal('job3')">
+                    <div class="timeline-circle">
+                        <img src="Assets/UoC.webp" alt="Company 3" class="company-logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Student Ambassador</h3>
+                        <p class="job-period">02/2025 - 09/2025</p>
+                    </div>
+                    <div class="timeline-connector"></div>
+                </div>
+                
+                <div class="timeline-item" onclick="openModal('job4')">
+                    <div class="timeline-circle">
+                        <img src="Assets/MM.png" alt="Mextron" class="company-logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Tech Support</h3>
+                        <p class="job-period">02/2025 - 09/2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Job Details -->
+<div id="jobModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-body">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+</div>
     
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="skills-container">
+                <div class="about-accent-line"></div>
+
             <h2 class="skills-title">
                 Skills<span class="title-dot">.</span>
             </h2>
@@ -272,6 +347,7 @@
     
    <section id="recent" class="recent-section">
     <div class="recent-container">
+                <div class="about-accent-line"></div>
         <h2 class="recent-title">
             Recent<span class="title-dot">.</span>
         </h2>

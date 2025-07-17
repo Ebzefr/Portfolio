@@ -155,6 +155,85 @@
     }
 }
   
+/* Experience Section Media Queries */
+@media (max-width: 768px) {
+    .experience-container {
+        padding: 0 1rem;
+    }
+
+    .experience-title {
+        font-size: 3rem;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .timeline-circle {
+        width: 160px;
+        height: 1600px;
+    }
+
+    .company-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .timeline-connector {
+        display: none;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-title {
+        font-size: 2.5rem;
+    }
+
+    .timeline-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .company-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .job-title {
+        font-size: 1rem;
+    }
+
+    .job-period {
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .modal h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal h4 {
+        font-size: 1.1rem;
+    }
+}
+
 /* Skills Section Media Queries */
 @media (max-width: 768px) {
     .skills-container {
