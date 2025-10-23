@@ -1,45 +1,53 @@
-/* Media Queries for Navigation & Profile Section */
+/*Media Queries for Navigation*/
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 0;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-buttons {
+        gap: 0.5rem;
+    }
+    
+    .nav-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
     }
 
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: rgba(136, 136, 136, 0.98);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        gap: 0;
-        padding: 2rem 0;
-        backdrop-filter: blur(10px);
+    .nav-menu,
+    .nav-buttons {
+        display: none;
     }
+}
 
-    .nav-menu.active {
-        left: 0;
+/* Media Queries for Profile Section */
+@media (max-width: 1024px) {
+    .greeting {
+        font-size: 3rem;
     }
-
-    .nav-item {
-        margin: 1rem 0;
+    
+    .rotating-title {
+        font-size: 3rem;
+        min-height: 4rem;
     }
-
-    .nav-container {
-        padding: 0 1rem;
+    
+    .profile-image-wrapper {
+        width: 400px;
+        height: 400px;
     }
+}
 
-    .nav-link {
-        font-size: 1rem;
-        padding: 1rem;
-        display: block;
-    }
-
-    .profile-container {
-        padding: 0 1rem;
-    }
-
+@media (max-width: 768px) {
     .profile-content {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -47,15 +55,12 @@
     }
 
     .greeting {
-        font-size: 1.5rem;
-    }
-
-    .name {
         font-size: 2.5rem;
     }
 
-    .description {
-        font-size: 1rem;
+    .rotating-title {
+        font-size: 2.5rem;
+        min-height: 3.5rem;
     }
 
     .profile-image-wrapper {
@@ -71,24 +76,16 @@
         display: flex !important;
         justify-content: center;
     }
-
-    /* Ensure mobile social container is visible */
-    .profile-image-container .mobile-social {
-        margin-top: 1rem;
-    }
 }
 
 @media (max-width: 480px) {
     .greeting {
-        font-size: 1.2rem;
-    }
-
-    .name {
         font-size: 2rem;
     }
 
-    .description {
-        font-size: 0.9rem;
+    .rotating-title {
+        font-size: 2rem;
+        min-height: 3rem;
     }
 
     .profile-image-wrapper {
@@ -97,21 +94,28 @@
     }
 
     .social-link {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
     }
 
     .social-link i {
         font-size: 20px;
     }
-
-    .mobile-social {
-        display: flex !important;
-        justify-content: center;
-    }
 }
 
 /* Media Queries for About Section */
+@media (max-width: 1024px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .about-info-card {
+        max-width: 600px;
+        margin-top: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .about-container {
         padding: 0 1rem;
@@ -130,107 +134,141 @@
         height: 60px;
         margin-bottom: 1.5rem;
     }
-}
 
-@media (max-width: 480px) {
-    .about-container {
-        padding: 0 1rem;
+    .about-info-card {
+        padding: 2rem 1.5rem;
+        margin-top: 0;
     }
 
-    .about-title {
-        font-size: 2.5rem;
+    .info-title {
+        font-size: 1.3rem;
     }
 
-    .about-text {
+    .info-degree {
         font-size: 1rem;
     }
 
-    .download-btn {
-        padding: 0.8rem 2rem;
-        font-size: 0.9rem;
+    .info-detail,
+    .info-venture {
+        font-size: 0.95rem;
+    }
+
+    .interest-tag {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2.5rem;
     }
 
     .about-accent-line {
         height: 50px;
     }
+
+    .about-info-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .info-section {
+        margin-bottom: 2rem;
+    }
+
+    .info-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
+
   
 /* Experience Section Media Queries */
 @media (max-width: 768px) {
+    .experience-title {
+        font-size: 3rem;
+    }
+
+    .timeline-item {
+        gap: 2rem;
+    }
+
+    .timeline-left {
+        min-width: 80px;
+    }
+
+    .year-badge {
+        font-size: 1.5rem;
+    }
+
+    .job-card {
+        padding: 1.5rem;
+    }
+
+    .job-role {
+        font-size: 1.3rem;
+    }
+
+    .job-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
     .experience-container {
         padding: 0 1rem;
     }
 
     .experience-title {
-        font-size: 3rem;
-    }
-
-    .timeline {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .timeline-circle {
-        width: 160px;
-        height: 1600px;
-    }
-
-    .company-logo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .timeline-connector {
-        display: none;
-    }
-
-    .modal-content {
-        width: 90%;
-        margin: 10% auto;
-        padding: 1.5rem;
-    }
-
-    .close-btn {
-        top: 10px;
-        right: 20px;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .experience-title {
         font-size: 2.5rem;
     }
 
-    .timeline-circle {
-        width: 140px;
-        height: 140px;
+    .timeline {
+        padding-left: 1rem;
     }
 
-    .company-logo {
-        width: 80px;
-        height: 80px;
+    .timeline-item {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
     }
 
-    .job-title {
-        font-size: 1rem;
+    .timeline-left {
+        min-width: 60px;
     }
 
-    .job-period {
-        font-size: 0.9rem;
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 1rem;
+    .year-badge {
+        font-size: 1.2rem;
     }
 
-    .modal h3 {
-        font-size: 1.3rem;
+    .job-card {
+        padding: 1.25rem;
     }
 
-    .modal h4 {
+    .job-role {
         font-size: 1.1rem;
+    }
+
+    .job-description {
+        font-size: 0.85rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .achievement-list li {
+        font-size: 0.85rem;
     }
 }
 
@@ -486,392 +524,303 @@
             }
         }
 
-
-/* Media Queries for all Projects detail page */
-@media screen and (max-width: 768px) {
-     .project-header h1 {
-        font-size: 2.3rem;
-    }
-    
-    .project-intro {
-        flex-direction: column;
+ /*Media Queries for Lofis App modal details*/
+  @media (max-width: 1024px) {
+    .project-header h1 {
+        font-size: 2rem;
     }
 
-    .project-image {
-        width: 100%;
-    }
-
-.project-sections {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-    
-    .project-sections .tech-stack {
-        flex-basis: 100%;
-        order: 1;
-    }
-    
-    .tech-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-    
-    .tech-icon {
-        padding: 0.8rem 0.5rem;
-    }
-    
-    .tech-icon img {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 8px;
-    }
-    
-    .tech-icon p {
-        font-size: 0.8rem;
-    }
-    
-    .project-sections .problem-solution {
-        flex-basis: calc(50% - 1rem);
-        order: 2;
-    }
-    
-    .project-sections .goals {
-        flex-basis: calc(50% - 1rem);
-        order: 3;
-    }
-    
     .survey-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
-        gap: 0.8rem;
     }
-    
+
     .personas-grid {
+        gap: 2rem;
+    }
+
+    .wireframe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pain-solution-container {
         grid-template-columns: 1fr;
     }
-    
-    .pain-solution-container {
-        flex-direction: column;
-        align-items: center;
+
+    .logo-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hifi-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .project-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .research-container h2,
+    .design-container h2 {
+        font-size: 2rem;
+    }
+
+    .research-container h3,
+    .design-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .survey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .personas-grid {
         gap: 1.5rem;
     }
-    
-    .pain-points, .solution {
-        max-width: 90%;
-        width: 100%;
-        padding: 1.2rem;
+
+    .persona-image {
+        max-width: 100%;
     }
-    
-    .pain-points h3, .solution h3 {
-        font-size: 1.3rem;
-    }
-    
-    .pain-points li, .solution li {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
+
     .wireframe-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .wireframe-image {
-        box-shadow: 0 1px 8px #582D09;
-    }
-    
-    .wireframe-image img {
-        width: 100%;
-        height: auto;
-    }
-   
-    .logo-container {
-        gap: 1rem;
-        margin: 1.5rem 0 2rem;
-    }
-    
-    .logo-image {
-        width: 48%;
-        max-width: 300px;
     }
 
-    .swiper-outer-container {
-        padding: 0 30px;
-        margin-bottom: 30px;
-    }
-    
-    .slide-image {
-        max-width: 200px;
-    }
-    
-    .slide-image img {
-        box-shadow: 0 1px 4px #582D09;
-    }
-    
-    .swiper-button-prev, .swiper-button-next {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .swiper-button-prev::before {
-        border-width: 15px 22px 15px 0;
-    }
-    
-    .swiper-button-next::before {
-        border-width: 15px 0 15px 22px;
-    }
-    
-    /* Hide pagination dots on mobile */
-    .swiper-pagination {
-        display: none !important;
+    .color-square {
+        width: 120px;
+        height: 120px;
+        font-size: 0.8rem;
     }
 
-    .job-header h1 {
-        font-size: 2.3rem;
+    .hifi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-detail-section,
+    .research-section,
+    .design-section {
+        padding: 1.5rem 0;
     }
 
-    .challenge-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+    .project-header h1 {
+        font-size: 1.5rem;
     }
-    
-    .challenges, .solutions {
-        max-width: 90%;
-        width: 100%;
-        padding: 1.2rem;
+
+    .research-container h2,
+    .design-container h2 {
+        font-size: 1.75rem;
     }
-    
-    .challenges h3, .solutions h3 {
+
+    .research-container h3,
+    .design-container h3 {
         font-size: 1.3rem;
     }
-    
-    .challenges li, .solutions li {
-        font-size: 0.9rem;
-        line-height: 1.4;
+
+    .wireframe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .color-square {
+        width: 100%;
+        height: 100px;
+    }
+
+    .pain-points,
+    .solution {
+        padding: 1.5rem;
+    }
+
+    .logo-image {
+        padding: 1.5rem;
+    }
+
+    .hifi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+     
+
+/*Media Queries for UK JOB modal details*/
+@media (max-width: 1024px) {
+    .job-header h1 {
+        font-size: 2rem;
+    }
+
+    .project-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-sections {
+        grid-template-columns: 1fr;
     }
 
     .result-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .result-icon {
-        padding: 1.2rem;
-        margin: 0 1rem;
-    }
-    
-    .result-icon img {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 12px;
-    }
-    
-    .result-icon p {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-    
-    .oval-button {
-        padding: 0.7rem 1.5rem;
-        min-width: 200px;
-        font-size: 0.9rem;
-    }
-    
-    .web-header h1 {
-        font-size: 2.3rem;
     }
 
-    .function-grid {
+    .challenge-container {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .function-icon {
-        padding: 1.2rem;
-        margin: 0 1rem;
-    }
-    
-    .function-icon img {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 12px;
-    }
-    
-    .function-icon p {
-        font-size: 1rem;
-        line-height: 1.4;
     }
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+    .job-header h1 {
+        font-size: 1.75rem;
+    }
 
+    .author-date {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-@media (max-width: 480px) {
-    .project-header h1 {
-        font-size: 2.3rem;
+    .project-text p {
+        font-size: 0.9rem;
+    }
+
+    .insight-container h2 {
+        font-size: 2rem;
+    }
+
+    .insight-container h3 {
+        font-size: 1.5rem;
     }
 
     .tech-grid {
-        gap: 10px;
-    }
-    
-    .tech-icon {
-        padding: 0.6rem 0.3rem;
-    }
-    
-    .tech-icon img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 6px;
-    }
-    
-    .tech-icon p {
-        font-size: 0.7rem;
-    }
-    
-   
-
-    .pain-solution-container {
-        gap: 1rem;
-    }
-    
-    .pain-points, .solution {
-        max-width: 95%;
-        padding: 1rem;
-    }
-    
-    .pain-points h3, .solution h3 {
-        font-size: 1.2rem;
-    }
-    
-    .pain-points li, .solution li {
-        font-size: 0.85rem;
-    }
-.wireframe-grid {
-        gap: 0.8rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .wireframe-image {
-        box-shadow: 0 1px 6px #582D09;
-    }
-    .logo-container {
-        gap: 0.8rem;
-        margin: 1rem 0 1.5rem;
-    }
-    
-    .logo-image {
-        width: 48%;
-        max-width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    .swiper-outer-container {
-        padding: 0 25px;
-        margin-bottom: 25px;
-    }
-    
-    .slide-image {
-        max-width: 150px;
-    }
-    
-    .slide-image img {
-        box-shadow: 0 1px 3px #582D09;
-    }
-    
-    .swiper-button-prev, .swiper-button-next {
-        width: 25px;
-        height: 25px;
-    }
-    
-    .swiper-button-prev::before {
-        border-width: 12px 18px 12px 0;
-    }
-    
-    .swiper-button-next::before {
-        border-width: 12px 0 12px 18px;
+        grid-template-columns: 1fr;
     }
 
-    .job-header h1 {
-        font-size: 2.3rem;
-    }
-
-    .challenge-container {
-        gap: 1rem;
-    }
-    
-    .challenges, .solutions {
-        max-width: 95%;
-        padding: 1rem;
-    }
-    
-    .challenges h3, .solutions h3 {
-        font-size: 1.2rem;
-    }
-    
-    .challenges li, .solutions li {
-        font-size: 0.85rem;
-    }
-    .result-grid {
-        gap: 12px;
-    }
-    
-    .result-icon {
-        padding: 1rem;
-        margin: 0 0.5rem;
-    }
-    
-    .result-icon img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 10px;
-    }
-    
-    .result-icon p {
-        font-size: 0.9rem;
-        line-height: 1.3;
-    }
-    
     .button-container {
-        gap: 0.8rem;
-        margin: 1rem 0;
-    }
-    
-    .oval-button {
-        padding: 0.6rem 1.2rem;
-        min-width: 180px;
-        font-size: 0.85rem;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .function-grid {
-        gap: 12px;
-    }
-    
-    .function-icon {
-        padding: 1rem;
-        margin: 0 0.5rem;
-    }
-    
-    .function-icon img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 10px;
-    }
-    
-    .function-icon p {
-        font-size: 0.9rem;
-        line-height: 1.3;
+    .oval-button {
+        width: 100%;
+        text-align: center;
     }
 }
 
+@media (max-width: 480px) {
+    .job-detail-section {
+        padding: 1rem 0;
+    }
 
+    .job-header h1 {
+        font-size: 1.5rem;
+    }
 
+    .tech-stack,
+    .problem-solution,
+    .goals {
+        padding: 1.5rem;
+    }
 
+    .project-sections h2 {
+        font-size: 1.3rem;
+    }
 
+    .insight-container h2 {
+        font-size: 1.75rem;
+    }
+
+    .insight-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .result-icon {
+        padding: 1.5rem;
+    }
+
+    .result-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .challenges,
+    .solutions {
+        padding: 1.5rem;
+    }
+
+    .oval-button {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Queries for WebSecura Modal details */
+@media (max-width: 1024px) {
+    .web-header h1 {
+        font-size: 2rem;
+    }
+
+    .function-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .web-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .feature-container h2 {
+        font-size: 2rem;
+    }
+
+    .feature-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .function-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .oval-button2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .web-detail-section,
+    .feature-section {
+        padding: 1.5rem 0;
+    }
+
+    .web-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .feature-container h2 {
+        font-size: 1.75rem;
+    }
+
+    .feature-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .function-icon {
+        padding: 1.5rem;
+    }
+
+    .function-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .oval-button2 {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+    }
+}

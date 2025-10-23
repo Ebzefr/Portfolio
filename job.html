@@ -7,7 +7,7 @@
      <link rel="icon" type="image/png" href="Assets/ebze-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
@@ -15,64 +15,106 @@
 </head>
 <body>
      <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-           <a href="index.html">
+   <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html">
             <div class="logo">
                 <img src="Assets/ebze-logo.png" alt="Logo" class="logo-img">
             </div>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#profile" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#experience" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a href="#skills" class="nav-link">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        
+        <!-- Desktop Buttons -->
+        <div class="nav-buttons">
+            <a href="project.html" class="nav-btn projects-btn">Projects</a>
+            <a href="Assets/Ebenezer_Obi_CV.pdf" class="nav-btn contact-btn" download="Ebenezer_Obi_CV.pdf">
+                CV <i class="fas fa-arrow-right"></i>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="project.html" class="nav-link">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">CONTACT</a>
-                </li>
-                 <li class="nav-item">
-                <a href="/Assets/CV.pdf" class="nav-link" target="_blank">
-                    <i class="fas fa-download"></i> DOWNLOAD CV
+        </div>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-items">
+                <a href="#home" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Home</span>
+                    <span class="mobile-nav-desc">Back to homepage</span>
                 </a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <a href="#about" class="mobile-nav-item">
+                    <span class="mobile-nav-title">About</span>
+                    <span class="mobile-nav-desc">Learn about me</span>
+                </a>
+                <a href="#experience" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Experience</span>
+                    <span class="mobile-nav-desc">My professional journey</span>
+                </a>
+                <a href="#skills" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Skills</span>
+                    <span class="mobile-nav-desc">My ideas & approach</span>
+                </a>
+                <a href="#contact" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Contact</span>
+                    <span class="mobile-nav-desc">Download My CV</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-buttons">
+                <a href="project.html" class="mobile-menu-btn projects-btn-mobile">Projects</a>
+                <a href="Assets/Ebenezer_Obi_CV.pdf" class="mobile-menu-btn contact-btn-mobile" download="Ebenezer_Obi_CV.pdf">
+                    <i class="fas fa-download"></i> Download My CV
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Project Detail Content -->
+    <!-- UK Jobs -->
     <section class="job-detail-section">
         <div class="job-header">
-            <h1>UK Tech Job Opportunities</h1>
+            <h1>E-Commerce Dashboard</h1>
             <div class="author-date">
                 <div class="author">Ebenezer Obi</div>
-                <div class="date">February 2025</div>
+                <div class="date">August 2025</div>
             </div>
         </div>
 
         <div class="project-intro">
             <div class="project-text">
-                <p> This is an interactive Shiny web application that analyzes and visualizes the evolution 
-                    of technology-related job opportunities across the United Kingdom from 2019 to 2023. By leveraging 
-                    job posting data, this project offers insights into shifting demands in job roles, required 
-                    technical skills, salary trends, and geographic hiring patterns.
+                <p> This project presents an end-to-end e-commerce analytics solution — from raw transactional data to an interactive, 
+                    insight-driven dashboard. Using Python (Pandas, NumPy) for data cleaning and enrichment, and Google Looker Studio 
+                    for visualization, the project showcases key business intelligence workflows for sales, customers, and product 
+                    performance analysis.
                 <br>
-                Developed using R, Shiny, and various data visualization libraries, this project demonstrates expertise 
-                in data cleaning, statistical analysis, interactive dashboard design, and web-based deployment. It also 
-                reflects a strong understanding of real-world employment trends and the value of data-driven decision-making 
-                in career and business strategy.
+                The dashboard provides a unified view of: Sales KPIs (Revenue, Orders, AOV), Customer demographics and behaviour, 
+                Product performance across categories and brands.
             </p>
             </div>
-            <div class="project-cover"><img src="Assets/J-cover.png" alt="UK Jobs"></div>
+            <div class="project-cover"><img src="Assets/E-cover.png" alt="E-Commerce"></div>
         </div>
 
         <div class="project-sections">
@@ -80,8 +122,8 @@
                 <h2>Tech Stack</h2>
                 <div class="tech-grid">
                     <div class="tech-icon">
-                        <img src="Assets/RStudio.png" alt="RStudio">
-                        <p>RStudio</p>
+                        <img src="Assets/Python.png" alt="Python">
+                        <p>Python</p>
                     </div>
                     <div class="tech-icon">
                         <img src="Assets/Kaggle.png" alt="Kaggle">
@@ -91,8 +133,8 @@
                         <p>MS Excel</p>
                     </div>
                     <div class="tech-icon">
-                        <img src="Assets/Shiny.png" alt="Shiny App">
-                        <p>Shiny</p>
+                        <img src="Assets/Looker.png" alt="LookerStudio">
+                        <p>LookerStudio</p>
                     </div>
                     
                 </div>
@@ -101,15 +143,16 @@
                 <h2>Problem</h2>
                 <ul>
                     <li>
-                        Shifts in demand for roles, skills, and 
-                        salaries are not always visible without deep analysis.
+                        E-commerce data was scattered across multiple CSV files with 
+                        inconsistent product and customer IDs.
                     </li>
                     <li>
-                        Emerging tech trends have disrupted hiring patterns.
+                        No unified system existed to track overall performance or 
+                        key business metrics.
                     </li>
                     <li>
-                        Job seekers and recruiters lack accessible tools 
-                        to explore these trends interactively.
+                        Limited visibility into which products, customers, or 
+                        categories drove the most revenue.
                     </li>
                 </ul>
             </div>
@@ -117,16 +160,13 @@
                 <h2>Goals</h2>
                 <ul>
                     <li>
-                        Identify trends in job titles, required skills, salaries, 
-                        and hiring regions.
+                        Consolidate all raw datasets into one clean, analytics-ready model.
                     </li>
                     <li>
-                        Build an interactive, user-friendly dashboard using Shiny 
-                        to visualize the data.
+                        Build a dynamic dashboard to monitor sales, customers, and product insights.
                     </li>
                     <li>
-                        Enable users to filter by year, location, job title, and 
-                        skill for personalized insights.
+                        Enable quick identification of top performers and growth opportunities.
                     </li>
                 </ul>
             </div>
@@ -143,28 +183,26 @@
            
             <h3>Dashboard</h3>
             <div class="dashboard">
-                <div class="dashboard-image"><img src="Assets/J-Dash.png" alt="Dashboard"></div>
+                <div class="dashboard-image"><img src="Assets/E-dash.png" alt="Dashboard"></div>
             </div>
                 <h3>Valuable Findings</h3>
           <div class="result-grid">
             <div class="result-icon">
                 <img src="Assets/J-list.png" alt="List">
-                <p>"The United Kingdom according to these dataset recorded a total of 364 Tech
-                    related jobs from 2019 to 2023".
+                <p>"A huge part of the total revenue was generated from Electronic products, 
+                    highlighting other category areas the business needs to focus on".
                 </p>
             </div>
             <div class="result-icon">
                 <img src="Assets/J-idea.png" alt="Idea">
-                <p>"Although a pandemic occured in 2020, there was total job listing
-                    of 44 and they were all Full-time, suggesting they were listed at 
-                    the start of year or post lockdown".
+                <p>"Male customers spent on average 411% in entire order more than 
+                    other age groups, indicating a key target demographic".
                 </p>
             </div>
             <div class="result-icon">
                 <img src="Assets/J-skills.png" alt="Skills">
-                <p>"In regards to experience level, there seem to be no much opportunities for
-                    current student seeking an internship or fresh graduates looking to 
-                    break into the corporate world".
+                <p>"The entire dataset spanned through May to June and the revenue recorded 
+                    can be possibly linked to mid-year promotions or seasonal shifts".
                 </p>
             </div>
           </div> 
@@ -172,25 +210,24 @@
             <div class="challenges">
                 <h3>Challenges</h3>
                 <ul>
-                    <li>Deploying the whole program to shinyapps.io.</li>
-                    <li>Github commit hangs in local file instead of pushing to the remote 
-                        repository.</li>
-                    <li>Slow dashboard loading on shinyapps.io.</li>
+                    <li>Product IDs in the raw basket data were inconsistent (numeric codes not matching product details).</li>
+                    <li>Missing links between datasets (no direct foreign keys between orders and customers).</li>
+                    <li>Limited time range (only two months of data) made long-term trend analysis difficult.</li>
                 </ul>
             </div>
             <div class="solutions">
                 <h3>Solution</h3>
                 <ul>
-                    <li>Ran error logs and removed rsconnect declarations present in the script.</li>
-                    <li>Clearly set all assets in directory before cloning afresh and pushing through terminal.</li>
-                    <li>Optimized plots using plotly + limited default dataset size</li>
+                    <li>Used Python to regenerate a clean, standardized product_id system (e.g., P001–P200) and mapped basket entries to new product records.</li>
+                    <li>Built relational joins in Python (Pandas merge) to create a unified dataset.</li>
+                    <li>Shifted focus to daily-level performance and cross-category insights to maximize business relevance.</li>
                 </ul>
             </div>
         </div>
 
         <div class="button-container">
-            <a href="https://ebzefr.shinyapps.io/Job-Analysis/" target="_blank" class="oval-button">Live Dashboard</a>
-            <a href="https://github.com/Ebzefr/Job-Analysis" target="_blank" class="oval-button">GitHub</a>
+            <a href="https://lookerstudio.google.com/reporting/c8c6d4c2-0522-4052-ad9c-b164149b2aef" target="_blank" class="oval-button">Live Dashboard</a>
+            <a href="https://github.com/Ebzefr/E-Commerce" target="_blank" class="oval-button">GitHub</a>
         </div>
 
         </div>

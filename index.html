@@ -7,70 +7,115 @@
     <link rel="icon" type="image/png" href="Assets/ebze-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     
 </head>
 <body>
      <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html">
+   <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html">
             <div class="logo">
                 <img src="Assets/ebze-logo.png" alt="Logo" class="logo-img">
             </div>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#profile" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#experience" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a href="#skills" class="nav-link">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a href="#project" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        
+        <!-- Desktop Buttons -->
+        <div class="nav-buttons">
+            <a href="Assets/Ebenezer_Obi_CV.pdf" class="nav-btn contact-btn" download="Ebenezer_Obi_CV.pdf">
+                CV <i class="fas fa-arrow-right"></i>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="project.html" class="nav-link">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                <a href="/Assets/CV.pdf" class="nav-link" target="_blank">
-                    <i class="fas fa-download"></i> DOWNLOAD CV
-                </a>
-                </li>
-            </ul>
-
+        </div>
         
         <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-items">
+                <a href="#home" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Home</span>
+                    <span class="mobile-nav-desc">Back to homepage</span>
+                </a>
+                <a href="#about" class="mobile-nav-item">
+                    <span class="mobile-nav-title">About</span>
+                    <span class="mobile-nav-desc">Learn about me</span>
+                </a>
+                <a href="#experience" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Experience</span>
+                    <span class="mobile-nav-desc">My professional journey</span>
+                </a>
+                <a href="#skills" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Skills</span>
+                    <span class="mobile-nav-desc">My tools & strength</span>
+                </a>
+                <a href="#project" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Projects</span>
+                    <span class="mobile-nav-desc">My ideas & approach</span>
+                </a>
+                <a href="#contact" class="mobile-nav-item">
+                    <span class="mobile-nav-title">Contact</span>
+                    <span class="mobile-nav-desc">Download My CV</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-buttons">
+                <a href="Assets/Ebenezer_Obi_CV.pdf" class="mobile-menu-btn contact-btn-mobile" download="Ebenezer_Obi_CV.pdf">
+                    <i class="fas fa-download"></i> Download My CV
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!-- Profile Section -->
-    <section id="profile" class="profile-section">
+<section id="profile" class="profile-section">
     <div class="profile-container">
         <div class="profile-content">
             <div class="profile-text">
-                <h1 class="greeting">Hey, I am</h1>
-                <h2 class="name">
-                    <span class="name-highlight">EBENEZER</span> 
-                    <span class="name-regular">OBI</span>
+                <h1 class="greeting">Hi, I'm Ebenezer Obi</h1>
+                <h2 class="rotating-title">
+                    <span class="rotating-text"></span>
                 </h2>
-                <p class="description">
-                    Computer Science Student &<br>
-                    Aspiring Full-Stack Developer
+                
+                <p class="profile-tagline">
+                    Creating technology solutions that deliver results and solve real-world problems.
                 </p>
                 
                 <div class="social-links desktop-social">
-                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                    <a href="https://www.linkedin.com/in/ebenezer-obi-23858324b" target="_blank" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com" target="_blank" class="social-link">
+                    <a href="https://github.com/Ebzefr" target="_blank" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -78,7 +123,7 @@
             
             <div class="profile-image-container">
                 <div class="profile-image-wrapper">
-                    <img src="Assets/Profile pic.jpeg" alt="Ebenezer Obi" class="profile-image">
+                    <img src="Assets/Profile pic.jpg" alt="Ebenezer Obi" class="profile-image">
                 </div>
                 <div class="social-links mobile-social">
                     <a href="https://www.linkedin.com/in/ebenezer-obi-23858324b" target="_blank" class="social-link">
@@ -94,94 +139,222 @@
 </section>
     
 <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-layout">
             <div class="about-content">
                 <div class="about-accent-line"></div>
                 <h2 class="about-title">
                     About me<span class="title-dot">.</span>
                 </h2>
                 <p class="about-text">
-                    I'm a final-year Computer Science student at the University of Chester 
-                    with a passion for building practical tech solutions that make life easier.
-                    Over the past few years, I’ve built full-stack applications ranging from secure 
-                    restaurant app to web vulnerability scanners and data dashboards. 
-                    I enjoy working at the intersection of clean design, strong backend logic, and user experience.
-                    <br>
-                    I’ve contributed to remote teams, taken on freelance work, and participated in hackathons,
-                    all of which have shaped my love for fast-paced, impact-driven environments.
-                    Right now, I’m actively seeking internship or graduate opportunities, open to 
-                    relocation and excited to bring curiosity, grit, and technical skills to the next team I join.
+                    I’m a final-year Computer Science student at the University of Chester and the founder of Clouddey 
+                    and WebSecura, two ventures focused on cloud automation and web security. I’m passionate about building 
+                    practical tech solutions that make life easier, and over the past few years, I’ve developed full-stack 
+                    applications ranging from secure restaurant apps to web vulnerability scanners and data dashboards.
+                    <br><br>
+                    I enjoy working at the intersection of clean design, strong backend logic, and seamless user experience. 
+                    My experience includes contributing to remote teams, taking on freelance projects, participating in hackathons, 
+                    and leading my own ventures, all of which have fueled my drive for fast-paced, impact-driven environments.
+                    I’m currently seeking employment opportunities, open to relocation, and eager to bring curiosity,
+                    grit, and technical problem-solving to the next team I join.
                 </p>
-                <a href="Assets/CV.pdf" class="download-btn" target="_blank">Download CV</a>
+                <a href="Assets/CV.pdf" class="download-btn" download="Ebenezer_Obi_CV.pdf">Download CV</a>
             </div>
-        </div>
-    </section>
-    <!-- Experience Section -->
-<section id="experience" class="experience-section">
-    <div class="experience-container">
-        <div class="experience-content">
-            <div class="experience-accent-line"></div>
-            <h2 class="experience-title">
-                Experience<span class="title-dot">.</span>
-            </h2>
             
-            <div class="timeline">
-                <div class="timeline-item" onclick="openModal('job1')">
-                    <div class="timeline-circle">
-                        <img src="Assets/LLC Logo.png" alt="Company 1" class="company-logo">
+            <!-- Info Card -->
+            <div class="about-info-card">
+                <div class="info-section">
+                    <h3 class="info-title">Education</h3>
+                    <div class="info-item">
+                        <p class="info-degree">BSc (Hons) Computer Science</p>
+                        <p class="info-detail">University of Chester</p>
+                        <p class="info-detail">Expected Graduation: 2026</p>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Web Developer</h3>
-                        <p class="job-period">05/2025 - Till date</p>
-                    </div>
-                    <div class="timeline-connector"></div>
                 </div>
                 
-                <div class="timeline-item" onclick="openModal('job2')">
-                    <div class="timeline-circle">
-                        <img src="Assets/GLG.png" alt="GLG" class="company-logo">
+                <div class="info-section">
+                    <h3 class="info-title">Ventures</h3>
+                    <div class="info-item">
+                        <p class="info-venture"><span class="venture-label">Founder,</span> Clouddey</p>
+                        <p class="info-venture"><span class="venture-label">Founder,</span> WebSecura</p>
                     </div>
-                    <div class="timeline-content">
-                        <h4 class="job-title">Network Consultant</h3>
-                        <p class="job-period">12/2024 - 05/2025</p>
-                    </div>
-                    <div class="timeline-connector"></div>
                 </div>
                 
-                <div class="timeline-item" onclick="openModal('job3')">
-                    <div class="timeline-circle">
-                        <img src="Assets/UoC.webp" alt="Company 3" class="company-logo">
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Student Ambassador</h3>
-                        <p class="job-period">10/2022 - 07/2024</p>
-                    </div>
-                    <div class="timeline-connector"></div>
-                </div>
-                
-                <div class="timeline-item" onclick="openModal('job4')">
-                    <div class="timeline-circle">
-                        <img src="Assets/MM.png" alt="Mextron" class="company-logo">
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Tech Support</h3>
-                        <p class="job-period">09/2020 - 09/2022</p>
+                <div class="info-section">
+                    <h3 class="info-title">Interests</h3>
+                    <div class="info-tags">
+                        <span class="interest-tag">Full-Stack Development</span>
+                        <span class="interest-tag">Cybersecurity</span>
+                        <span class="interest-tag">Data Analytics</span>
+                        <span class="interest-tag">Cloud Computing</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+  
+<!-- Experience Section -->
+<section id="experience" class="experience-section">
+    <div class="experience-container">
+        <div class="experience-header">
+            <div class="experience-accent-line"></div>
+            <h2 class="experience-title">Experience<span class="title-dot">.</span></h2>
+        </div>
 
-<!-- Modal for Job Details -->
-<div id="jobModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modal-body">
+        <div class="timeline">
+            <!-- Job 1 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                    <div class="year-badge">2025</div>
+                </div>
+                
+                <div class="timeline-right">
+                    <div class="job-card">
+                        <h3 class="job-role">Web Developer & IT Support</h3>
+                        <p class="job-description">
+                            Designed and deployed a responsive business website, handled full server and domain setup via cPanel, and provided technical consulting on automation and IT strategy.
+                        </p>
+                        
+                        <!-- Tech Stack Tags -->
+                        <div class="tech-stack">
+                            <span class="tech-tag">cPanel</span>
+                            <span class="tech-tag">Web Design</span>
+                            <span class="tech-tag">Server Setup</span>
+                            <span class="tech-tag">IT Consulting</span>
+                        </div>
+                        
+                        <!-- Key Achievements -->
+                        <div class="achievements">
+                            <div class="achievement-title">
+                                <span class="achievement-icon">●</span>
+                                Key Achievements
+                            </div>
+                            <ul class="achievement-list">
+                                <li>Full-stack website deployment from design to production</li>
+                                <li>Server infrastructure setup and domain configuration</li>
+                                <li>Technical automation strategy consulting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                    <div class="year-badge">2024</div>
+                </div>
+                
+                <div class="timeline-right">
+                    <div class="job-card">
+                        <h3 class="job-role">Network Consultant</h3>
+                        <p class="job-description">
+                            Provide expert insights on UK university edtech and student management systems through compliance-regulated consultations with investment and equity firms.
+                        </p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">EdTech</span>
+                            <span class="tech-tag">SIS Systems</span>
+                            <span class="tech-tag">Consulting</span>
+                            <span class="tech-tag">Compliance</span>
+                        </div>
+                        
+                        <div class="achievements">
+                            <div class="achievement-title">
+                                <span class="achievement-icon">●</span>
+                                Key Achievements
+                            </div>
+                            <ul class="achievement-list">
+                                <li>Expert consultations on UK university technology systems</li>
+                                <li>Strategic insights for investment and equity firms</li>
+                                <li>Compliance-regulated consultation delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                    <div class="year-badge">2022</div>
+                </div>
+                
+                <div class="timeline-right">
+                    <div class="job-card">
+                        <h3 class="job-role">Student Ambassador (Digital Comms & Outreach)</h3>
+                        <p class="job-description">
+                            Supported international student outreach and marketing through Unibuddy and online campaigns, promoting global engagement, diversity, and inclusion.
+                        </p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Unibuddy</span>
+                            <span class="tech-tag">Digital Marketing</span>
+                            <span class="tech-tag">Social Media</span>
+                            <span class="tech-tag">Outreach</span>
+                        </div>
+                        
+                        <div class="achievements">
+                            <div class="achievement-title">
+                                <span class="achievement-icon">●</span>
+                                Key Achievements
+                            </div>
+                            <ul class="achievement-list">
+                                <li>International student outreach and engagement campaigns</li>
+                                <li>Digital communications and social media management</li>
+                                <li>Promoted diversity, inclusion, and global engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot"></div>
+                    <!-- No line for last item -->
+                </div>
+                
+                <div class="timeline-right">
+                    <div class="job-card">
+                        <h3 class="job-role">Tech Support Assistant</h3>
+                        <p class="job-description">
+                            Maintained and documented IT systems while assisting engineers with installations, repairs, and infrastructure improvements.
+                        </p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">IT Support</span>
+                            <span class="tech-tag">Documentation</span>
+                            <span class="tech-tag">System Maintenance</span>
+                            <span class="tech-tag">Infrastructure</span>
+                        </div>
+                        
+                        <div class="achievements">
+                            <div class="achievement-title">
+                                <span class="achievement-icon">●</span>
+                                Key Achievements
+                            </div>
+                            <ul class="achievement-list">
+                                <li>IT system maintenance and documentation</li>
+                                <li>Technical support for installations and repairs</li>
+                                <li>Infrastructure improvement assistance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
     
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
@@ -343,41 +516,89 @@
 
         </div>
     </section>
-    
-   <section id="recent" class="recent-section">
-    <div class="recent-container">
+
+    <!----Project Section---->
+   <section id="project" class="recent-section">
+    <div class="project-container">
                 <div class="about-accent-line"></div>
-        <h2 class="recent-title">
-            Recent<span class="title-dot">.</span>
+        <h2 class="project-title">
+            Projects<span class="title-dot">.</span>
         </h2>
         
         <div class="projects-grid">
-            
-            <a href="job.html">
-            <div class="project-card">
-                <img src="Assets/Job-logo.webp" alt="UK TechJobs" class="project-image">
+                <!-- CloudDey Project -->
+                <div class="project-card" onclick="openProject('clouddev')">
+                    <img src="Assets/Cloud-logo.webp" alt="Clouddey" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Clouddey</h3>
+                        <p class="project-tech">React • Tailwind • Firebase</p>
+                    </div>
+                </div>
+
+                <!-- Personal Portfolio -->
+                <div class="project-card" onclick="openProject('portfolio')">
+                    <img src="Assets/ebze-logo.png" alt="Ebze.dev" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Ebze.dev</h3>
+                        <p class="project-tech">HTML • CSS • JavaScript</p>
+                    </div>
+                </div>
+
+                <!-- Lofis -->
+                <div class="project-card" onclick="openProject('app')">
+                    <img src="Assets/Lofis-app.png" alt="Lofis App" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Lofis App</h3>
+                        <p class="project-tech">UI/UX • Figma </p>
+                    </div>
+                </div>
+
+                <!-- Lofis web -->
+                <div class="project-card" onclick="openProject('ecommerce')">
+                    <img src="Assets/Lofis.png" alt="Lofis Web" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">Lofis Web</h3>
+                        <p class="project-tech">C# • ASP.NET • SQL</p>
+                    </div>
+                </div>
+
+                                <!-- UK Jobs -->
+                <div class="project-card" onclick="openProject('analytics')">
+                    <img src="Assets/Job-logo.webp" alt="UK Jobs" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">UK Tech Jobs</h3>
+                        <p class="project-tech">R • Kaggle • Shiny</p>
+                    </div>
+                </div>
+
+                                                <!-- WebSecura -->
+                <div class="project-card" onclick="openProject('websecura')">
+                    <img src="Assets/WebLogo.webp" alt="WebSecura" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">WebSecura</h3>
+                        <p class="project-tech">HTML • Python • JavaScript</p>
+                    </div>
+                </div>
+
+                                     <!-- E-commerce -->
+                <div class="project-card" onclick="openProject('ecommerce')">
+                    <img src="Assets/Ecom-logo.webp" alt="E-commerce" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-name">E-Commerce Dashboard</h3>
+                        <p class="project-tech">Python • Excel • LookerStudio</p>
+                    </div>
+                </div>
             </div>
-            </a>
-            
-            <a href="">
-            <div class="project-card">
-                <img src="Assets/ebze-logo.png" alt="Ebze.dev" class="project-image">
-            </div>
-            </a>
-            
-            <a href="web.html">
-            <div class="project-card">
-                <img src="Assets/WebLogo.webp" alt="WebSecura" class="project-image">
-            </div>
-            </a>
-        
-        </div>
-        
-        <div class="more-projects-btn-container">
-            <a href="project.html" class="more-projects-btn">More Projects</a>
         </div>
     </div>
 </section>
+
+<div id="projectModal" class="project-modal">
+    <div class="modal-content-wrapper">
+        <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+        <div id="modalContent" class="modal-inner-content"></div>
+    </div>
+</div>
     
    <!-- Contact Section -->
 <section id="contact" class="contact-section">

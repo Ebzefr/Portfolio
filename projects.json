@@ -1,0 +1,343 @@
+{
+  "projects": [
+    {
+      "id": "analytics",
+      "name": "UK Tech Job Opportunities",
+      "shortName": "UK Tech Jobs",
+      "logo": "Assets/Job-logo.webp",
+      "author": "Ebenezer Obi",
+      "date": "February 2025",
+      "coverImage": "Assets/J-cover.png",
+      "category": "Data Analytics",
+      "description": "This is an interactive Shiny web application that analyzes and visualizes the evolution of technology-related job opportunities across the United Kingdom from 2019 to 2023. By leveraging job posting data, this project offers insights into shifting demands in job roles, required technical skills, salary trends, and geographic hiring patterns.",
+      "detailedDescription": "Developed using R, Shiny, and various data visualization libraries, this project demonstrates expertise in data cleaning, statistical analysis, interactive dashboard design, and web-based deployment. It also reflects a strong understanding of real-world employment trends and the value of data-driven decision-making in career and business strategy.",
+      "techStack": [
+        {
+          "name": "RStudio",
+          "icon": "Assets/RStudio.png"
+        },
+        {
+          "name": "Kaggle",
+          "icon": "Assets/Kaggle.png"
+        },
+        {
+          "name": "MS Excel",
+          "icon": "Assets/Excel.png"
+        },
+        {
+          "name": "Shiny",
+          "icon": "Assets/Shiny.png"
+        }
+      ],
+      "problems": [
+        "Shifts in demand for roles, skills, and salaries are not always visible without deep analysis.",
+        "Emerging tech trends have disrupted hiring patterns.",
+        "Job seekers and recruiters lack accessible tools to explore these trends interactively."
+      ],
+      "goals": [
+        "Identify trends in job titles, required skills, salaries, and hiring regions.",
+        "Build an interactive, user-friendly dashboard using Shiny to visualize the data.",
+        "Enable users to filter by year, location, job title, and skill for personalized insights."
+      ],
+      "insights": {
+        "dashboardImage": "Assets/J-Dash.png",
+        "findings": [
+          {
+            "icon": "Assets/J-list.webp",
+            "text": "The United Kingdom according to these dataset recorded a total of 364 Tech related jobs from 2019 to 2023."
+          },
+          {
+            "icon": "Assets/J-idea.webp",
+            "text": "Although a pandemic occured in 2020, there was total job listing of 44 and they were all Full-time, suggesting they were listed at the start of year or post lockdown."
+          },
+          {
+            "icon": "Assets/J-skills.webp",
+            "text": "In regards to experience level, there seem to be no much opportunities for current student seeking an internship or fresh graduates looking to break into the corporate world."
+          }
+        ]
+      },
+      "challenges": [
+        "Deploying the whole program to shinyapps.io.",
+        "Github commit hangs in local file instead of pushing to the remote repository.",
+        "Slow dashboard loading on shinyapps.io."
+      ],
+      "solutions": [
+        "Ran error logs and removed rsconnect declarations present in the script.",
+        "Clearly set all assets in directory before cloning afresh and pushing through terminal.",
+        "Optimized plots using plotly + limited default dataset size"
+      ],
+      "links": {
+        "live": "https://ebzefr.shinyapps.io/Job-Analysis/",
+        "github": "https://github.com/Ebzefr/Job-Analysis"
+      }
+    },
+    {
+      "id": "app",
+      "name": "Lofis Restaurant App",
+      "shortName": "Lofis App",
+      "logo": "Assets/Lofis-app.png",
+      "author": "Ebenezer Obi",
+      "date": "March 2024",
+      "coverImage": "Assets/L-Cover.png",
+      "category": "UI/UX Design",
+      "description": "This project is a UX/UI mobile app prototype designed for a modern restaurant, built using Figma. The goal was to create a seamless and inclusive experience for users to easily make reservations, order food, view dietary information, and track deliveries in real time.",
+      "detailedDescription": "The design focuses on accessibility, user diversity, and intuitive navigation. Key features include dietary filters (vegan, gluten-free, allergy-safe), a simplified booking process, and a live map for delivery tracking. Personas ranged from busy professionals to elderly users, ensuring the app meets a wide spectrum of user needs.",
+      "techStack": [
+        {
+          "name": "Figma",
+          "icon": "Assets/Figma.png"
+        },
+        {
+          "name": "Google Form",
+          "icon": "Assets/Google form.png"
+        },
+        {
+          "name": "Google Doc",
+          "icon": "Assets/Google doc.png"
+        },
+        {
+          "name": "Illustrator",
+          "icon": "Assets/Illustrator.png"
+        }
+      ],
+      "problems": [
+        "Users find the reservation process too time-consuming and confusing.",
+        "Dietary restrictions are hard to filter and view in the menu.",
+        "Users experience uncertainty about food delivery status.",
+        "Older users struggle with navigating the app interface."
+      ],
+      "goals": [
+        "Simplify the reservation flow with fewer steps and clear prompts.",
+        "Implement intuitive dietary filters and display clear ingredient/allergy info.",
+        "Integrate a real-time delivery tracker with live map and ETA updates.",
+        "Design an accessible, senior-friendly UI with larger touch targets and simple language."
+      ],
+      "research": {
+        "surveyImages": [
+          "Assets/LS1.png",
+          "Assets/LS2.png",
+          "Assets/LS3.png",
+          "Assets/LS4.png",
+          "Assets/LS5.png",
+          "Assets/LS6.png"
+        ],
+        "personaImages": [
+          "Assets/LP1.png",
+          "Assets/LP2.png",
+          "Assets/LP3.png"
+        ],
+        "painPoints": [
+          "Difficult navigation for reservations.",
+          "Lack of detailed dietary information.",
+          "Confusing menu layout.",
+          "Unclear or slow delivery tracking."
+        ],
+        "solutions": [
+          "Simplify the reservation process by providing a one-click reservation feature and a calendar view with availability.",
+          "Add a dietary filter that can display specific dietary needs.",
+          "Redesign the menu to be categorized by food types.",
+          "Implement a live map that shows the real-time location and time of the delivery."
+        ],
+        "userFlowImage": "Assets/L-flow.png"
+      },
+      "design": {
+        "wireframes": [
+          "Assets/Wire1.png",
+          "Assets/Wire2.png",
+          "Assets/Wire3.png",
+          "Assets/Wire4.png",
+          "Assets/Wire5.png",
+          "Assets/Wire6.png",
+          "Assets/Wire7.png",
+          "Assets/Wire8.png"
+        ],
+        "colors": {
+          "main": ["#582D09", "#F9CF00"],
+          "neutral": ["#222222", "#374151", "#9CA3AF", "#BEC5D1", "#F4F4F4", "#FFFFFF"]
+        },
+        "logoImages": [
+          "Assets/L-Sketch.jpg",
+          "Assets/Lofis logo.png"
+        ],
+        "hiFidelityScreens": [
+          "Assets/L-splash.png",
+          "Assets/L-Welcome.png",
+          "Assets/L-reg.png",
+          "Assets/L-regde.png",
+          "Assets/L-log.png",
+          "Assets/L-logde.png",
+          "Assets/L-forget.png",
+          "Assets/L-email.png",
+          "Assets/L-enter.png",
+          "Assets/L-back.png",
+          "Assets/L-pass.png",
+          "Assets/L-succes.png",
+          "Assets/L-home.png",
+          "Assets/L-reserve.png",
+          "Assets/L-book.png",
+          "Assets/L-confirm.png",
+          "Assets/L-menu.png",
+          "Assets/L-detail.png",
+          "Assets/L-bask.png",
+          "Assets/L-order.png",
+          "Assets/L-orfirm.png",
+          "Assets/L-orup.png"
+        ]
+      },
+      "links": {
+        "figma": "#"
+      }
+    },
+    {
+      "id": "websecura",
+      "name": "WebSecura",
+      "shortName": "WebSecura",
+      "logo": "Assets/WebLogo.webp",
+      "author": "Ebenezer Obi",
+      "date": "June 2025",
+      "coverImage": "Assets/W-Cover.png",
+      "category": "Web Security",
+      "description": "WebSecura is a web-based security analysis tool designed to help developers, security professionals, and everyday users detect and understand vulnerabilities in any public-facing website. It performs comprehensive scanning using OWASP Top 10 principles, HTTP security header checks, SSL/TLS validation, and more — all wrapped in a sleek, intuitive UI.",
+      "techStack": [
+        {
+          "name": "HTML",
+          "icon": "Assets/HTML5.png"
+        },
+        {
+          "name": "CSS",
+          "icon": "Assets/CSS3.png"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Assets/Tailwind CSS.png"
+        },
+        {
+          "name": "Javascript",
+          "icon": "Assets/JavaScript.png"
+        },
+        {
+          "name": "Python",
+          "icon": "Assets/Python.png"
+        },
+        {
+          "name": "Flask",
+          "icon": "Assets/Flask.png"
+        }
+      ],
+      "problems": [
+        "Users lack easy-to-use tools to perform real-time website security checks.",
+        "Most vulnerability scanners are too technical or require installation/setup.",
+        "Security headers, SSL certs, and basic OWASP protections are often overlooked.",
+        "There's no quick feedback loop for developers to assess basic site security compliance."
+      ],
+      "goals": [
+        "Offer one-click scanning for any public URL",
+        "Provide clear, human-readable recommendations for each failed check",
+        "Support real-time scanning with detailed status output",
+        "Make security insights accessible and understandable to everyone"
+      ],
+      "features": {
+        "displayImage": "Assets/W-display.png",
+        "keyFunctions": [
+          {
+            "icon": "Assets/W-real.webp",
+            "text": "Instantly runs over 15 web security checks including SSL/TLS validation, HTTP headers, XSS, and more."
+          },
+          {
+            "icon": "Assets/W-developer.webp",
+            "text": "Provides clear pass/fail statuses with human-readable descriptions and remediation tips for each issue."
+          },
+          {
+            "icon": "Assets/W-modern.webp",
+            "text": "Clean and responsive design ensures a smooth experience across desktop and mobile devices."
+          }
+        ]
+      },
+      "challenges": [
+        "Some sites failed due to certificate trust issues.",
+        "Parsing headers across inconsistent server responses was tricky.",
+        "Structuring 15+ checks into readable categories required thoughtful UI planning."
+      ],
+      "solutions": [
+        "Solved this by isolating certificate verification errors and informing the user instead of blocking the scan.",
+        "Added robust fallback logic to normalize and interpret results correctly.",
+        "Used status tags and icons to make output more scannable."
+      ],
+      "links": {
+        "live": "https://websecura-1.onrender.com",
+        "github": "https://github.com/Ebzefr/WebSecura"
+      }
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-Commerce Dashboard",
+      "shortName": "E-Commerce",
+      "logo": "Assets/Lofis.png",
+      "author": "Ebenezer Obi",
+      "date": "August 2025",
+      "coverImage": "Assets/E-cover.png",
+      "category": "Data Analytics",
+      "description": "This project presents an end-to-end e-commerce analytics solution — from raw transactional data to an interactive, insight-driven dashboard. Using Python (Pandas, NumPy) for data cleaning and enrichment, and Google Looker Studio for visualization, the project showcases key business intelligence workflows for sales, customers, and product performance analysis.",
+      "detailedDescription": "The dashboard provides a unified view of: Sales KPIs (Revenue, Orders, AOV), Customer demographics and behaviour, Product performance across categories and brands.",
+      "techStack": [
+        {
+          "name": "Python",
+          "icon": "Assets/Python.png"
+        },
+        {
+          "name": "Kaggle",
+          "icon": "Assets/Kaggle.png"
+        },
+        {
+          "name": "MS Excel",
+          "icon": "Assets/Excel.png"
+        },
+        {
+          "name": "LookerStudio",
+          "icon": "Assets/Looker.png"
+        }
+      ],
+      "problems": [
+        "E-commerce data was scattered across multiple CSV files with inconsistent product and customer IDs.",
+        "No unified system existed to track overall performance or key business metrics.",
+        "Limited visibility into which products, customers, or categories drove the most revenue."
+      ],
+      "goals": [
+        "Consolidate all raw datasets into one clean, analytics-ready model.",
+        "Build a dynamic dashboard to monitor sales, customers, and product insights.",
+        "Enable quick identification of top performers and growth opportunities."
+      ],
+      "insights": {
+        "dashboardImage": "Assets/E-dash.png",
+        "findings": [
+          {
+            "icon": "Assets/J-list.webp",
+            "text": "A huge part of the total revenue was generated from Electronic products, highlighting other category areas the business needs to focus on."
+          },
+          {
+            "icon": "Assets/J-idea.webp",
+            "text": "Male customers spent on average 411% in entire order more than other age groups, indicating a key target demographic."
+          },
+          {
+            "icon": "Assets/J-skills.webp",
+            "text": "The entire dataset spanned through May to June and the revenue recorded can be possibly linked to mid-year promotions or seasonal shifts."
+          }
+        ]
+      },
+      "challenges": [
+        "Product IDs in the raw basket data were inconsistent (numeric codes not matching product details).",
+        "Missing links between datasets (no direct foreign keys between orders and customers).",
+        "Limited time range (only two months of data) made long-term trend analysis difficult."
+      ],
+      "solutions": [
+        "Used Python to regenerate a clean, standardized product_id system (e.g., P001–P200) and mapped basket entries to new product records.",
+        "Built relational joins in Python (Pandas merge) to create a unified dataset.",
+        "Shifted focus to daily-level performance and cross-category insights to maximize business relevance."
+      ],
+      "links": {
+        "live": "https://lookerstudio.google.com/reporting/c8c6d4c2-0522-4052-ad9c-b164149b2aef",
+        "github": "https://github.com/Ebzefr/E-Commerce"
+      }
+    }
+  ]
+}
