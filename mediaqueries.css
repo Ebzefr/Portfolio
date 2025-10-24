@@ -572,7 +572,9 @@
     }
 
     .survey-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: (2, 1fr);
+        gap: 0.2rem;
+
     }
 
     .personas-grid {
@@ -584,7 +586,9 @@
     }
 
     .wireframe-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+
     }
 
     .color-square {
@@ -594,7 +598,7 @@
     }
 
     .hifi-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -691,7 +695,21 @@
     }
 
     .tech-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .tech-icon {
+        padding: 0.75rem;
+    }
+
+    .tech-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tech-icon p {
+        font-size: 0.8rem;
     }
 
     .button-container {
@@ -724,6 +742,24 @@
         font-size: 1.3rem;
     }
 
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .tech-icon {
+        padding: 0.5rem;
+    }
+
+    .tech-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tech-icon p {
+        font-size: 0.75rem;
+    }
+
     .insight-container h2 {
         font-size: 1.75rem;
     }
@@ -751,6 +787,7 @@
         font-size: 0.9rem;
     }
 }
+    
 
 /* Media Queries for WebSecura Modal details */
 @media (max-width: 1024px) {

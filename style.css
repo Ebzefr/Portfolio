@@ -1094,7 +1094,7 @@ body::before {
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.05);
     color: #ffffff;
-    font-family: 'Martian Mono', monospace;
+  font-family: "DM Sans", sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
@@ -1124,7 +1124,6 @@ body::before {
     border-radius: 50px;
     background-color: transparent;
     color: #ffffff;
-    font-family: 'Martian Mono', monospace;
     font-size: 1rem;
     font-weight: 400;
     cursor: pointer;
@@ -1487,7 +1486,7 @@ footer p{
 /* Hi-Fidelity Design Grid */
 .hifi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin: 2rem 0 3rem 0;
 }
@@ -1515,7 +1514,7 @@ footer p{
 }
 
 
-/************** UK JOB *************************/
+/************** UK JOB/E-COMMERCE *************************/
 .job-detail-section {
     padding: 2rem 0;
 }
