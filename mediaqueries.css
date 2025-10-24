@@ -695,7 +695,7 @@
     }
 
     .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
     }
 
@@ -743,21 +743,21 @@
     }
 
     .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
     }
 
     .tech-icon {
-        padding: 0.5rem;
+        padding: 0.4rem;
     }
 
     .tech-icon img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     .tech-icon p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .insight-container h2 {
