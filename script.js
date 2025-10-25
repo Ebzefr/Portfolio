@@ -209,7 +209,7 @@ function openProject(projectId) {
         // UK Tech Jobs modal content
         modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'ecommerce') {
-        // E-Commerce Dashboard modal content 
+        // E-Commerce Dashboard modal content (uses same structure as analytics)
         modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'app') {
         // Lofis App modal content
@@ -223,6 +223,14 @@ function openProject(projectId) {
     document.getElementById('modalContent').innerHTML = modalHTML;
     document.getElementById('projectModal').style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Initialize card decks for Lofis App after modal is shown
+    if (projectId === 'app') {
+        setTimeout(() => {
+            initCardDeck('wireframeDeck', 'wireframeCounter', project.design.wireframes);
+            initCardDeck('hifiDeck', 'hifiCounter', project.design.hiFidelityScreens);
+        }, 200);
+    }
 }
 
 // Close modal
@@ -449,6 +457,13 @@ function buildLofisModal(project) {
                     `).join('')}
                 </div>
                 
+                <!-- Card Deck for Mobile Wireframes -->
+                <div class="card-deck-container wireframe-deck">
+                    <div class="swipe-instruction">← Swipe to browse wireframes →</div>
+                    <div class="card-deck" id="wireframeDeck"></div>
+                    <div class="card-counter" id="wireframeCounter">1 / ${project.design.wireframes.length}</div>
+                </div>
+                
                 <h3>Colour</h3>
                 <div class="color-section">
                     <h4>Main Colors</h4>
@@ -483,6 +498,13 @@ function buildLofisModal(project) {
                             <img src="${img}" alt="Hi-Fi Design">
                         </div>
                     `).join('')}
+                </div>
+                
+                <!-- Card Deck for Mobile Hi-Fi -->
+                <div class="card-deck-container hifi-deck">
+                    <div class="swipe-instruction">← Swipe to browse designs →</div>
+                    <div class="card-deck" id="hifiDeck"></div>
+                    <div class="card-counter" id="hifiCounter">1 / ${project.design.hiFidelityScreens.length}</div>
                 </div>
             </div>
         </section>
@@ -583,4 +605,138 @@ function buildWebSecuraModal(project) {
             </div>
         </section>
     `;
+}
+
+// Card Deck Functionality
+function initCardDeck(deckId, counterId, images) {
+    const deckContainer = document.getElementById(deckId);
+    const counter = document.getElementById(counterId);
+    
+    if (!deckContainer || !images || images.length === 0) return;
+    
+    let currentIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    
+    // Create all cards
+    images.forEach((imgSrc, index) => {
+        const card = document.createElement('div');
+        card.className = 'deck-card';
+        card.style.zIndex = images.length - index;
+        card.innerHTML = `<img src="${imgSrc}" alt="Design ${index + 1}">`;
+        
+        if (index === 0) {
+            card.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+        } else {
+            card.style.transform = `translateX(0) translateY(${index * 3}px) rotate(0deg)`;
+            card.style.opacity = '0.7';
+        }
+        
+        deckContainer.appendChild(card);
+    });
+    
+    const cards = deckContainer.querySelectorAll('.deck-card');
+    
+    function updateCounter() {
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+    
+    function showNextCard() {
+        if (currentIndex >= images.length - 1) return;
+        
+        const currentCard = cards[currentIndex];
+        currentCard.classList.add('swiped-right');
+        
+        currentIndex++;
+        updateCounter();
+        
+        // Update remaining cards
+        for (let i = currentIndex; i < cards.length; i++) {
+            const card = cards[i];
+            const offset = (i - currentIndex) * 3;
+            card.style.transform = `translateX(0) translateY(${offset}px) rotate(0deg)`;
+            card.style.opacity = i === currentIndex ? '1' : '0.7';
+        }
+    }
+    
+    function showPrevCard() {
+        if (currentIndex <= 0) return;
+        
+        currentIndex--;
+        updateCounter();
+        
+        const currentCard = cards[currentIndex];
+        currentCard.classList.remove('swiped-right', 'swiped-left');
+        currentCard.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+        currentCard.style.opacity = '1';
+        
+        // Update remaining cards
+        for (let i = currentIndex + 1; i < cards.length; i++) {
+            const card = cards[i];
+            const offset = (i - currentIndex) * 3;
+            card.style.transform = `translateX(0) translateY(${offset}px) rotate(0deg)`;
+            card.style.opacity = '0.7';
+        }
+    }
+    
+    // Touch and mouse events
+    function handleStart(e) {
+        if (currentIndex >= images.length) return;
+        
+        isDragging = true;
+        startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        cards[currentIndex].style.transition = 'none';
+    }
+    
+    function handleMove(e) {
+        if (!isDragging || currentIndex >= images.length) return;
+        
+        currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        const deltaX = currentX - startX;
+        const rotation = deltaX / 20;
+        
+        cards[currentIndex].style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
+    }
+    
+    function handleEnd(e) {
+        if (!isDragging || currentIndex >= images.length) return;
+        
+        isDragging = false;
+        const deltaX = currentX - startX;
+        
+        cards[currentIndex].style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        
+        // Swipe threshold
+        if (Math.abs(deltaX) > 100) {
+            if (deltaX > 0) {
+                // Swiped right - go to previous
+                cards[currentIndex].style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+                showPrevCard();
+            } else {
+                // Swiped left - go to next
+                showNextCard();
+            }
+        } else {
+            // Return to position
+            cards[currentIndex].style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+        }
+        
+        currentX = 0;
+        startX = 0;
+    }
+    
+    // Add event listeners to current card
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', handleStart);
+        card.addEventListener('touchmove', handleMove);
+        card.addEventListener('touchend', handleEnd);
+        
+        card.addEventListener('mousedown', handleStart);
+        card.addEventListener('mousemove', handleMove);
+        card.addEventListener('mouseup', handleEnd);
+        card.addEventListener('mouseleave', handleEnd);
+    });
+    
+    updateCounter();
 }

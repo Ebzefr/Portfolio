@@ -585,20 +585,30 @@
         max-width: 100%;
     }
 
-    .wireframe-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem;
+     .wireframe-grid {
+        display: none; /* Hide grid on mobile */
+    }
 
+    .card-deck-container {
+        display: block; /* Show card deck on mobile */
+    }
+
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
     }
 
     .color-square {
-        width: 120px;
-        height: 120px;
-        font-size: 0.8rem;
+        height: 100px;
+        font-size: 0.75rem;
     }
 
-    .hifi-grid {
-        grid-template-columns: repeat(3, 1fr);
+   .hifi-grid {
+        display: none; /* Hide grid on tablet/mobile */
+    }
+
+    .card-deck-container.hifi-deck {
+        display: block; /* Show card deck for hi-fi on mobile */
     }
 }
 
@@ -623,13 +633,24 @@
         font-size: 1.3rem;
     }
 
-    .wireframe-grid {
-        grid-template-columns: 1fr;
+     .wireframe-grid {
+        display: none; /* Keep hidden on small mobile */
+    }
+
+    .card-deck-container {
+        height: 450px; /* Slightly smaller on very small screens */
+        max-width: 100%;
+    }
+
+
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
     }
 
     .color-square {
-        width: 100%;
-        height: 100px;
+        height: 60px;
+        font-size: 0.65rem;
     }
 
     .pain-points,
@@ -642,7 +663,7 @@
     }
 
     .hifi-grid {
-        grid-template-columns: 1fr;
+        display: none; /* Keep hidden on small mobile */
     }
 }
      
