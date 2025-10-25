@@ -3,13 +3,13 @@
 
 function initLofisCarousels() {
     // Initialize wireframe carousel
-    initAutoCarousel('wireframeCarousel', 'wireframeCounter');
+    initSwipeCarousel('wireframeCarousel');
     
     // Initialize hi-fi carousel
-    initAutoCarousel('hifiCarousel', 'hifiCounter');
+    initSwipeCarousel('hifiCarousel');
 }
 
-function initAutoCarousel(carouselId, counterId) {
+function initSwipeCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);
     if (!carousel) {
         console.log(`Carousel ${carouselId} not found`);
@@ -17,7 +17,6 @@ function initAutoCarousel(carouselId, counterId) {
     }
 
     const cards = carousel.querySelectorAll('.deck-card');
-    const counter = document.getElementById(counterId);
     
     if (cards.length === 0) {
         console.log(`No cards found in ${carouselId}`);
@@ -25,89 +24,70 @@ function initAutoCarousel(carouselId, counterId) {
     }
 
     let currentIndex = 0;
-    let intervalId;
     let touchStartX = 0;
     let touchEndX = 0;
+    let isDragging = false;
+
+    function showCard(index) {
+        // Remove active class from all cards
+        cards.forEach(card => {
+            card.classList.remove('active');
+        });
+        
+        // Add active class to current card
+        cards[index].classList.add('active');
+        currentIndex = index;
+    }
 
     function showNextCard() {
-        // Remove active class from current card
-        cards[currentIndex].classList.remove('active');
-        cards[currentIndex].classList.add('exiting');
-
-        // Move to next card
-        currentIndex = (currentIndex + 1) % cards.length;
-
-        // Show next card after animation
+        const nextIndex = (currentIndex + 1) % cards.length;
+        
+        // Add exit animation to current card
+        cards[currentIndex].classList.add('swipe-left');
+        
         setTimeout(() => {
-            // Remove exiting class from all cards
-            cards.forEach(card => card.classList.remove('exiting'));
-            
-            // Add active class to new card
-            cards[currentIndex].classList.add('active');
-            
-            // Update counter
-            if (counter) {
-                counter.textContent = currentIndex + 1;
-            }
-        }, 500);
+            cards[currentIndex].classList.remove('swipe-left');
+            showCard(nextIndex);
+        }, 300);
     }
 
     function showPreviousCard() {
-        // Remove active class from current card
-        cards[currentIndex].classList.remove('active');
-        cards[currentIndex].classList.add('exiting');
-
-        // Move to previous card
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-
-        // Show previous card after animation
+        const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
+        
+        // Add exit animation to current card
+        cards[currentIndex].classList.add('swipe-right');
+        
         setTimeout(() => {
-            // Remove exiting class from all cards
-            cards.forEach(card => card.classList.remove('exiting'));
-            
-            // Add active class to new card
-            cards[currentIndex].classList.add('active');
-            
-            // Update counter
-            if (counter) {
-                counter.textContent = currentIndex + 1;
-            }
-        }, 500);
-    }
-
-    // Start auto-sliding
-    function startAutoSlide() {
-        if (intervalId) clearInterval(intervalId);
-        intervalId = setInterval(showNextCard, 5000); // 1 second
-    }
-
-    // Stop auto-sliding
-    function stopAutoSlide() {
-        if (intervalId) {
-            clearInterval(intervalId);
-            intervalId = null;
-        }
+            cards[currentIndex].classList.remove('swipe-right');
+            showCard(prevIndex);
+        }, 300);
     }
 
     // Touch event handlers
     function handleTouchStart(e) {
         touchStartX = e.changedTouches[0].screenX;
-        stopAutoSlide(); // Pause auto-slide during swipe
+        isDragging = true;
+    }
+
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        touchEndX = e.changedTouches[0].screenX;
     }
 
     function handleTouchEnd(e) {
-        touchEndX = e.changedTouches[0].screenX;
+        if (!isDragging) return;
+        isDragging = false;
         handleSwipe();
-        startAutoSlide(); // Resume auto-slide after swipe
     }
 
     function handleSwipe() {
         const swipeThreshold = 50; // Minimum swipe distance
+        const diff = touchStartX - touchEndX;
         
-        if (touchEndX < touchStartX - swipeThreshold) {
+        if (diff > swipeThreshold) {
             // Swiped left - go to next
             showNextCard();
-        } else if (touchEndX > touchStartX + swipeThreshold) {
+        } else if (diff < -swipeThreshold) {
             // Swiped right - go to previous
             showPreviousCard();
         }
@@ -115,29 +95,43 @@ function initAutoCarousel(carouselId, counterId) {
 
     // Add touch event listeners
     carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
     carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
 
-    // Start the carousel
-    startAutoSlide();
+    // Mouse drag support for desktop testing
+    carousel.addEventListener('mousedown', (e) => {
+        touchStartX = e.screenX;
+        isDragging = true;
+    });
 
-    // Pause on hover (optional - desktop only)
-    carousel.addEventListener('mouseenter', stopAutoSlide);
-    carousel.addEventListener('mouseleave', startAutoSlide);
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        touchEndX = e.screenX;
+    });
 
-    // Store cleanup function
-    carousel._cleanup = stopAutoSlide;
+    carousel.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        touchEndX = e.screenX;
+        handleSwipe();
+    });
+
+    carousel.addEventListener('mouseleave', (e) => {
+        if (isDragging) {
+            isDragging = false;
+        }
+    });
+
+    // Show first card initially
+    showCard(0);
     
-    console.log(`Carousel ${carouselId} initialized with ${cards.length} cards (auto-slide: 1s, swipe enabled)`);
+    console.log(`Swipe carousel ${carouselId} initialized with ${cards.length} cards`);
 }
 
 // Clean up all carousels when modal closes
 function cleanupCarousels() {
-    ['wireframeCarousel', 'hifiCarousel'].forEach(id => {
-        const carousel = document.getElementById(id);
-        if (carousel && carousel._cleanup) {
-            carousel._cleanup();
-        }
-    });
+    // No timers to clean up, just reset
+    console.log('Carousels cleaned up');
 }
 
 // Export for use in modal

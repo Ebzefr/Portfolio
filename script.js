@@ -463,16 +463,13 @@ function buildLofisModal(project) {
                 
                 <!-- Auto-Carousel for Mobile Wireframes -->
                 <div class="card-deck-container" id="wireframeCarousel">
-                    <div class="swipe-instruction">Auto-sliding every 1 second • Swipe to navigate</div>
+                    <div class="swipe-instruction">← Swipe to navigate →</div>
                     <div class="card-deck">
                         ${project.design.wireframes.map((img, index) => `
                             <div class="deck-card ${index === 0 ? 'active' : ''}">
                                 <img src="${img}" alt="Wireframe ${index + 1}">
                             </div>
                         `).join('')}
-                    </div>
-                    <div class="card-counter">
-                        <span id="wireframeCounter">1</span> / ${project.design.wireframes.length}
                     </div>
                 </div>
                 
@@ -514,16 +511,13 @@ function buildLofisModal(project) {
                 
                 <!-- Auto-Carousel for Mobile Hi-Fi -->
                 <div class="card-deck-container" id="hifiCarousel">
-                    <div class="swipe-instruction">Auto-sliding every 1 second • Swipe to navigate</div>
+                    <div class="swipe-instruction">← Swipe to navigate →</div>
                     <div class="card-deck">
                         ${project.design.hiFidelityScreens.map((img, index) => `
                             <div class="deck-card ${index === 0 ? 'active' : ''}">
                                 <img src="${img}" alt="Hi-Fi ${index + 1}">
                             </div>
                         `).join('')}
-                    </div>
-                    <div class="card-counter">
-                        <span id="hifiCounter">1</span> / ${project.design.hiFidelityScreens.length}
                     </div>
                 </div>
             </div>
