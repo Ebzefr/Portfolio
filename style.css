@@ -1396,7 +1396,8 @@ footer p{
     margin: 2rem 0 3rem 0;
 }
 
-card-deck-container {
+/* Card Deck Container (for mobile) */
+.card-deck-container {
     position: relative;
     width: 100%;
     max-width: 400px;
@@ -1404,7 +1405,7 @@ card-deck-container {
     margin: 2rem auto 3rem;
     perspective: 1000px;
     display: none; /* Hidden by default, shown on mobile */
-    z-index: 1;
+    z-index: 1; /* Keep it below other content */
 }
 
 .card-deck {
@@ -1421,24 +1422,31 @@ card-deck-container {
     overflow: hidden;
     border: 2px solid rgba(241, 90, 36, 0.3);
     background: rgba(30, 30, 30, 0.9);
-    cursor: grab;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-     z-index: auto;
-}
-
-.deck-card:active {
-    cursor: grabbing;
-}
-
-.deck-card.swiped-left {
-    transform: translateX(-150%) rotate(-30deg);
     opacity: 0;
+    transform: scale(0.9) translateY(20px);
 }
 
-.deck-card.swiped-right {
-    transform: translateX(150%) rotate(30deg);
-    opacity: 0;
+.deck-card.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 10;
+}
+
+.deck-card.exiting {
+    animation: swipeOut 0.5s ease forwards;
+}
+
+@keyframes swipeOut {
+    0% {
+        transform: scale(1) translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9) translateX(-120%) rotate(-15deg);
+        opacity: 0;
+    }
 }
 
 .deck-card img {

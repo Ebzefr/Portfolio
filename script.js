@@ -224,17 +224,21 @@ function openProject(projectId) {
     document.getElementById('projectModal').style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
-    // Initialize card decks for Lofis App after modal is shown
-    if (projectId === 'app') {
+    // Initialize auto-carousel for Lofis App after modal is shown
+    if (projectId === 'app' && window.initLofisCarousels) {
         setTimeout(() => {
-            initCardDeck('wireframeDeck', 'wireframeCounter', project.design.wireframes);
-            initCardDeck('hifiDeck', 'hifiCounter', project.design.hiFidelityScreens);
+            window.initLofisCarousels();
         }, 200);
     }
 }
 
 // Close modal
 function closeProjectModal() {
+    // Cleanup carousels if they exist
+    if (window.cleanupCarousels) {
+        window.cleanupCarousels();
+    }
+    
     document.getElementById('projectModal').style.display = 'none';
     document.body.style.overflow = 'auto'; // Restore scrolling
 }
@@ -457,11 +461,19 @@ function buildLofisModal(project) {
                     `).join('')}
                 </div>
                 
-                <!-- Card Deck for Mobile Wireframes -->
-                <div class="card-deck-container wireframe-deck">
-                    <div class="swipe-instruction">← Swipe to browse wireframes →</div>
-                    <div class="card-deck" id="wireframeDeck"></div>
-                    <div class="card-counter" id="wireframeCounter">1 / ${project.design.wireframes.length}</div>
+                <!-- Auto-Carousel for Mobile Wireframes -->
+                <div class="card-deck-container" id="wireframeCarousel">
+                    <div class="swipe-instruction">Auto-sliding every 1 second • Swipe to navigate</div>
+                    <div class="card-deck">
+                        ${project.design.wireframes.map((img, index) => `
+                            <div class="deck-card ${index === 0 ? 'active' : ''}">
+                                <img src="${img}" alt="Wireframe ${index + 1}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="card-counter">
+                        <span id="wireframeCounter">1</span> / ${project.design.wireframes.length}
+                    </div>
                 </div>
                 
                 <h3>Colour</h3>
@@ -500,11 +512,19 @@ function buildLofisModal(project) {
                     `).join('')}
                 </div>
                 
-                <!-- Card Deck for Mobile Hi-Fi -->
-                <div class="card-deck-container hifi-deck">
-                    <div class="swipe-instruction">← Swipe to browse designs →</div>
-                    <div class="card-deck" id="hifiDeck"></div>
-                    <div class="card-counter" id="hifiCounter">1 / ${project.design.hiFidelityScreens.length}</div>
+                <!-- Auto-Carousel for Mobile Hi-Fi -->
+                <div class="card-deck-container" id="hifiCarousel">
+                    <div class="swipe-instruction">Auto-sliding every 1 second • Swipe to navigate</div>
+                    <div class="card-deck">
+                        ${project.design.hiFidelityScreens.map((img, index) => `
+                            <div class="deck-card ${index === 0 ? 'active' : ''}">
+                                <img src="${img}" alt="Hi-Fi ${index + 1}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="card-counter">
+                        <span id="hifiCounter">1</span> / ${project.design.hiFidelityScreens.length}
+                    </div>
                 </div>
             </div>
         </section>
@@ -740,3 +760,66 @@ function initCardDeck(deckId, counterId, images) {
     
     updateCounter();
 }
+
+// Auto-carousel function for wireframes and hi-fi designs
+function initAutoCarousel(carouselId, counterId, totalCards) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const cards = carousel.querySelectorAll('.deck-card');
+    const counter = document.getElementById(counterId);
+    let currentIndex = 0;
+    let intervalId;
+
+    function showNextCard() {
+        // Remove active class from current card
+        cards[currentIndex].classList.remove('active');
+        cards[currentIndex].classList.add('exiting');
+
+        // Move to next card
+        currentIndex = (currentIndex + 1) % totalCards;
+
+        // Show next card after animation
+        setTimeout(() => {
+            // Remove exiting class from all cards
+            cards.forEach(card => card.classList.remove('exiting'));
+            
+            // Add active class to new card
+            cards[currentIndex].classList.add('active');
+            
+            // Update counter
+            if (counter) {
+                counter.textContent = currentIndex + 1;
+            }
+        }, 300);
+    }
+
+    // Start auto-sliding
+    function startAutoSlide() {
+        intervalId = setInterval(showNextCard, 5000); // 5 seconds
+    }
+
+    // Stop auto-sliding
+    function stopAutoSlide() {
+        if (intervalId) {
+            clearInterval(intervalId);
+        }
+    }
+
+    // Start the carousel
+    startAutoSlide();
+
+    // Pause on hover (optional)
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    // Clean up on modal close
+    window.addEventListener('modalClosed', stopAutoSlide);
+}
+
+// Update close modal function to trigger cleanup
+const originalCloseModal = closeProjectModal;
+closeProjectModal = function() {
+    window.dispatchEvent(new Event('modalClosed'));
+    originalCloseModal();
+};
