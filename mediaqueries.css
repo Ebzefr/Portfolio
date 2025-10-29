@@ -348,13 +348,13 @@
     }
 }      
 
-/* Recent Section Media Queries */
+/* Project Section Media Queries */
 @media (max-width: 768px) {
     .recent-container {
         padding: 0 1rem;
     }
 
-    .recent-title {
+    .prroject-title {
         font-size: 3rem;
         margin-bottom: 2rem;
     }
@@ -442,87 +442,6 @@
         text-align: center;
     }
 }
-
-/* Projects Page Media Queries */
-@media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: rgba(136, 136, 136, 0.98);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                gap: 0;
-                padding: 2rem 0;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 1rem 0;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-link {
-                font-size: 1rem;
-                padding: 1rem;
-                display: block;
-            }
-
-            .projects-container {
-                padding: 0 1rem;
-            }
-
-            .projects-title {
-                font-size: 3rem;
-                margin-bottom: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .projects-title {
-                font-size: 2.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .project-card {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .project-overlay {
-                padding: 1.5rem 1rem 1rem;
-            }
-
-            .project-name {
-                font-size: 1rem;
-            }
-
-            .project-tech {
-                font-size: 0.8rem;
-            }
-        }
 
  /*Media Queries for Lofis App modal details*/
   @media (max-width: 1024px) {

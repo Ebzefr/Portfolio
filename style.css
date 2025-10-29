@@ -568,7 +568,6 @@ body::before {
     display: flex;
     align-items: center;
     padding: 4rem 0;
-    background-color: #000000;
 }
 
 .experience-container {
