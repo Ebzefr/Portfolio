@@ -148,6 +148,9 @@ function openProject(projectId) {
     } else if (projectId === 'websecura') {
         // WebSecura modal content
         modalHTML = buildWebSecuraModal(project);
+    }else if (projectId === 'spotify') {
+        // WebSecura modal content
+        modalHTML = buildAnalyticsModal(project);
     }
 
     // Insert content and show modal

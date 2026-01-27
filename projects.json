@@ -338,6 +338,77 @@
         "live": "https://lookerstudio.google.com/reporting/c8c6d4c2-0522-4052-ad9c-b164149b2aef",
         "github": "https://github.com/Ebzefr/E-Commerce"
       }
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify Prediction",
+      "shortName": "Spotify",
+      "logo": "Assets/Spotify.webp",
+      "author": "Ebenezer Obi",
+      "date": "December 2025",
+      "coverImage": "Assets/S-cover.webp",
+      "category": "Data Analytics",
+      "description": "An end-to-end data product that predicts a user’s future Spotify Wrapped using historical streaming data.",
+      "detailedDescription": "The project ingests extended Spotify listening history, applies time-series forecasting to predict top artists, songs, albums, and total listening time for the upcoming year, and presents the results in a fully animated Spotify Wrapped–inspired web experience.",
+      "techStack": [
+        {
+          "name": "Python",
+          "icon": "Assets/Python.png"
+        },
+        {
+          "name": "Jupyter",
+          "icon": "Assets/Jupyter.png"
+        },
+        {
+          "name": "React",
+          "icon": "Assets/React.png"
+        },
+        {
+          "name": "Vercel",
+          "icon": "Assets/Vercel.png"
+        }
+      ],
+      "problems": [
+        "Spotify Wrapped is retrospective and offers no forward-looking insights into user behavior.",
+        "Raw streaming data is noisy, high-volume, and difficult to translate into meaningful trends.",
+        "Analytical results are often disconnected from user-friendly product experiences."
+      ],
+      "goals": [
+        "Predict future listening behavior (artists, songs, albums, minutes listened) using historical data.",
+        "Translate model outputs into a compelling, product-quality user experience.",
+        "Build a reproducible pipeline that connects data science outputs directly to a frontend application."
+      ],
+      "insights": {
+        "dashboardImage": "Assets/S-dash.png",
+        "findings": [
+          {
+            "icon": "Assets/J-list.webp",
+            "text": "Listening behavior shows strong artist-level persistence, making top artists more predictable than individual tracks."
+          },
+          {
+            "icon": "Assets/J-idea.webp",
+            "text": "Aggregating monthly listening data significantly improves forecast stability compared to daily data."
+          },
+          {
+            "icon": "Assets/J-skills.webp",
+            "text": "A small subset of artists accounts for a disproportionate share of future listening time, reflecting long-term user affinity."
+          }
+        ]
+      },
+      "challenges": [
+        "High variance and sparsity in track-level listening data.",
+        "Negative or unrealistic predictions from time-series models.",
+        "Bridging the gap between analytical outputs and an animated, consumer-grade UI."
+      ],
+      "solutions": [
+        "Focused modeling on top artists and tracks to reduce noise and improve signal quality.",
+        "Applied post-processing constraints (e.g., clipping negative forecasts) to ensure realistic predictions.",
+        "Exported model results as structured JSON to enable seamless integration with a React + animation-driven frontend."
+      ],
+      "links": {
+        "live": "https://spotify-prediction-rosy.vercel.app/",
+        "github": "https://github.com/Ebzefr/Spotify-Prediction"
+      }
     }
   ]
 }
