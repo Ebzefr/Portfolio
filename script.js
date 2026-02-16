@@ -42,10 +42,10 @@ window.addEventListener('scroll', () => {
 //Profile Section Function
 // Text rotation animation
 const roles = [
-    'FullStack Developer',
+    'Software Engineer',
+    'Product Engineer',
     'Data Analyst',
-    'Cloud Specialist',
-    'UX/UI Designer'
+    'Cloud Specialist'
 ];
 
 let currentRoleIndex = 0;
@@ -92,17 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Project navigation function
-        function openProject(projectId) {
-            // Navigate to individual project HTML files
-            const projectPages = {
-                'clouddey': 'cloud.html',
-                'portfolio': 'https://ebze.dev/', 
-                'websecura': 'web.html',
-                'app': 'lofis.html',
-                'ecommerce': 'lofisweb.html',
-                'analytics': 'job.html'
-            };
-            
+        function openProject(projectId) {            
             if (projectPages[projectId]) {
                 window.location.href = projectPages[projectId];
             }
@@ -149,8 +139,11 @@ function openProject(projectId) {
         // WebSecura modal content
         modalHTML = buildWebSecuraModal(project);
     }else if (projectId === 'spotify') {
-        // WebSecura modal content
+        // Spotify modal content
         modalHTML = buildAnalyticsModal(project);
+    } else if (projectId === 'clouddey') {
+        // WebSecura modal content
+        modalHTML = buildWebSecuraModal(project);
     }
 
     // Insert content and show modal

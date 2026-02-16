@@ -272,7 +272,7 @@
       "id": "ecommerce",
       "name": "E-Commerce Dashboard",
       "shortName": "E-Commerce",
-      "logo": "Assets/Lofis.png",
+      "logo": "Assets/Lofis.webp",
       "author": "Ebenezer Obi",
       "date": "August 2025",
       "coverImage": "Assets/E-cover.png",
@@ -336,7 +336,7 @@
       ],
       "links": {
         "live": "https://lookerstudio.google.com/reporting/c8c6d4c2-0522-4052-ad9c-b164149b2aef",
-        "github": "https://github.com/Ebzefr/E-Commerce"
+        "github": "https://github.com/Ebzefr/Ecomm-Analysis"
       }
     },
     {
@@ -408,6 +408,80 @@
       "links": {
         "live": "https://spotify-prediction-rosy.vercel.app/",
         "github": "https://github.com/Ebzefr/Spotify-Prediction"
+      }
+    },
+    {
+      "id": "clouddey",
+      "name": "Clouddey",
+      "shortName": "Clouddey",
+      "logo": "Assets/Cloud-logo.webp",
+      "author": "Ebenezer Obi",
+      "date": "June 2025",
+      "coverImage": "Assets/C-Cover.png",
+      "category": "Cloud File",
+      "description": "Clouddey is a cloud-based temporary file-sharing application that allows users to securely upload files, set passwords and expiration times, and share download links via email. Files automatically expire and self-delete, ensuring privacy and minimal cloud storage usage.",
+      "techStack": [
+        {
+          "name": "React",
+          "icon": "Assets/React.png"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Assets/Tailwind CSS.png"
+        },
+        {
+          "name": "Javascript",
+          "icon": "Assets/JavaScript.png"
+        },
+        {
+          "name": "Node",
+          "icon": "Assets/Node.js.png"
+        },
+        {
+          "name": "Vercel",
+          "icon": "Assets/Vercel.png"
+        }
+      ],
+      "problems": [
+        "Files shared via messaging apps remain permanently accessible.",
+        "Sensitive files are often shared without protection.",
+        "Sending files manually is inefficient."
+      ],
+      "goals": [
+        "Build a system where files automatically expire and self-delete.",
+        "Implement optional password protection with limited access attempts.",
+        "Automate secure link generation and email delivery to recipients."
+      ],
+      "features": {
+        "displayImage": "Assets/C-display.png",
+        "keyFunctions": [
+          {
+            "icon": "Assets/W-real.webp",
+            "text": "Serverless architecture simplifies scaling, vercel functions handled backend logic without managing servers."
+          },
+          {
+            "icon": "Assets/W-developer.webp",
+            "text": "Security must be enforced on the backend, password validation and attempt limiting cannot rely on frontend logic."
+          },
+          {
+            "icon": "Assets/W-modern.webp",
+            "text": "Ephemeral storage requires careful lifecycle control, auto-deletion logic must handle both expiration and download-triggered deletion reliably."
+          }
+        ]
+      },
+      "challenges": [
+        "Handling file uploads in a serverless environment.",
+        "Preventing brute-force password attempts.",
+        "Managing expiration timers reliably."
+      ],
+      "solutions": [
+        "Used Formidable v3 and temporary /tmp storage before moving files to Vercel Blob.",
+        "Implemented server-side attempt limiting (2 attempts max).",
+        "Stored timestamps and validated expiration during every download request, triggering automatic deletion when expired."
+      ],
+      "links": {
+        "live": "https://clouddey.vercel.app/",
+        "github": "https://github.com/Ebzefr/Clouddey"
       }
     }
   ]
