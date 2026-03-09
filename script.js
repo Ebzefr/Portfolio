@@ -142,8 +142,11 @@ function openProject(projectId) {
         // Spotify modal content
         modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'clouddey') {
-        // WebSecura modal content
+        // Clouddey modal content
         modalHTML = buildWebSecuraModal(project);
+    }else if (projectId === 'lofisweb') {
+        // Lofis Web modal content
+        modalHTML = buildLofisWebModal(project);
     }
 
     // Insert content and show modal
@@ -511,6 +514,109 @@ function buildWebSecuraModal(project) {
                 <div class="display">
                     <div class="display-image">
                         <img src="${project.features.displayImage}" alt="Display">
+                    </div>
+                </div>
+                
+                <h3>Key Functions</h3>
+                <div class="function-grid">
+                    ${project.features.keyFunctions.map(func => `
+                        <div class="function-icon">
+                            <img src="${func.icon}" alt="Function">
+                            <p>${func.text}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="challenge-container">
+                    <div class="challenges">
+                        <h3>Challenges</h3>
+                        <ul>
+                            ${project.challenges.map(challenge => `<li>${challenge}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="solutions">
+                        <h3>Solution</h3>
+                        <ul>
+                            ${project.solutions.map(solution => `<li>${solution}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <a href="${project.links.live}" target="_blank" class="oval-button2">Live Preview</a>
+                    <a href="${project.links.github}" target="_blank" class="oval-button2">GitHub</a>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+// Build LofisWeb modal
+function buildLofisWebModal(project) {
+    return `
+        <section class="web-detail-section">
+            <div class="web-header">
+                <h1>${project.name}</h1>
+                <div class="author-date">
+                    <div class="author">${project.author}</div>
+                    <div class="date">${project.date}</div>
+                </div>
+            </div>
+
+            <div class="project-intro">
+                <div class="project-text">
+                    <p>${project.description}</p>
+                </div>
+                <div class="project-cover">
+                    <img src="${project.coverImage}" alt="${project.name}">
+                </div>
+            </div>
+
+            <div class="project-sections">
+                <div class="tech-stack">
+                    <h2>Tech Stack</h2>
+                    <div class="tech-grid">
+                        ${project.techStack.map(tech => `
+                            <div class="tech-icon">
+                                <img src="${tech.icon}" alt="${tech.name}">
+                                <p>${tech.name}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="problem-solution">
+                    <h2>Problem</h2>
+                    <ul>
+                        ${project.problems.map(problem => `<li>${problem}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="goals">
+                    <h2>Goals</h2>
+                    <ul>
+                        ${project.goals.map(goal => `<li>${goal}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <div class="feature-container">
+                <h2>Features</h2>
+                <p>This section highlights the core results of the analysis and gives a visual preview of the dashboard in action. You'll find key trends uncovered from the data, the challenges faced during development, and an interactive link to explore the project firsthand.</p>
+                
+                <h3>User Side</h3>
+                <div class="display">
+                    <div class="display-image">
+                        <img src="${project.features.displayImage}" alt="Display">
+                    </div>
+                </div>
+
+                <h3>Admin Side</h3>
+                <div class="display">
+                    <div class="display-image">
+                        <img src="${project.features.UIImage}" alt="UI">
                     </div>
                 </div>
                 

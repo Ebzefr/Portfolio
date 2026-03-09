@@ -483,6 +483,94 @@
         "live": "https://clouddey.vercel.app/",
         "github": "https://github.com/Ebzefr/Clouddey"
       }
+    },
+    {
+      "id": "lofisweb",
+      "name": "Lofis Restaurant Website",
+      "shortName": "Lofis Web",
+      "logo": "Assets/Lofis.webp",
+      "author": "Ebenezer Obi",
+      "date": "June 2025",
+      "coverImage": "Assets/Lo-Cover.png",
+      "category": "Lofis",
+      "description": "Full-stack restaurant management system with customer ordering portal and admin dashboard. Features include menu management, order processing, user authentication, role-based access, and real-time analytics. Built with ASP.NET Core, EF Core, SQL Server, and deployed to production.",
+      "techStack": [
+        {
+          "name": "ASP.NET",
+          "icon": "Assets/ASP.png"
+        },
+        {
+          "name": "HTML",
+          "icon": "Assets/HTML5.png"
+        },
+        {
+          "name": "CSS",
+          "icon": "Assets/CSS3.png"
+        },
+        {
+          "name": "Javascript",
+          "icon": "Assets/JavaScript.png"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Assets/Tailwind CSS.png"
+        },
+        {
+          "name": "MS SQL",
+          "icon": "Assets/MS SQL.png"
+        },
+        {
+          "name": "CSharp",
+          "icon": "Assets/CSharp.png"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "Assets/Bootstrap.png"
+        }
+      ],
+      "problems": [
+    "Manual restaurant order management is time-consuming and error-prone.",
+    "Customer ordering systems often lack real-time menu updates and order tracking.",
+    "Restaurant data (sales, inventory, customer activity) is difficult to analyze without dedicated tools."
+  ],
+  "goals": [
+    "Build a dual-interface system: customer-facing storefront and comprehensive admin dashboard.",
+    "Implement real-time order management with status tracking and role-based access control.",
+    "Provide actionable analytics with interactive visualizations for business insights."
+  ],
+      "features": {
+        "displayImage": "Assets/L-User.png",
+        "UIImage": "Assets/L-Admin.png",
+
+        "keyFunctions": [
+          {
+            "icon": "Assets/W-real.webp",
+      "text": "Role-based authentication separates customer and admin experiences, ASP.NET Core Identity handles secure registration, login, and authorization middleware."
+          },
+          {
+            "icon": "Assets/W-developer.webp",
+      "text": "Entity Framework Core manages complex relationships (users, orders, basket items, food items) with foreign keys, ensuring data integrity across transactions."
+          },
+          {
+            "icon": "Assets/W-modern.webp",
+      "text": "RESTful API controllers feed Chart.js visualizations, aggregating real-time metrics like revenue trends, order status distribution, and top-selling items without page reloads."
+          }
+        ]
+      },
+      "challenges": [
+    "Deploying to a subfolder (/Lofis) on Plesk broke all routing and API calls.",
+    "Cart data persistence across sessions required careful state management.",
+    "Identity scaffolding conflicts caused duplicate registration errors."
+  ],
+  "solutions": [
+    "Configured UsePathBase middleware and updated all navigation/API calls to use Razor's @Url.Content helper for path-base-aware URLs.",
+    "Created BasePageModel pattern with LoadCartCountAsync method, ensuring cart count displays consistently across all pages via database queries.",
+    "Consolidated Identity registration by removing AddDefaultIdentity and using AddIdentity with AddDefaultUI to prevent service duplication."
+  ],
+      "links": {
+        "live": "https://2223073.win.studentwebserver.co.uk/Lofis",
+        "github": "https://github.com/Ebzefr/Lofis-J100152"
+      }
     }
   ]
 }
