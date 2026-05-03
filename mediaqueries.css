@@ -348,7 +348,6 @@
     }
 }      
 
-/* Project Section Media Queries */
 @media (max-width: 768px) {
     .recent-container {
         padding: 0 1rem;
@@ -360,9 +359,33 @@
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        margin-bottom: 2rem;
+        gap: 12px;
+    }
+
+    .project-logo-wrap {
+        width: 110px;
+        padding: 14px;
+    }
+
+    .project-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .project-body {
+        padding: 16px 16px 44px;
+    }
+
+    .project-name {
+        font-size: 0.95rem;
+    }
+
+    .project-desc {
+        font-size: 0.82rem;
+    }
+
+    .project-desc-wrap {
+        max-height: 72px;
     }
 
     .more-projects-btn-container {
@@ -381,13 +404,46 @@
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 10px;
     }
 
     .project-card {
-        max-width: 300px;
-        margin: 0 auto;
+        min-height: 120px;
+        /* remove the old max-width/margin auto — not needed for list layout */
+    }
+
+    .project-logo-wrap {
+        width: 90px;
+        padding: 12px;
+    }
+
+    .project-image {
+        width: 64px;
+        height: 64px;
+    }
+
+    .project-name {
+        font-size: 0.88rem;
+        /* allow wrapping on very small screens */
+        white-space: normal;
+    }
+
+    .project-category {
+        display: none; /* hides the pill badge on tiny screens to prevent overflow */
+    }
+
+    .project-desc-wrap {
+        max-height: 60px;
+    }
+
+    .project-desc {
+        font-size: 0.8rem;
+    }
+
+    .view-details {
+        font-size: 0.72rem;
+        bottom: 10px;
+        right: 14px;
     }
 }
 
