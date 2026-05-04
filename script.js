@@ -132,6 +132,9 @@ function openProject(projectId) {
     } else if (projectId === 'ecommerce') {
         // E-Commerce Dashboard modal content (uses same structure as analytics)
         modalHTML = buildAnalyticsModal(project);
+      }  else if (projectId === 'naive-bayes-predictor') {
+        // Naive Bayes Predictor modal content
+        modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'app') {
         // Lofis App modal content
         modalHTML = buildLofisModal(project);

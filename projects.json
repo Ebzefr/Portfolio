@@ -340,6 +340,85 @@
       }
     },
     {
+  "id": "naive-bayes-predictor",
+  "name": "Student Performance Predictor",
+  "shortName": "ML Predictor",
+  "logo": "Assets/NaiveBayes.webp",
+  "author": "Ebenezer Obi",
+  "date": "April 2026",
+  "coverImage": "Assets/NB-cover.png",
+  "category": "Machine Learning",
+  "description": "A production-ready machine learning web application that predicts student performance levels using a Gaussian Naive Bayes classifier built entirely from scratch. The interactive dashboard provides real-time predictions with confidence analysis, feature importance visualization, and comprehensive model evaluation metrics — transforming academic coursework into a deployable product.",
+  "detailedDescription": "The application predicts student performance (High/Medium/Low) based on five behavioral features: part-time job status, absence days, extracurricular activities, weekly study hours, and gender. Built without sklearn, the classifier implements Bayes' Theorem with Gaussian probability distributions, log-space calculations for numerical stability, and custom feature contribution analysis. The dark-themed UI provides confidence thresholds, uncertainty warnings, probability distributions, and interactive Plotly visualizations.",
+  "techStack": [
+    {
+      "name": "Python",
+      "icon": "Assets/Python.png"
+    },
+    {
+      "name": "Streamlit",
+      "icon": "Assets/Streamlit.png"
+    },
+    {
+      "name": "Plotly",
+      "icon": "Assets/Ploty.png"
+    },
+    {
+      "name": "NumPy",
+      "icon": "Assets/NumPy.png"
+    },
+    {
+      "name": "Pandas",
+      "icon": "Assets/Pandas.png"
+    }
+  ],
+  "problems": [
+    "Machine learning models are often black boxes — users receive predictions without understanding confidence levels or feature contributions.",
+    "Academic ML projects rarely make it to production, remaining as Jupyter notebooks or command-line scripts.",
+    "Naive Bayes implementations in sklearn hide the underlying mathematics, limiting deep understanding of probabilistic classification.",
+    "Low-confidence predictions (e.g., 50.7%) are often presented with the same certainty as high-confidence ones, misleading decision-makers."
+  ],
+  "goals": [
+    "Implement Gaussian Naive Bayes from scratch to demonstrate understanding of Bayes' Theorem, Gaussian probability density functions, and log-probability calculations.",
+    "Build a production-ready web interface that makes ML predictions accessible to non-technical users.",
+    "Create a confidence threshold system that honestly communicates prediction uncertainty.",
+    "Visualize feature contributions to make the classification process interpretable and educational."
+  ],
+  "insights": {
+    "dashboardImage": "Assets/NB-dash.png",
+    "findings": [
+      {
+        "icon": "Assets/J-list.webp",
+        "text": "The model achieves 56% test accuracy on behavioral features alone, demonstrating that academic performance depends on many factors beyond student behavior — a realistic and honest assessment."
+      },
+      {
+        "icon": "Assets/J-idea.webp",
+        "text": "Extreme class imbalance (0.1% Low performers) reveals dataset limitations. The model struggles with rare classes, highlighting the importance of balanced training data in real-world ML applications."
+      },
+      {
+        "icon": "Assets/J-skills.webp",
+        "text": "Confidence thresholds prevent misleading predictions: the system warns users when predictions are uncertain (margin <5% between top classes) rather than presenting low-confidence results as definitive."
+      }
+    ]
+  },
+  "challenges": [
+    "Probability density values for categorical features with low variance exceeded 400,000, making raw likelihoods uninterpretable for users.",
+    "The dataset contained severe class imbalance (High: 57.7%, Medium: 42.2%, Low: 0.1%), causing prediction bias.",
+    "SVG icons initially rendered as raw code in Streamlit's markdown, breaking the UI design.",
+    "Plotly charts rejected 'weight' parameter in font configurations, causing runtime errors during visualization."
+  ],
+  "solutions": [
+    "Developed a relative importance visualization that normalizes likelihood values across classes to percentages, making feature contributions intuitive without sacrificing mathematical accuracy.",
+    "Implemented a three-tier confidence system (High ≥70%, Moderate 55-69%, Low <55%) with margin detection to alert users when predictions are uncertain.",
+    "Created custom SVG icon helper functions that inject styles directly into the opening tag, ensuring proper inline rendering in Streamlit components.",
+    "Stripped invalid Plotly font parameters and configured all charts for dark theme with proper color variables, grid styling, and text contrast."
+  ],
+  "links": {
+    "live": "https://naive-bayes-predictor.streamlit.app/",
+    "github": "https://github.com/Ebzefr/Naive-Bayes-Predictor"
+  }
+},
+    {
       "id": "spotify",
       "name": "Spotify Prediction",
       "shortName": "Spotify",
