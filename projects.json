@@ -264,7 +264,7 @@
         "Used status tags and icons to make output more scannable."
       ],
       "links": {
-        "live": "https://websecura-1.onrender.com",
+        "live": "https://web-secura.vercel.app/",
         "github": "https://github.com/Ebzefr/WebSecura"
       }
     },
