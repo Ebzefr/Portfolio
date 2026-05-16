@@ -199,13 +199,10 @@
       "category": "Web Security",
       "description": "WebSecura is a web-based security analysis tool designed to help developers, security professionals, and everyday users detect and understand vulnerabilities in any public-facing website. It performs comprehensive scanning using OWASP Top 10 principles, HTTP security header checks, SSL/TLS validation, and more — all wrapped in a sleek, intuitive UI.",
       "techStack": [
+        
         {
-          "name": "HTML",
-          "icon": "Assets/HTML5.png"
-        },
-        {
-          "name": "CSS",
-          "icon": "Assets/CSS3.png"
+          "name": "React",
+          "icon": "Assets/React.png"
         },
         {
           "name": "Tailwind",
@@ -214,6 +211,10 @@
         {
           "name": "Javascript",
           "icon": "Assets/JavaScript.png"
+        },
+        {
+          "name": "SQLite",
+          "icon": "Assets/SQLite.png"
         },
         {
           "name": "Python",
