@@ -197,8 +197,7 @@
       "date": "June 2025",
       "coverImage": "Assets/W-Cover.png",
       "category": "Web Security",
-      "description": "WebSecura is a web-based security analysis tool designed to help developers, security professionals, and everyday users detect and understand vulnerabilities in any public-facing website. It performs comprehensive scanning using OWASP Top 10 principles, HTTP security header checks, SSL/TLS validation, and more — all wrapped in a sleek, intuitive UI.",
-      "techStack": [
+"description": "WebSecura is a full-stack web security scanner that enables developers, security professionals, and non-technical users to assess the security posture of any public-facing website in seconds. Built with React and Flask, it performs 13+ automated checks aligned with OWASP Top 10 principles — covering SSL/TLS validation, HTTP security headers, XSS protection, Content Security Policy, cookie security, vulnerable JavaScript library detection, injection risk assessment, and directory traversal exposure. Authenticated users can save scan history, export reports to PDF and CSV, and configure continuous monitoring schedules with automated score-drop alerts — all wrapped in a responsive glassmorphic UI with Clerk-powered authentication.",      "techStack": [
         
         {
           "name": "React",
@@ -226,44 +225,50 @@
         }
       ],
       "problems": [
-        "Users lack easy-to-use tools to perform real-time website security checks.",
-        "Most vulnerability scanners are too technical or require installation/setup.",
-        "Security headers, SSL certs, and basic OWASP protections are often overlooked.",
-        "There's no quick feedback loop for developers to assess basic site security compliance."
-      ],
-      "goals": [
-        "Offer one-click scanning for any public URL",
-        "Provide clear, human-readable recommendations for each failed check",
-        "Support real-time scanning with detailed status output",
-        "Make security insights accessible and understandable to everyone"
-      ],
-      "features": {
-        "displayImage": "Assets/W-display.png",
-        "keyFunctions": [
-          {
-            "icon": "Assets/W-real.webp",
-            "text": "Instantly runs over 15 web security checks including SSL/TLS validation, HTTP headers, XSS, and more."
-          },
-          {
-            "icon": "Assets/W-developer.webp",
-            "text": "Provides clear pass/fail statuses with human-readable descriptions and remediation tips for each issue."
-          },
-          {
-            "icon": "Assets/W-modern.webp",
-            "text": "Clean and responsive design ensures a smooth experience across desktop and mobile devices."
-          }
-        ]
-      },
-      "challenges": [
-        "Some sites failed due to certificate trust issues.",
-        "Parsing headers across inconsistent server responses was tricky.",
-        "Structuring 15+ checks into readable categories required thoughtful UI planning."
-      ],
-      "solutions": [
-        "Solved this by isolating certificate verification errors and informing the user instead of blocking the scan.",
-        "Added robust fallback logic to normalize and interpret results correctly.",
-        "Used status tags and icons to make output more scannable."
-      ],
+  "Users lack easy-to-use tools to perform real-time website security checks.",
+  "Most vulnerability scanners are too technical or require installation/setup.",
+  "Security headers, SSL certs, and OWASP protections are often overlooked by developers.",
+  "There's no quick feedback loop for developers to assess basic site security compliance.",
+  "Developers have no way to monitor sites continuously for security regressions."
+],
+"goals": [
+  "Offer one-click scanning for any public URL with no setup required",
+  "Provide clear, human-readable recommendations with server-specific fix instructions",
+  "Support real-time scanning with detailed pass/fail output across 13+ security checks",
+  "Make security insights accessible and understandable to non-security professionals",
+  "Enable continuous automated monitoring with threshold-based alerting"
+],
+"features": {
+  "displayImage": "Assets/W-display.png",
+  "keyFunctions": [
+    {
+      "icon": "Assets/W-real.webp",
+      "text": "Instantly runs 13+ security checks including SSL/TLS validation, HSTS, CSP, XSS protection, cookie security, clickjacking prevention, vulnerable JS library detection, and OWASP A03 injection risk assessment."
+    },
+    {
+      "icon": "Assets/W-developer.webp",
+      "text": "Provides actionable fix instructions tailored to specific server types (Nginx, Apache, Express, Cloudflare) alongside pass/fail statuses and severity ratings for each issue."
+    },
+    {
+      "icon": "Assets/W-modern.webp",
+      "text": "Authenticated users can save scan history, export reports to PDF and CSV, and set up continuous monitoring schedules with automated alerts when security scores drop."
+    }
+  ]
+},
+"challenges": [
+  "Some sites failed due to SSL certificate trust and hostname mismatch issues.",
+  "Parsing security headers across inconsistent server responses required robust fallback logic.",
+  "Structuring 13+ checks into readable, actionable output required thoughtful UI planning.",
+  "Migrating from a vanilla HTML/CSS/JS frontend to a full React SPA mid-project without losing functionality.",
+  "Handling Vercel's CI=true environment which treats ESLint warnings as hard build errors."
+],
+"solutions": [
+  "Isolated certificate verification errors with a dual-context SSL checker — attempts verified connection first, falls back to analysis-only mode with clear user feedback.",
+  "Added normalisation logic to handle case-insensitive and missing headers gracefully across different server implementations.",
+  "Used severity tags, pass/fail icons, and collapsible actionable fix sections to make output scannable without overwhelming the user.",
+  "Rebuilt the frontend in React with React Router, Context API, and Clerk auth while preserving all existing scan logic and styling.",
+  "Systematically resolved all ESLint errors including unused imports, invalid href attributes, regex escape issues, and useEffect dependency violations."
+],
       "links": {
         "live": "https://web-secura.vercel.app/",
         "github": "https://github.com/Ebzefr/WebSecura"
