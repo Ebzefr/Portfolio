@@ -72,6 +72,77 @@
       }
     },
     {
+  "id": "cqc-workforce",
+  "name": "UK Adult Social Care Workforce & Quality Dashboard",
+  "shortName": "Care Workforce Dashboard",
+  "logo": "Assets/CQC-logo.webp",
+  "author": "Ebenezer Obi",
+  "date": "August 2026",
+  "coverImage": "Assets/CQC-cover.png",
+  "category": "Data Analytics",
+  "description": "An interactive Power BI dashboard analyzing workforce vacancy rates, staff turnover, and CQC care quality ratings across English regions for 2024/25, built on official Skills for Care and CQC open datasets.",
+  "detailedDescription": "Developed using Power BI Desktop with Power Query for data cleaning and DAX for custom measures, this project combines two large public-sector datasets — Skills for Care workforce statistics and CQC's care location ratings — to surface a regional relationship between staffing pressure and care quality outcomes. The project involved substantial real-world data wrangling: reconciling inconsistent regional naming conventions across sources, handling suppressed/redacted values in government exports, and resolving one-to-many join complexities between workforce and regulatory datasets. Given my background working frontline care shifts across the North West, this dashboard also connects directly to the market research underpinning my own care-sector startups.",
+  "techStack": [
+    {
+      "name": "Power BI",
+      "icon": "Assets/PowerBI.png"
+    },
+    {
+      "name": "Power Query",
+      "icon": "Assets/PowerQuery.png"
+    },
+    {
+      "name": "DAX",
+      "icon": "Assets/DAX.png"
+    },
+    {
+      "name": "Skills for Care",
+      "icon": "Assets/SkillsForCare.png"
+    }
+  ],
+  "problems": [
+    "Regional workforce vacancy and turnover data is published separately from CQC quality ratings, with no existing tool linking the two.",
+    "Government data exports use inconsistent region naming and redact small values with suppression symbols, making the raw files unusable without cleaning.",
+    "Staffing pressure and care quality are widely assumed to be linked, but the relationship isn't visualized anywhere accessible."
+  ],
+  "goals": [
+    "Combine Skills for Care workforce data with CQC ratings data into a single relational model.",
+    "Surface a clear visual relationship between regional vacancy rates and the proportion of Good/Outstanding-rated locations.",
+    "Present workforce trends from 2016/17 to 2024/25 alongside a current regional snapshot."
+  ],
+  "insights": {
+    "dashboardImage": "Assets/CQC-Dash.png",
+    "findings": [
+      {
+        "icon": "Assets/J-list.webp",
+        "text": "England's adult social care sector reports a 5.7% average vacancy rate and 20.3% turnover rate across regions in 2024/25, with 80.4% of the 30,000+ rated locations scoring Good or Outstanding."
+      },
+      {
+        "icon": "Assets/J-idea.webp",
+        "text": "Regions with higher vacancy rates, such as the East Midlands and North East, show a visible skew toward lower proportions of Good or Outstanding ratings compared to London and the South East."
+      },
+      {
+        "icon": "Assets/J-skills.webp",
+        "text": "Filled workforce posts have declined nationally since 2016/17, highlighting a sustained staffing contraction well before the more recent post-pandemic period."
+      }
+    ]
+  },
+  "challenges": [
+    "CQC and Skills for Care datasets used different regional naming conventions (e.g. 'Eastern' vs 'East of England'), breaking the join until standardized.",
+    "Multiple numeric columns in both source files used '*' to suppress small values, silently converting entire columns to text and breaking aggregation functions.",
+    "The CQC ratings file was structured with six rows per location (one per rating domain), requiring careful filtering to avoid inflating location counts."
+  ],
+  "solutions": [
+    "Standardized region names across both tables in Power Query using Replace Values before establishing the model relationship.",
+    "Identified and replaced suppression symbols column-by-column, then explicitly retyped each field to Decimal Number so DAX measures could aggregate correctly.",
+    "Filtered the ratings table to the 'Overall' rating domain only, reducing each location to a single representative row before counting."
+  ],
+  "links": {
+    "live": "",
+    "github": ""
+  }
+},
+    {
       "id": "app",
       "name": "Lofis Restaurant App",
       "shortName": "Lofis App",

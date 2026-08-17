@@ -130,9 +130,12 @@ function openProject(projectId) {
         // UK Tech Jobs modal content
         modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'ecommerce') {
-        // E-Commerce Dashboard modal content (uses same structure as analytics)
+        // E-Commerce Dashboard modal content
         modalHTML = buildAnalyticsModal(project);
       }  else if (projectId === 'naive-bayes-predictor') {
+     // CQC Workforce modal content
+        modalHTML = buildAnalyticsModal(project);
+      }  else if (projectId === 'cqc-workforce') {
         // Naive Bayes Predictor modal content
         modalHTML = buildAnalyticsModal(project);
     } else if (projectId === 'app') {

@@ -1,6 +1,3 @@
-// Auto-Carousel Initialization for Lofis App Modal
-// This script should be called after the Lofis modal content is loaded
-
 function initLofisCarousels() {
     // Initialize wireframe carousel
     initSwipeCarousel('wireframeCarousel');
