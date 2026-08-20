@@ -284,7 +284,7 @@
     }
 
     .skills-grid {
-        grid-template-columns: 1fr; /* stack cards on tablet */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
@@ -359,10 +359,11 @@
 
     .skill-divider {
         margin: 0.75rem 0 0.5rem;
-        margin-top: 0.75rem; /* reset auto from desktop */
+        margin-top: 0.75rem; 
     }
 }
 
+/* Projects Section Media Queries */
 @media (max-width: 768px) {
     .recent-container {
         padding: 0 1rem;

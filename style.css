@@ -789,7 +789,7 @@ body::before {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    align-items: stretch; /* both cards same height */
+    align-items: stretch; 
 }
 
 .skill-card {
@@ -804,9 +804,8 @@ body::before {
     transition: all 0.3s ease;
 }
 
-/* Push the second subsection to fill available space */
 .skill-card .skill-divider {
-    margin-top: auto; /* pushes divider + content below it to bottom */
+    margin-top: auto;
     margin-bottom: 0.75rem;
 }
 
@@ -842,14 +841,14 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
-    width: 58px;  /* fixed width keeps names from stretching */
+    width: 58px;  
 }
 
 .skill-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;   /* was 45px */
+    width: 40px;   
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
@@ -863,12 +862,12 @@ body::before {
 }
 
 .skill-icon i {
-    font-size: 17px;  /* was 20px */
+    font-size: 17px;  
     color: #ffffff;
 }
 
 .skill-name {
-    font-size: 0.65rem;  /* was 0.7rem */
+    font-size: 0.65rem;  
     color: #ffffff;
     font-weight: 300;
     text-align: center;
