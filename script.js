@@ -194,10 +194,6 @@ function buildAnalyticsModal(project) {
         <section class="job-detail-section">
             <div class="job-header">
                 <h1>${project.name}</h1>
-                <div class="author-date">
-                    <div class="author">${project.author}</div>
-                    <div class="date">${project.date}</div>
-                </div>
             </div>
 
             <div class="project-intro">
@@ -292,10 +288,6 @@ function buildLofisModal(project) {
         <section class="project-detail-section">
             <div class="project-header">
                 <h1>${project.name}</h1>
-                <div class="author-date">
-                    <div class="author">${project.author}</div>
-                    <div class="date">${project.date}</div>
-                </div>
             </div>
 
             <div class="project-intro">
@@ -468,10 +460,6 @@ function buildWebSecuraModal(project) {
         <section class="web-detail-section">
             <div class="web-header">
                 <h1>${project.name}</h1>
-                <div class="author-date">
-                    <div class="author">${project.author}</div>
-                    <div class="date">${project.date}</div>
-                </div>
             </div>
 
             <div class="project-intro">
@@ -564,10 +552,6 @@ function buildLofisWebModal(project) {
         <section class="web-detail-section">
             <div class="web-header">
                 <h1>${project.name}</h1>
-                <div class="author-date">
-                    <div class="author">${project.author}</div>
-                    <div class="date">${project.date}</div>
-                </div>
             </div>
 
             <div class="project-intro">
