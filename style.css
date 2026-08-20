@@ -773,7 +773,7 @@ body::before {
 .skills-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2rem; 
     width: 100%;
 }
 
@@ -787,43 +787,70 @@ body::before {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    align-items: stretch; /* both cards same height */
 }
 
 .skill-card {
     background-color: rgba(255, 255, 255, 0.05);
     border: 2px solid #f15a24;
     border-radius: 12px;
-    padding: 2rem 1.5rem;
-    min-height: 280px;
-    height: 280px;
+    padding: 1.5rem;
+    min-height: unset;
+    height: unset;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
 }
 
-.skill-icons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    flex-grow: 1;
-    align-items: start;
+/* Push the second subsection to fill available space */
+.skill-card .skill-divider {
+    margin-top: auto; /* pushes divider + content below it to bottom */
+    margin-bottom: 0.75rem;
 }
 
+.skill-category {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.skill-section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f15a24;
+    margin-bottom: 0.6rem;
+}
+
+.skill-divider {
+    border: none;
+    border-top: 1px solid rgba(241, 90, 36, 0.2);
+    margin: 1rem 0 0.75rem;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    align-items: start;
+    margin-top: 0;
+}
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    width: 58px;  /* fixed width keeps names from stretching */
 }
 
 .skill-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 40px;   /* was 45px */
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: all 0.3s ease;
@@ -836,12 +863,12 @@ body::before {
 }
 
 .skill-icon i {
-    font-size: 20px;
+    font-size: 17px;  /* was 20px */
     color: #ffffff;
 }
 
 .skill-name {
-    font-size: 0.7rem;
+    font-size: 0.65rem;  /* was 0.7rem */
     color: #ffffff;
     font-weight: 300;
     text-align: center;
