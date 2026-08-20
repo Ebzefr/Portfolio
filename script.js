@@ -43,9 +43,10 @@ window.addEventListener('scroll', () => {
 // Text rotation animation
 const roles = [
     'Software Engineer',
-    'Product Engineer',
+    'Data Engineer',
+    'AI Engineer',
+    'Full-Stack Developer',
     'Data Analyst',
-    'Cloud Specialist'
 ];
 
 let currentRoleIndex = 0;
