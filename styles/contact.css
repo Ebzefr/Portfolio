@@ -1,0 +1,136 @@
+/* ==================================================================
+   CONTACT — "Let's build something great together." + brick links
+   Bricks reuse .brick / .brick-front / .brick-top / .stud from lego.css
+   ================================================================== */
+
+.contact {
+    position: relative;
+    padding: clamp(5rem, 12vh, 8rem) 0 clamp(5rem, 12vh, 8rem);
+    overflow: clip;
+}
+
+.contact-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.contact-heading {
+    margin: 1.2rem 0 1.6rem;
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.9rem, 7.2vw, 6.4rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    color: var(--ink);
+}
+
+.contact-intro {
+    max-width: 34em;
+    margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #555555;
+}
+
+/* ---------- Brick links ---------- */
+.contact-bricks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.8rem, 2.8vw, 2.4rem) clamp(1rem, 2vw, 1.6rem);
+    max-width: 680px;
+    padding-top: 0.5rem;
+    perspective: 1400px;
+    perspective-origin: 50% 0%;
+}
+
+.contact-brick {
+    --depth: 0.75em;
+    display: block;
+    font-size: clamp(1.45rem, 2.4vw, 2rem); /* 1em = brick scale */
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    text-decoration: none;
+    color: var(--b-text);
+    transform: rotateX(-15deg) rotateY(3deg);
+    /* no filter here: it would flatten the 3D faces */
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.contact-brick .brick-front {
+    display: flex;
+    align-items: center;
+    gap: 0.55em;
+    padding: 0.95em 0.85em;
+    border-radius: 0.08em;
+    text-shadow: none;
+    box-shadow:
+        inset 0 0.03em 0 rgba(255, 255, 255, 0.35),
+        inset 0 -0.04em 0 rgba(0, 0, 0, 0.18),
+        0 0.55em 0.9em -0.3em rgba(0, 0, 0, 0.28);
+    transition: box-shadow 0.2s ease;
+}
+.contact-brick .brick-studs { left: 0.4em; right: 0.4em; }
+/* chunkier studs for these big bricks */
+.contact-brick .stud { width: 0.82em; height: 0.26em; }
+.contact-brick .stud::before { width: 0.82em; height: 0.82em; }
+
+.contact-brick-icon { font-size: 0.95em; width: 1.1em; text-align: center; }
+.contact-brick-label { font-size: 0.72em; font-weight: 800; letter-spacing: -0.02em; }
+.contact-brick-arrow {
+    margin-left: auto;
+    font-size: 0.6em;
+    transition: transform 0.2s ease;
+}
+
+.contact-brick:hover {
+    transform: rotateX(-15deg) rotateY(3deg) translateY(-0.18em);
+}
+.contact-brick:hover .contact-brick-arrow { transform: translateX(0.25em); }
+/* snap press */
+.contact-brick:active {
+    transform: rotateX(-15deg) rotateY(3deg) translateY(0.1em);
+}
+.contact-brick:focus-visible { outline: none; }
+.contact-brick:focus-visible .brick-front { outline: 3px solid var(--ink); outline-offset: 4px; }
+
+/* ---------- Decorations ---------- */
+.contact-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-size: clamp(3.2rem, 6vw, 5.4rem);
+    color: var(--ink);
+}
+.contact-deco > * { position: absolute; }
+.contact-deco-yellow { right: 3%; top: 9%; }
+.contact-deco-blue   { right: 14%; top: 34%; }
+.contact-deco-red    { right: 5%; bottom: 12%; }
+.contact-deco-green  { left: -0.35em; bottom: -0.35em; }
+
+.contact-dash { font-size: 0.75em; }
+.contact-dash--1 { left: max(1rem, calc(50% - 660px + 36rem)); top: 12%; }
+.contact-dash--2 { right: 22%; top: 27%; transform: rotate(-80deg); }
+.contact-dash--3 { right: 3%; bottom: 30%; }
+.contact-dash--4 { left: 1.2rem; bottom: 13%; transform: rotate(-80deg); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .contact-deco-blue,
+    .contact-dash--2 { display: none; }
+    .contact-dash--1 { display: none; }
+}
+
+@media (max-width: 640px) {
+    .contact-bricks { grid-template-columns: 1fr; max-width: 420px; }
+    .contact-deco { font-size: 2.6rem; }
+    .contact-deco-yellow { top: 2.5rem; right: 0.5rem; }
+    .contact-deco-red,
+    .contact-dash--3 { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-brick,
+    .contact-brick-arrow { transition: none; }
+}

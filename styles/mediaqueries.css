@@ -1,0 +1,111 @@
+/*Media Queries for Navigation*/
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 0;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-buttons {
+        gap: 0.5rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu,
+    .nav-buttons {
+        display: none;
+    }
+}
+
+/* Experience Section Media Queries */
+@media (max-width: 768px) {
+    .experience-title {
+        font-size: 3rem;
+    }
+
+    .timeline-item {
+        gap: 2rem;
+    }
+
+    .timeline-left {
+        min-width: 80px;
+    }
+
+    .year-badge {
+        font-size: 1.5rem;
+    }
+
+    .job-card {
+        padding: 1.5rem;
+    }
+
+    .job-role {
+        font-size: 1.3rem;
+    }
+
+    .job-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-container {
+        padding: 0 1rem;
+    }
+
+    .experience-title {
+        font-size: 2.5rem;
+    }
+
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline-item {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-left {
+        min-width: 60px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+    .year-badge {
+        font-size: 1.2rem;
+    }
+
+    .job-card {
+        padding: 1.25rem;
+    }
+
+    .job-role {
+        font-size: 1.1rem;
+    }
+
+    .job-description {
+        font-size: 0.85rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .achievement-list li {
+        font-size: 0.85rem;
+    }
+}

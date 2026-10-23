@@ -1,0 +1,320 @@
+/* ==================================================================
+   LEGO SYSTEM
+   - .lego-btn   : brick-shaped buttons (studs on top, chunky base)
+   - .hero-*     : home section with the 3D brick stack
+   ================================================================== */
+
+/* ---------- Brick colours (shared by buttons and hero bricks) ---------- */
+.lego--red    { --b-face: #e3000b; --b-light: #ff3b42; --b-side: #a10008; --b-edge: #6b0005; --b-text: #ffffff; }
+.lego--yellow { --b-face: #ffc20e; --b-light: #ffd84a; --b-side: #c79000; --b-edge: #8a6400; --b-text: #141414; }
+.lego--green  { --b-face: #1f9d3d; --b-light: #39b957; --b-side: #13702a; --b-edge: #0b4a1b; --b-text: #ffffff; }
+.lego--blue   { --b-face: #1e5fd8; --b-light: #4a84ee; --b-side: #13429c; --b-edge: #0b2c6b; --b-text: #ffffff; }
+.lego--black  { --b-face: #1b1b1b; --b-light: #3a3a3a; --b-side: #000000; --b-edge: #000000; --b-text: #ffffff; }
+.lego--white  { --b-face: #ffffff; --b-light: #ffffff; --b-side: #d9d9d6; --b-edge: #161616; --b-text: #161616; }
+
+/* ==================================================================
+   LEGO BUTTONS
+   ================================================================== */
+.lego-btn {
+    --stud-w: 1.35em;
+    --base: 6px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55em;
+    margin-top: 0.6em; /* room for the studs */
+    padding: 0.85em 1.6em;
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: var(--b-text);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--b-light) 0%, var(--b-face) 42%, var(--b-face) 100%);
+    border: 1.5px solid var(--b-edge);
+    border-radius: 6px;
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+        0 var(--base) 0 var(--b-side),
+        0 var(--base) 0 1.5px var(--b-edge),
+        0 calc(var(--base) + 8px) 16px rgba(0, 0, 0, 0.16);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* the two studs */
+.lego-btn::before,
+.lego-btn::after {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    width: var(--stud-w);
+    height: 0.5em;
+    background: linear-gradient(90deg, var(--b-light) 0%, var(--b-face) 45%, var(--b-side) 100%);
+    border: 1.5px solid var(--b-edge);
+    border-bottom: none;
+    border-radius: 0.7em 0.7em 2px 2px / 0.35em 0.35em 2px 2px;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+.lego-btn::before { left: 18%; }
+.lego-btn::after  { right: 18%; }
+
+.lego-btn i { font-size: 0.9em; transition: transform 0.2s ease; }
+
+.lego-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+        0 calc(var(--base) + 2px) 0 var(--b-side),
+        0 calc(var(--base) + 2px) 0 1.5px var(--b-edge),
+        0 calc(var(--base) + 12px) 20px rgba(0, 0, 0, 0.16);
+}
+.lego-btn:hover .lego-btn-arrow { transform: translateX(3px); }
+
+/* "snap" press into place */
+.lego-btn:active {
+    transform: translateY(calc(var(--base) - 1px));
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+        0 1px 0 var(--b-side),
+        0 1px 0 1.5px var(--b-edge),
+        0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.lego-btn:focus-visible {
+    outline: 3px solid #ffc20e;
+    outline-offset: 5px;
+}
+
+.lego-btn--sm { font-size: 0.85rem; padding: 0.75em 1.3em; --base: 5px; }
+.lego-btn--block { display: flex; width: 100%; font-size: 1rem; padding: 1em 1.5em; }
+
+/* ==================================================================
+   HERO
+   ================================================================== */
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.5rem, 4svh, 2.75rem);
+    padding: calc(72px + clamp(2.5rem, 7svh, 4.5rem)) 1rem 3.5rem;
+    text-align: center;
+    overflow-x: clip; /* falling bricks never cause sideways scroll */
+}
+
+/* ---------- 3D brick stack ---------- */
+.hero-stage {
+    position: relative;
+    perspective: 1400px;
+    perspective-origin: 50% 20%;
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    /* scales with width and height so the stack + text always fit one screen */
+    font-size: clamp(2.1rem, min(8.2vw, 9.5svh), 5.6rem);
+    letter-spacing: -0.045em;
+    word-spacing: 0.1em;
+    line-height: 1;
+}
+
+.hero-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+    /* camera looks slightly down and from the left; --tilt-x/y follow the pointer */
+    transform: rotateX(calc(-14deg + var(--tilt-y, 0deg))) rotateY(calc(10deg + var(--tilt-x, 0deg)));
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* soft floor shadow under the stack */
+.hero-stage::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: -0.35em;
+    height: 0.5em;
+    background: radial-gradient(closest-side, rgba(0, 0, 0, 0.28), transparent);
+    filter: blur(6px);
+    z-index: -1;
+    animation: heroShadow 2.4s ease-out both;
+}
+
+/* Wrapper that carries the drop animation, so the brick keeps its own resting offset */
+.brick-drop {
+    transform-style: preserve-3d;
+    animation: brickDrop 0.9s both;
+    animation-delay: calc(var(--order) * 0.32s + 0.15s);
+}
+
+.brick {
+    --depth: 0.95em;
+    --studs: 4;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateX(var(--shift, 0)) rotateZ(var(--rot, 0deg));
+    color: var(--b-text);
+}
+
+/* Front face: the part that faces the visitor */
+.brick-front {
+    position: relative;
+    display: block;
+    min-width: var(--min-w, auto);
+    padding: 0.16em 0.42em 0.14em;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 30%, transparent 75%, rgba(0, 0, 0, 0.1)),
+        var(--b-face);
+    border-radius: 0.06em;
+    box-shadow:
+        inset 0 0.03em 0 rgba(255, 255, 255, 0.35),
+        inset 0 -0.03em 0 rgba(0, 0, 0, 0.18);
+    white-space: nowrap;
+    text-shadow: 0 0.025em 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Top, left and right faces give the brick its depth */
+.brick-top,
+.brick-left,
+.brick-right {
+    position: absolute;
+    pointer-events: none;
+}
+
+.brick-top {
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--depth);
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+    background: linear-gradient(0deg, var(--b-light), var(--b-face));
+}
+
+.brick-left,
+.brick-right {
+    top: 0;
+    bottom: 0;
+    width: var(--depth);
+    background: linear-gradient(90deg, var(--b-side), var(--b-face));
+}
+.brick-left  { left: 0;  transform-origin: left center;  transform: rotateY(90deg); }
+.brick-right { right: 0; transform-origin: right center; transform: rotateY(-90deg); background: var(--b-side); }
+
+/* Studs sit on the top face, halfway back */
+.brick-studs {
+    position: absolute;
+    left: 0.3em;
+    right: 0.3em;
+    top: 0;
+    height: 0;
+    display: flex;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--depth) / -2));
+}
+
+.stud {
+    position: relative;
+    width: 0.62em;
+    height: 0.2em;
+    transform: translateY(-100%);
+    transform-style: preserve-3d;
+    background: linear-gradient(90deg, var(--b-light) 0%, var(--b-face) 40%, var(--b-side) 100%);
+    border-radius: 0 0 0.04em 0.04em;
+}
+
+/* round cap of the stud */
+.stud::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.62em;
+    height: 0.62em;
+    border-radius: 50%;
+    transform: translateY(-50%) rotateX(90deg);
+    background: radial-gradient(circle at 40% 40%, var(--b-light), var(--b-face) 70%);
+    box-shadow: inset 0 0 0 0.02em rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Name statement + actions ---------- */
+.hero-title {
+    margin: 0;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 3.6vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    animation: heroFadeUp 0.7s ease-out both;
+    animation-delay: 1.55s;
+}
+
+.hero-title > span {
+    display: block;
+    color: #9b9b9b;
+}
+
+.hero-dot { color: #f15a24; }
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.25rem;
+    animation: heroFadeUp 0.7s ease-out both;
+    animation-delay: 1.75s;
+}
+
+/* ---------- Animations ---------- */
+@keyframes brickDrop {
+    0% {
+        transform: translate3d(0, -115vh, 0) rotateZ(var(--spin, 6deg));
+        animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.45); /* accelerate like gravity */
+    }
+    62% {
+        transform: translate3d(0, 0, 0) rotateZ(0deg);
+        animation-timing-function: ease-out;
+    }
+    74% { transform: translate3d(0, -0.12em, 0) rotateZ(calc(var(--spin, 6deg) / -6)); animation-timing-function: ease-in; }
+    86% { transform: translate3d(0, 0, 0); animation-timing-function: ease-out; }
+    93% { transform: translate3d(0, -0.03em, 0); animation-timing-function: ease-in; }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes heroShadow {
+    0%, 20% { opacity: 0; transform: scaleX(0.5); }
+    100% { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .hero-stage { font-size: clamp(2.1rem, 12.5vw, 3.6rem); }
+    .hero-stack { transform: rotateX(-12deg) rotateY(8deg); }
+    .lego-btn { font-size: 0.88rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brick-drop,
+    .hero-title,
+    .hero-actions,
+    .hero-stage::after { animation: none; }
+    .hero-stack,
+    .lego-btn,
+    .lego-btn i { transition: none; }
+}
