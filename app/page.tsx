@@ -15,7 +15,7 @@ export default function Home() {
       <Skills />
       <Contact />
       <footer className="site-footer">
-        <p>Copyright &copy; {new Date().getFullYear()} Ebenezer. All Rights Reserved.</p>
+        <p>Copyright &copy; {new Date().getFullYear()} Ebzé. All Rights Reserved.</p>
       </footer>
     </>
   );
