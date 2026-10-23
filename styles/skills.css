@@ -1,0 +1,223 @@
+/* ==================================================================
+   SKILLS — "My toolkit for building": 3D brick pile
+   Bricks reuse .brick / .brick-front / .brick-top / .stud from lego.css
+   ================================================================== */
+
+.skills {
+    position: relative;
+    padding: clamp(4.5rem, 10vh, 7rem) 0 clamp(4.5rem, 10vh, 7rem);
+    overflow: clip; /* falling bricks appear from the top edge of the section */
+}
+
+.skills-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.skills-header {
+    display: grid;
+    grid-template-columns: 1fr minmax(260px, 430px);
+    align-items: end;
+    gap: 1.5rem 3rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.skills-intro {
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #555555;
+}
+
+.skills-body {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* ---------- The pile ---------- */
+.skill-pile {
+    position: relative;
+    container-type: inline-size; /* bricks scale to the space they have */
+    padding-left: 7rem; /* room for the handwritten group labels */
+    perspective: 1600px;
+    perspective-origin: 50% 0%;
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+}
+
+.skill-stack {
+    /* 1em = brick scale; the widest row is about 27.5em, so it always fits the column */
+    font-size: clamp(15px, calc(100cqi / 28.5), 42px);
+    transform-style: preserve-3d;
+    transform: rotateX(-12deg) rotateY(7deg);
+}
+
+.skill-group {
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+}
+.skill-rows,
+.skill-row > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform-style: preserve-3d;
+}
+.skill-row { transform-style: preserve-3d; }
+
+/* a row of bricks; on narrow screens a row may wrap, leftovers sit on top */
+.skill-row > ul {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.skill-drop { transform-style: preserve-3d; }
+
+/* the brick itself */
+.skill-brick { --depth: 0.8em; }
+.skill-brick .brick-front {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    min-width: 3.3em;
+    padding: 0.42em 0.5em;
+    border-radius: 0.08em;
+    box-shadow:
+        inset 0 0.03em 0 rgba(255, 255, 255, 0.35),
+        inset 0 -0.04em 0 rgba(0, 0, 0, 0.18),
+        inset -0.02em 0 0 rgba(0, 0, 0, 0.12); /* seam between neighbouring bricks */
+    text-shadow: none;
+}
+.skill-brick .brick-studs { left: 0.25em; right: 0.25em; }
+.skill-brick .stud,
+.skill-brick .stud::before { width: 0.5em; }
+.skill-brick .stud::before { height: 0.5em; }
+.skill-brick .stud { height: 0.17em; }
+
+.skill-icon {
+    width: 0.66em;
+    height: 0.66em;
+    flex-shrink: 0;
+    fill: currentColor;
+    font-size: 0.56em; /* Font Awesome fallback icons */
+    display: grid;
+    place-items: center;
+}
+svg.skill-icon { font-size: inherit; }
+
+.skill-name {
+    font-size: 0.5em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.skill-brick { transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1); }
+.skill-brick:hover {
+    transform: translateX(var(--shift, 0)) translateY(-0.14em) rotateZ(var(--rot, 0deg));
+}
+
+/* handwritten group labels */
+.skill-label.note {
+    position: absolute;
+    right: calc(100% + 0.6rem);
+    top: 0.1em;
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 600;
+    transform: rotate(-10deg);
+}
+.skill-label .doodle {
+    display: block;
+    width: 2.4rem;
+    height: 1.1rem;
+    margin: 0.2rem 0 0 1.4rem;
+    transform: rotate(18deg);
+}
+.skill-label--red    { color: #e3000b; }
+.skill-label--yellow { color: #d99a00; }
+.skill-label--blue   { color: #1e5fd8; }
+.skill-label--green  { color: #1f9d3d; }
+
+.skill-dashes {
+    position: absolute;
+    top: -1.2rem;
+    right: 6%;
+    font-size: 3rem;
+    color: var(--ink);
+}
+
+/* ---------- Stacking animation ---------- */
+.skills:not(.is-visible) .skill-drop { opacity: 0; }
+.skills.is-visible .skill-drop {
+    animation: skillDrop 0.75s both;
+    animation-delay: calc(var(--order, 0) * 45ms);
+}
+
+@keyframes skillDrop {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -55vh, 0) rotateZ(var(--spin, 6deg));
+        animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.45);
+    }
+    12% { opacity: 1; }
+    64% {
+        transform: translate3d(0, 0, 0) rotateZ(0deg);
+        animation-timing-function: ease-out;
+    }
+    78% { transform: translate3d(0, -0.12em, 0); animation-timing-function: ease-in; }
+    90% { transform: translate3d(0, 0, 0); animation-timing-function: ease-out; }
+    95% { transform: translate3d(0, -0.025em, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* doodles in this section draw when it comes into view */
+.skills .doodle path,
+.skills .doodle circle { animation-play-state: paused; animation-delay: 1.4s; }
+.skills.is-visible .doodle path,
+.skills.is-visible .doodle circle { animation-play-state: running; }
+
+/* ---------- Decorative loose bricks ---------- */
+.skills-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-size: clamp(3rem, 5vw, 4.4rem);
+}
+.skills-deco > div { position: absolute; }
+.skills-deco-blue   { left: -0.45em; top: 42%; }
+.skills-deco-yellow { right: 3%; top: 30%; z-index: 2; font-size: 0.8em; }
+.skills-deco-green  { left: -0.3em; bottom: 4%; }
+.skills-deco-red    { right: 12%; bottom: 1%; font-size: 0.85em; }
+.skills-deco-red2   { right: -0.5em; bottom: -0.4em; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .skills-deco-yellow,
+    .skills-deco-red { display: none; }
+}
+
+@media (max-width: 760px) {
+    .skills-header { grid-template-columns: 1fr; }
+    .skill-pile { padding-left: 0; }
+    .skill-stack { font-size: clamp(17px, 5.4vw, 22px); }
+    .skill-label.note {
+        position: static;
+        display: block;
+        margin: 0.9rem 0 0.5rem;
+        font-size: 1.3rem;
+        transform: rotate(-4deg);
+    }
+    .skill-label .doodle { display: none; }
+    .skill-dashes { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills:not(.is-visible) .skill-drop { opacity: 1; }
+    .skills.is-visible .skill-drop { animation: none; }
+    .skill-brick { transition: none; }
+}
