@@ -152,7 +152,9 @@ svg.skill-icon { font-size: inherit; }
 }
 
 /* ---------- Stacking animation ---------- */
-.skills:not(.is-visible) .skill-drop { opacity: 0; }
+/* hidden until the pile scrolls into view. Not opacity: animating or setting
+   opacity flattens each brick, and lower rows' studs then paint over the row above */
+.skills:not(.is-visible) .skill-drop { visibility: hidden; }
 .skills.is-visible .skill-drop {
     animation: skillDrop 0.75s both;
     animation-delay: calc(var(--order, 0) * 45ms);
@@ -160,11 +162,9 @@ svg.skill-icon { font-size: inherit; }
 
 @keyframes skillDrop {
     0% {
-        opacity: 0;
         transform: translate3d(0, -55vh, 0) rotateZ(var(--spin, 6deg));
         animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.45);
     }
-    12% { opacity: 1; }
     64% {
         transform: translate3d(0, 0, 0) rotateZ(0deg);
         animation-timing-function: ease-out;
@@ -172,7 +172,7 @@ svg.skill-icon { font-size: inherit; }
     78% { transform: translate3d(0, -0.12em, 0); animation-timing-function: ease-in; }
     90% { transform: translate3d(0, 0, 0); animation-timing-function: ease-out; }
     95% { transform: translate3d(0, -0.025em, 0); }
-    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
 }
 
 /* doodles in this section draw when it comes into view */
@@ -217,7 +217,7 @@ svg.skill-icon { font-size: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .skills:not(.is-visible) .skill-drop { opacity: 1; }
+    .skills:not(.is-visible) .skill-drop { visibility: visible; }
     .skills.is-visible .skill-drop { animation: none; }
     .skill-brick { transition: none; }
 }
