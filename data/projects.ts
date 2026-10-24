@@ -51,12 +51,14 @@ export const projects: Project[] = [
   {
     id: "lofis-app",
     name: "Lofis App",
-    type: "Mobile / UX",
+    type: "Mobile App",
     icon: "fas fa-mobile-screen",
-    blurb: "A restaurant app designed in Figma from user research: reservations, ordering, dietary filters and delivery tracking.",
-    tags: [["Figma", "dark"], ["UX Research", "blue"], ["Illustrator", "yellow"], ["UI/UX", "lilac"]],
+    blurb: "A working restaurant app built from my UX research: dietary filters, order customising, checkout, live delivery tracking and table booking.",
+    tags: [["React Native", "blue"], ["Expo", "dark"], ["TypeScript", "navy"], ["UI/UX", "lilac"]],
     logo: img("lofis-app-logo.webp"),
-    phoneScreen: img("lofis-app-screen.webp"),
+    display: img("lofis-app-display.webp"),
+    live: "https://ebzefr.github.io/lofis-app/",
+    github: "https://github.com/Ebzefr/lofis-app",
   },
   {
     id: "lofis-web",
