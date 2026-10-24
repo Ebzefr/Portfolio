@@ -21,7 +21,7 @@ export default function About() {
         {/* ---- photo card ---- */}
         <div className="about-photo" aria-hidden="true">
           <div className="about-paper" />
-          <img className="about-figure" src="/Assets/cards/about-figure.png" alt="" loading="lazy" />
+          <img className="about-figure" src="/Assets/cards/about-figure.webp" alt="" loading="lazy" />
 
           <span className="about-dashes">
             <Doodle.Dashes />
