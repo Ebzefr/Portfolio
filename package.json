@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "npx serve out",
     "emulators": "firebase emulators:start --project demo-ebze",
-    "seed:local": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 GCLOUD_PROJECT=demo-ebze node --no-deprecation scripts/seed-bricks.mjs",
-    "moderate:local": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 GCLOUD_PROJECT=demo-ebze node --no-deprecation scripts/moderate.mjs",
-    "seed": "node --no-deprecation scripts/seed-bricks.mjs",
-    "moderate": "node --no-deprecation scripts/moderate.mjs",
+    "seed:local": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 GCLOUD_PROJECT=demo-ebze node scripts/seed-bricks.mjs",
+    "moderate:local": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 GCLOUD_PROJECT=demo-ebze node scripts/moderate.mjs",
+    "seed": "node scripts/seed-bricks.mjs",
+    "moderate": "node scripts/moderate.mjs",
     "api:local": "node guestbook-api/dev-server.mjs"
   },
   "dependencies": {

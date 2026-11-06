@@ -2,8 +2,7 @@
 
 import Matter from "matter-js";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { layoutFor } from "@/lib/guestbook/layouts";
-import { BrickScene } from "@/lib/guestbook/scene";
+import { BrickScene, LAYOUTS, type SceneSize } from "@/lib/guestbook/scene";
 import { PAD_TOP, geometry } from "@/lib/guestbook/shapes";
 import type { BrickNote } from "@/lib/guestbook/types";
 import { BrickSvg } from "./BrickSvg";
@@ -16,8 +15,7 @@ type Props = {
   pendingIds: Set<string>; // the visitor's own bricks that are waiting for approval
   reducedMotion: boolean;
   onLand?: (speed: number) => void;
-  /** how many approved bricks are in the pit (the rest are only in the full list) */
-  onShown?: (count: number) => void;
+  onLayout?: (max: number) => void;
 };
 
 const MAX_RUN_MS = 9000;
@@ -26,7 +24,7 @@ const STEP_MS = 1000 / 60;
 const formatDate = (ms: number) =>
   new Date(ms).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
-export default function BrickPit({ notes, pendingIds, reducedMotion, onLand, onShown }: Props) {
+export default function BrickPit({ notes, pendingIds, reducedMotion, onLand, onLayout }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const els = useRef(new Map<string, HTMLButtonElement>());
   const sceneRef = useRef<BrickScene | null>(null);
@@ -34,7 +32,6 @@ export default function BrickPit({ notes, pendingIds, reducedMotion, onLand, onS
   const running = useRef(false);
   const deadline = useRef(0);
   const dropping = useRef(new Set<string>());
-  const seen = useRef(new Set<string>()); // every brick the pit has considered, kept or not
   const onLandRef = useRef(onLand);
   onLandRef.current = onLand;
 
@@ -43,14 +40,12 @@ export default function BrickPit({ notes, pendingIds, reducedMotion, onLand, onS
   const [active, setActive] = useState<{ id: string; pinned: boolean } | null>(null);
   const [focusId, setFocusId] = useState<string | null>(null);
 
-  const size = layoutFor(width);
+  const size: SceneSize = width && width < 640 ? LAYOUTS.narrow : LAYOUTS.wide;
   const scale = width ? width / size.w : 0;
 
-  useEffect(() => {
-    onShown?.(placed.filter((n) => !pendingIds.has(n.id)).length);
-  }, [placed, pendingIds, onShown]);
+  useEffect(() => onLayout?.(size.maxBricks), [size.maxBricks, onLayout]);
 
-  // the newest bricks; presettle keeps as many of these as fit
+  // the bricks that fit in the pit: the newest ones
   const shown = useMemo(() => notes.slice(0, size.maxBricks), [notes, size.maxBricks]);
 
   /* ---------- size + visibility ---------- */
@@ -142,24 +137,19 @@ export default function BrickPit({ notes, pendingIds, reducedMotion, onLand, onS
         }
         onLandRef.current?.(speed);
       };
-      const kept = new Set(scene.presettle(shown));
-      seen.current = new Set(shown.map((n) => n.id));
+      scene.presettle(shown);
       sceneRef.current = scene;
-      setPlaced(shown.filter((n) => kept.has(n.id)).reverse()); // oldest first, matching keyboard order
+      setPlaced([...shown].reverse()); // oldest first, matching keyboard order
       return;
     }
 
-    const fresh = shown.filter((n) => !seen.current.has(n.id)).reverse(); // oldest first
+    const fresh = shown.filter((n) => !scene!.bricks.has(n.id)).reverse(); // oldest first
     if (!fresh.length) return;
-    for (const n of fresh) seen.current.add(n.id);
     const timers = fresh.map((note, i) =>
       window.setTimeout(() => {
         const s = sceneRef.current;
         if (!s || s.bricks.has(note.id)) return;
         const g = geometry(note.shape);
-        // full pit: lift the highest bricks off so the new one lands inside the frame
-        const removed = new Set(s.makeRoom(g.h + 80, dropping.current));
-        if (removed.size) setPlaced((p) => p.filter((n) => !removed.has(n.id)));
         if (reducedMotion) {
           // no fall: place it on the pile straight away
           s.add(note, Math.min(-g.h - PAD_TOP, s.pileTop() - g.h - 20));

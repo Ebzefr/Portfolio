@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import seedData from "@/data/brick-seeds.json";
 import { countBricks, guestbookConfigured, watchBricks } from "@/lib/guestbook/client";
-import { MAX_SHOWN } from "@/lib/guestbook/layouts";
+import { LAYOUTS } from "@/lib/guestbook/layouts";
 import { isColor, isShape, type BrickNote } from "@/lib/guestbook/types";
 import { LooseBrick } from "../LegoBits";
 import AllBricks from "./AllBricks";
@@ -55,7 +55,7 @@ export default function Guestbook() {
   const [approved, setApproved] = useState<BrickNote[]>([]);
   const [count, setCount] = useState<number | null>(null);
   const [mine, setMine] = useState<BrickNote[]>([]);
-  const [inPit, setInPit] = useState(0);
+  const [shownMax, setShownMax] = useState<number>(LAYOUTS.wide.maxBricks);
   const [browse, setBrowse] = useState(false);
   const [sound, setSound] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -90,7 +90,7 @@ export default function Guestbook() {
     setLoad("loading");
     let alive = true;
     const stop = watchBricks(
-      MAX_SHOWN,
+      LAYOUTS.wide.maxBricks,
       (notes) => {
         if (!alive) return;
         setApproved(notes);
@@ -148,7 +148,7 @@ export default function Guestbook() {
   }, []);
 
   const ready = load === "ready" || load === "offline" || load === "error";
-  const hidden = count !== null && inPit ? Math.max(0, count - inPit) : 0;
+  const hidden = count !== null ? Math.max(0, count - Math.min(shownMax, approved.length)) : 0;
 
   return (
     <section id="guestbook" className="guestbook" ref={sectionRef} aria-labelledby="gb-title">
@@ -216,14 +216,15 @@ export default function Guestbook() {
             pendingIds={pendingIds}
             reducedMotion={reducedMotion}
             onLand={onLand}
-            onShown={setInPit}
+            onLayout={setShownMax}
           />
         ) : (
           <PitPlaceholder />
         )}
         {hidden > 0 && (
           <p className="gb-pit-note">
-            Showing {inPit} recent bricks. {hidden} more {hidden === 1 ? "is" : "are"} in the full list.
+            Showing the newest {Math.min(shownMax, approved.length)} bricks. {hidden} older{" "}
+            {hidden === 1 ? "one is" : "ones are"} in the full list.
           </p>
         )}
       </div>

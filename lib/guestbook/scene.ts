@@ -4,7 +4,7 @@
    window width. Rendering happens elsewhere (BrickPit reads body positions). */
 
 import Matter from "matter-js";
-import { CELL, DEPTH, PAD_TOP, geometry, hashString, seeded } from "./shapes";
+import { CELL, DEPTH, geometry, hashString, seeded } from "./shapes";
 import type { BrickNote } from "./types";
 
 const { Bodies, Body, Composite, Engine, Events, Sleeping } = Matter;
@@ -103,21 +103,14 @@ export class BrickScene {
     for (const other of this.bricks.values()) Sleeping.set(other.body, false);
   }
 
-  /** A brick body higher than this would have its studs cut off by the top of the pit. */
-  readonly ceiling = PAD_TOP + 4;
-
   /**
    * Build the pile for bricks that were already saved, without showing the fall.
-   * Newest bricks drop first, so when the pit can't hold them all it's the oldest that
-   * miss out (they're still in the "all messages" list). Anything left poking above the
-   * top after settling is removed; those bricks sit on top, so nothing else moves.
-   * Returns the ids that made it into the pit.
+   * Bricks are dropped oldest first in a steady stream, then everything is left to settle.
    */
-  presettle(notes: BrickNote[]): string[] {
-    const ordered = [...notes].sort((a, b) => b.createdAt - a.createdAt || a.id.localeCompare(b.id));
+  presettle(notes: BrickNote[]) {
+    const ordered = [...notes].sort((a, b) => a.createdAt - b.createdAt || a.id.localeCompare(b.id));
     const spawnY = -CELL * 4;
     for (const note of ordered) {
-      if (this.pileTop() < this.ceiling - CELL * 2) break; // clearly full
       const placed = this.add(note, spawnY);
       // wait until it has dropped clear of the spawn point before the next one appears
       for (let i = 0; i < 60 && placed.body.bounds.min.y < spawnY + CELL * 4.5; i++) {
@@ -126,30 +119,6 @@ export class BrickScene {
       }
     }
     this.settle(900);
-    for (let pass = 0; pass < 3; pass++) {
-      const over = [...this.bricks.values()].filter((b) => b.body.bounds.min.y < this.ceiling);
-      if (!over.length) break;
-      for (const b of over) this.remove(b.note.id);
-      this.settle(400);
-    }
-    return [...this.bricks.keys()];
-  }
-
-  /**
-   * Before a live drop into a full pit: lift off the highest bricks (oldest first when tied)
-   * until there's enough headroom. Returns the ids removed.
-   */
-  makeRoom(headroom: number, keep: Set<string>): string[] {
-    const removed: string[] = [];
-    while (this.pileTop() < this.ceiling + headroom) {
-      const top = [...this.bricks.values()]
-        .filter((b) => !keep.has(b.note.id))
-        .sort((a, b) => a.body.bounds.min.y - b.body.bounds.min.y || a.note.createdAt - b.note.createdAt)[0];
-      if (!top) break;
-      this.remove(top.note.id);
-      removed.push(top.note.id);
-    }
-    return removed;
   }
 
   /** Step until everything is asleep (or a step limit is hit), then put it all to sleep. */
