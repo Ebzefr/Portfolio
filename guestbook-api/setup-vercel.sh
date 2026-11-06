@@ -31,9 +31,9 @@ gcloud iam service-accounts keys create "$KEY" --iam-account "$SA" --project "$P
 NEW_KEY_ID=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["private_key_id"])' "$KEY")
 
 echo "→ Environment variables"
-for var in FIREBASE_SERVICE_ACCOUNT RATE_SALT; do $VERCEL env rm "$var" production --yes >/dev/null 2>&1 || true; done
-base64 < "$KEY" | tr -d '\n' | $VERCEL env add FIREBASE_SERVICE_ACCOUNT production
-openssl rand -hex 24 | tr -d '\n' | $VERCEL env add RATE_SALT production
+for var in FIREBASE_SERVICE_ACCOUNT RATE_SALT; do $VERCEL env rm "$var" --environment production --yes >/dev/null 2>&1 || true; done
+base64 < "$KEY" | tr -d '\n' | $VERCEL env add FIREBASE_SERVICE_ACCOUNT --environment production
+openssl rand -hex 24 | tr -d '\n' | $VERCEL env add RATE_SALT --environment production
 
 echo "→ Removing old keys"
 for id in $(gcloud iam service-accounts keys list --iam-account "$SA" --managed-by=user --format="value(name.basename())"); do

@@ -122,7 +122,7 @@ export default function BrickForm({ disabled, disabledNote, onDropped }: Props) 
           </span>
           <textarea
             name="message"
-            rows={2}
+            rows={1}
             maxLength={MESSAGE_MAX}
             placeholder="Say hi, leave a tip, or just leave your mark…"
             value={message}
@@ -166,25 +166,23 @@ export default function BrickForm({ disabled, disabledNote, onDropped }: Props) 
             ))}
           </div>
         </fieldset>
-      </div>
 
-      <div className="gb-submit-row">
         <button type="submit" className="lego-btn lego--red gb-submit" disabled={disabled || sending}>
           {sending ? "Dropping…" : "Drop my brick"}
           <i className={`fas ${sending ? "fa-spinner fa-spin" : "fa-arrow-down"} lego-btn-arrow`} aria-hidden="true"></i>
         </button>
-
-        <p className={`gb-status gb-status--${state.kind}`} role="status" aria-live="polite">
-          {disabled && disabledNote}
-          {!disabled && state.kind === "done" && (
-            <>
-              <strong>Your brick is officially part of the build! 🧱</strong>
-              <span>Everyone else will see it once I&apos;ve approved it.</span>
-            </>
-          )}
-          {!disabled && state.kind === "error" && state.text}
-        </p>
       </div>
+
+      <p className={`gb-status gb-status--${state.kind}`} role="status" aria-live="polite">
+        {disabled && disabledNote}
+        {!disabled && state.kind === "done" && (
+          <>
+            <strong>Your brick is officially part of the build! 🧱</strong>
+            <span>Everyone else will see it once I&apos;ve approved it.</span>
+          </>
+        )}
+        {!disabled && state.kind === "error" && state.text}
+      </p>
     </form>
   );
 }
