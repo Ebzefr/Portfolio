@@ -4,3 +4,11 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 .DS_Store
+
+# local env + Firebase
+.env*.local
+.vercel/
+firebase-debug.log
+firestore-debug.log
+*-service-account*.json
+guestbook-api/.env*

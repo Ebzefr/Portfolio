@@ -1,0 +1,12 @@
+[
+  { "id": "seed-01-amina",  "name": "Amina",  "message": "Love the design! This is so cool 😭",            "color": "red",    "shape": "rect2x4", "createdAt": "2026-10-01T09:00:00Z" },
+  { "id": "seed-02-josh",   "name": "Josh",   "message": "Bro really built his portfolio out of LEGO 😂",   "color": "yellow", "shape": "l",       "createdAt": "2026-10-02T09:00:00Z" },
+  { "id": "seed-03-sarah",  "name": "Sarah",  "message": "The little details are everything!",              "color": "blue",   "shape": "square",  "createdAt": "2026-10-03T09:00:00Z" },
+  { "id": "seed-04-daniel", "name": "Daniel", "message": "Keep building, man! 🚀",                          "color": "green",  "shape": "long1x6", "createdAt": "2026-10-04T09:00:00Z" },
+  { "id": "seed-05-tobi",   "name": "Tobi",   "message": "This is actually so creative.",                   "color": "orange", "shape": "t",       "createdAt": "2026-10-05T09:00:00Z" },
+  { "id": "seed-06-rachel", "name": "Rachel", "message": "Okay this is ridiculously cute 😂",               "color": "purple", "shape": "zigzag",  "createdAt": "2026-10-06T09:00:00Z" },
+  { "id": "seed-07-alex",   "name": "Alex",   "message": "Came for the projects, stayed for the bricks.",   "color": "cream",  "shape": "plate",   "createdAt": "2026-10-07T09:00:00Z" },
+  { "id": "seed-08-sam",    "name": "Sam",    "message": "You've inspired me to redesign mine!",            "color": "blue",   "shape": "rect2x4", "createdAt": "2026-10-08T09:00:00Z" },
+  { "id": "seed-09-chris",  "name": "Chris",  "message": "The animations are satisfying ngl.",              "color": "red",    "shape": "zigzag",  "createdAt": "2026-10-09T09:00:00Z" },
+  { "id": "seed-10-maya",   "name": "Maya",   "message": "Leaving my little mark here 🧱",                  "color": "yellow", "shape": "t",       "createdAt": "2026-10-10T09:00:00Z" }
+]

@@ -7,6 +7,7 @@ import "@/styles/work.css";
 import "@/styles/about.css";
 import "@/styles/skills.css";
 import "@/styles/contact.css";
+import "@/styles/guestbook.css";
 
 export const metadata: Metadata = {
   title: "Portfolio",

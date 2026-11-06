@@ -1,0 +1,5 @@
+node_modules
+*.test.js
+setup-vercel.sh
+dev-server.mjs
+.env*

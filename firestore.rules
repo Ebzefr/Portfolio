@@ -1,0 +1,19 @@
+rules_version = '2';
+
+// Guestbook security:
+// - anyone can read bricks that have been approved (queries must filter status == "approved")
+// - nobody can write from a browser; new bricks only arrive through the submitBrick
+//   Cloud Function, and approving/rejecting happens with the Admin SDK (scripts/moderate.mjs)
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /brickNotes/{noteId} {
+      allow get, list: if resource.data.status == "approved";
+      allow create, update, delete: if false;
+    }
+
+    // rate-limit records and everything else stay private
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
